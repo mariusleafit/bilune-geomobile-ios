@@ -26,6 +26,13 @@
 		29B63D701785C881001AEE4B /* InfoUNINEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D6F1785C881001AEE4B /* InfoUNINEViewController.m */; };
 		29EAB981178696F50043BD86 /* ChangeFloorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EAB980178696F50043BD86 /* ChangeFloorViewController.m */; };
 		29EAB984178698280043BD86 /* LegendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EAB983178698280043BD86 /* LegendViewController.m */; };
+		29EAB9871786A2470043BD86 /* InfoLeafitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EAB9861786A2470043BD86 /* InfoLeafitViewController.m */; };
+		29EAB9891786A5490043BD86 /* 5cm_transparent_no_10101.png in Resources */ = {isa = PBXBuildFile; fileRef = 29EAB9881786A5490043BD86 /* 5cm_transparent_no_10101.png */; };
+		29EABB901786A8880043BD86 /* northArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 29B63D611785B9D9001AEE4B /* northArrow.png */; };
+		29EABB911786A8880043BD86 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 29B63D601785B8D8001AEE4B /* info.png */; };
+		29EABB921786A8880043BD86 /* gps32.png in Resources */ = {isa = PBXBuildFile; fileRef = 29B63D5F1785B8C1001AEE4B /* gps32.png */; };
+		29EABB931786A8880043BD86 /* bilune_page_background01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29B63D5B1785B2CA001AEE4B /* bilune_page_background01.jpg */; };
+		29EABB941786A8880043BD86 /* logo_unine_bleu.png in Resources */ = {isa = PBXBuildFile; fileRef = 29B63D5A1785B2B9001AEE4B /* logo_unine_bleu.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +73,9 @@
 		29EAB980178696F50043BD86 /* ChangeFloorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeFloorViewController.m; sourceTree = "<group>"; };
 		29EAB982178698280043BD86 /* LegendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegendViewController.h; sourceTree = "<group>"; };
 		29EAB983178698280043BD86 /* LegendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegendViewController.m; sourceTree = "<group>"; };
+		29EAB9851786A2470043BD86 /* InfoLeafitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoLeafitViewController.h; sourceTree = "<group>"; };
+		29EAB9861786A2470043BD86 /* InfoLeafitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoLeafitViewController.m; sourceTree = "<group>"; };
+		29EAB9881786A5490043BD86 /* 5cm_transparent_no_10101.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5cm_transparent_no_10101.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +196,8 @@
 				29EAB980178696F50043BD86 /* ChangeFloorViewController.m */,
 				29EAB982178698280043BD86 /* LegendViewController.h */,
 				29EAB983178698280043BD86 /* LegendViewController.m */,
+				29EAB9851786A2470043BD86 /* InfoLeafitViewController.h */,
+				29EAB9861786A2470043BD86 /* InfoLeafitViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -193,6 +205,7 @@
 		29B63D591785AC48001AEE4B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				29EAB9881786A5490043BD86 /* 5cm_transparent_no_10101.png */,
 				29B63D611785B9D9001AEE4B /* northArrow.png */,
 				29B63D601785B8D8001AEE4B /* info.png */,
 				29B63D5F1785B8C1001AEE4B /* gps32.png */,
@@ -256,11 +269,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29EABB901786A8880043BD86 /* northArrow.png in Resources */,
+				29EABB911786A8880043BD86 /* info.png in Resources */,
+				29EABB921786A8880043BD86 /* gps32.png in Resources */,
+				29EABB931786A8880043BD86 /* bilune_page_background01.jpg in Resources */,
+				29EABB941786A8880043BD86 /* logo_unine_bleu.png in Resources */,
 				2930D4441785A3E500A4DCD2 /* InfoPlist.strings in Resources */,
 				2930D44C1785A3E500A4DCD2 /* Default.png in Resources */,
 				2930D44E1785A3E500A4DCD2 /* Default@2x.png in Resources */,
 				2930D4501785A3E500A4DCD2 /* Default-568h@2x.png in Resources */,
 				2930D4531785A3E500A4DCD2 /* BiluneGeoMobile.storyboard in Resources */,
+				29EAB9891786A5490043BD86 /* 5cm_transparent_no_10101.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +301,7 @@
 				29B63D701785C881001AEE4B /* InfoUNINEViewController.m in Sources */,
 				29EAB981178696F50043BD86 /* ChangeFloorViewController.m in Sources */,
 				29EAB984178698280043BD86 /* LegendViewController.m in Sources */,
+				29EAB9871786A2470043BD86 /* InfoLeafitViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

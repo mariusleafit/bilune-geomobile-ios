@@ -12,7 +12,7 @@
 
 @end
 
-@implementation InfoViewController
+@implementation InfoUNINEViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

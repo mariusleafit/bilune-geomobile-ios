@@ -1,18 +1,18 @@
 //
-//  FloorListViewController.m
+//  InfoLeafitViewController.m
 //  BiluneGeoMobile
 //
-//  Created by Marius Gächter on 04.07.13.
+//  Created by Marius Gächter on 05.07.13.
 //  Copyright (c) 2013 leafit. All rights reserved.
 //
 
-#import "FloorListViewController.h"
+#import "InfoLeafitViewController.h"
 
-@interface FloorListViewController ()
+@interface InfoLeafitViewController ()
 
 @end
 
-@implementation FloorListViewController
+@implementation InfoLeafitViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

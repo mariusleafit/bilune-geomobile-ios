@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FloorListViewController : UITableViewController
+@interface FloorListViewController : UIViewController
 
 @end
