@@ -33,6 +33,13 @@
 		29EABB921786A8880043BD86 /* gps32.png in Resources */ = {isa = PBXBuildFile; fileRef = 29B63D5F1785B8C1001AEE4B /* gps32.png */; };
 		29EABB931786A8880043BD86 /* bilune_page_background01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29B63D5B1785B2CA001AEE4B /* bilune_page_background01.jpg */; };
 		29EABB941786A8880043BD86 /* logo_unine_bleu.png in Resources */ = {isa = PBXBuildFile; fileRef = 29B63D5A1785B2B9001AEE4B /* logo_unine_bleu.png */; };
+		29EABB9B1786BF250043BD86 /* BuildingStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EABB9A1786BF250043BD86 /* BuildingStack.m */; };
+		29EABB9F1786BF7D0043BD86 /* Building.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EABB9E1786BF7D0043BD86 /* Building.m */; };
+		29EABBA21786BF870043BD86 /* Floor.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EABBA11786BF870043BD86 /* Floor.m */; };
+		29EABBA61786BFAD0043BD86 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EABBA51786BFAC0043BD86 /* Room.m */; };
+		29EABBA91786BFC10043BD86 /* Occupant.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EABBA81786BFC10043BD86 /* Occupant.m */; };
+		29EABBAC1786BFD10043BD86 /* Legend.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EABBAB1786BFD10043BD86 /* Legend.m */; };
+		29EABBAF1786BFDC0043BD86 /* LegendEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EABBAE1786BFDC0043BD86 /* LegendEntry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +83,20 @@
 		29EAB9851786A2470043BD86 /* InfoLeafitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoLeafitViewController.h; sourceTree = "<group>"; };
 		29EAB9861786A2470043BD86 /* InfoLeafitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoLeafitViewController.m; sourceTree = "<group>"; };
 		29EAB9881786A5490043BD86 /* 5cm_transparent_no_10101.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5cm_transparent_no_10101.png; sourceTree = "<group>"; };
+		29EABB991786BF250043BD86 /* BuildingStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingStack.h; sourceTree = "<group>"; };
+		29EABB9A1786BF250043BD86 /* BuildingStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingStack.m; sourceTree = "<group>"; };
+		29EABB9D1786BF7D0043BD86 /* Building.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Building.h; sourceTree = "<group>"; };
+		29EABB9E1786BF7D0043BD86 /* Building.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Building.m; sourceTree = "<group>"; };
+		29EABBA01786BF870043BD86 /* Floor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Floor.h; sourceTree = "<group>"; };
+		29EABBA11786BF870043BD86 /* Floor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Floor.m; sourceTree = "<group>"; };
+		29EABBA41786BFAC0043BD86 /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
+		29EABBA51786BFAC0043BD86 /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
+		29EABBA71786BFC10043BD86 /* Occupant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Occupant.h; sourceTree = "<group>"; };
+		29EABBA81786BFC10043BD86 /* Occupant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Occupant.m; sourceTree = "<group>"; };
+		29EABBAA1786BFD10043BD86 /* Legend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Legend.h; sourceTree = "<group>"; };
+		29EABBAB1786BFD10043BD86 /* Legend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Legend.m; sourceTree = "<group>"; };
+		29EABBAD1786BFDC0043BD86 /* LegendEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegendEntry.h; sourceTree = "<group>"; };
+		29EABBAE1786BFDC0043BD86 /* LegendEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegendEntry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +192,7 @@
 		29B63D571785ABDF001AEE4B /* core */ = {
 			isa = PBXGroup;
 			children = (
+				29EABB971786BE770043BD86 /* models */,
 			);
 			name = core;
 			sourceTree = "<group>";
@@ -216,6 +238,43 @@
 				2930D44F1785A3E500A4DCD2 /* Default-568h@2x.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		29EABB971786BE770043BD86 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				29EABB9C1786BF4F0043BD86 /* legend */,
+				29EABB981786BE880043BD86 /* layermanager */,
+				29EABBA71786BFC10043BD86 /* Occupant.h */,
+				29EABBA81786BFC10043BD86 /* Occupant.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		29EABB981786BE880043BD86 /* layermanager */ = {
+			isa = PBXGroup;
+			children = (
+				29EABB991786BF250043BD86 /* BuildingStack.h */,
+				29EABB9A1786BF250043BD86 /* BuildingStack.m */,
+				29EABB9D1786BF7D0043BD86 /* Building.h */,
+				29EABB9E1786BF7D0043BD86 /* Building.m */,
+				29EABBA01786BF870043BD86 /* Floor.h */,
+				29EABBA11786BF870043BD86 /* Floor.m */,
+				29EABBA41786BFAC0043BD86 /* Room.h */,
+				29EABBA51786BFAC0043BD86 /* Room.m */,
+			);
+			name = layermanager;
+			sourceTree = "<group>";
+		};
+		29EABB9C1786BF4F0043BD86 /* legend */ = {
+			isa = PBXGroup;
+			children = (
+				29EABBAA1786BFD10043BD86 /* Legend.h */,
+				29EABBAB1786BFD10043BD86 /* Legend.m */,
+				29EABBAD1786BFDC0043BD86 /* LegendEntry.h */,
+				29EABBAE1786BFDC0043BD86 /* LegendEntry.m */,
+			);
+			name = legend;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +361,13 @@
 				29EAB981178696F50043BD86 /* ChangeFloorViewController.m in Sources */,
 				29EAB984178698280043BD86 /* LegendViewController.m in Sources */,
 				29EAB9871786A2470043BD86 /* InfoLeafitViewController.m in Sources */,
+				29EABB9B1786BF250043BD86 /* BuildingStack.m in Sources */,
+				29EABB9F1786BF7D0043BD86 /* Building.m in Sources */,
+				29EABBA21786BF870043BD86 /* Floor.m in Sources */,
+				29EABBA61786BFAD0043BD86 /* Room.m in Sources */,
+				29EABBA91786BFC10043BD86 /* Occupant.m in Sources */,
+				29EABBAC1786BFD10043BD86 /* Legend.m in Sources */,
+				29EABBAF1786BFDC0043BD86 /* LegendEntry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
