@@ -16,8 +16,16 @@
 		2930D44C1785A3E500A4DCD2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2930D44B1785A3E500A4DCD2 /* Default.png */; };
 		2930D44E1785A3E500A4DCD2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2930D44D1785A3E500A4DCD2 /* Default@2x.png */; };
 		2930D4501785A3E500A4DCD2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2930D44F1785A3E500A4DCD2 /* Default-568h@2x.png */; };
-		2930D4531785A3E500A4DCD2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2930D4511785A3E500A4DCD2 /* MainStoryboard.storyboard */; };
-		2930D4561785A3E500A4DCD2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2930D4551785A3E500A4DCD2 /* ViewController.m */; };
+		2930D4531785A3E500A4DCD2 /* BiluneGeoMobile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2930D4511785A3E500A4DCD2 /* BiluneGeoMobile.storyboard */; };
+		2930D4561785A3E500A4DCD2 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2930D4551785A3E500A4DCD2 /* MainMenuViewController.m */; };
+		29B63D5E1785B6EC001AEE4B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D5D1785B6EC001AEE4B /* MapViewController.m */; };
+		29B63D641785BB97001AEE4B /* BuildingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D631785BB95001AEE4B /* BuildingListViewController.m */; };
+		29B63D671785C2B2001AEE4B /* FloorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D661785C2B2001AEE4B /* FloorListViewController.m */; };
+		29B63D6A1785C36A001AEE4B /* RoomListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D691785C369001AEE4B /* RoomListViewController.m */; };
+		29B63D6D1785C4D8001AEE4B /* SearchOccupantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D6C1785C4D8001AEE4B /* SearchOccupantsViewController.m */; };
+		29B63D701785C881001AEE4B /* InfoUNINEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D6F1785C881001AEE4B /* InfoUNINEViewController.m */; };
+		29EAB981178696F50043BD86 /* ChangeFloorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EAB980178696F50043BD86 /* ChangeFloorViewController.m */; };
+		29EAB984178698280043BD86 /* LegendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EAB983178698280043BD86 /* LegendViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,9 +42,30 @@
 		2930D44B1785A3E500A4DCD2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		2930D44D1785A3E500A4DCD2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2930D44F1785A3E500A4DCD2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		2930D4521785A3E500A4DCD2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		2930D4541785A3E500A4DCD2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2930D4551785A3E500A4DCD2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2930D4521785A3E500A4DCD2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/BiluneGeoMobile.storyboard; sourceTree = "<group>"; };
+		2930D4541785A3E500A4DCD2 /* MainMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		2930D4551785A3E500A4DCD2 /* MainMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		29B63D5A1785B2B9001AEE4B /* logo_unine_bleu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_unine_bleu.png; sourceTree = "<group>"; };
+		29B63D5B1785B2CA001AEE4B /* bilune_page_background01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bilune_page_background01.jpg; sourceTree = "<group>"; };
+		29B63D5C1785B6EB001AEE4B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		29B63D5D1785B6EC001AEE4B /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		29B63D5F1785B8C1001AEE4B /* gps32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gps32.png; sourceTree = "<group>"; };
+		29B63D601785B8D8001AEE4B /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		29B63D611785B9D9001AEE4B /* northArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = northArrow.png; sourceTree = "<group>"; };
+		29B63D621785BB95001AEE4B /* BuildingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingListViewController.h; sourceTree = "<group>"; };
+		29B63D631785BB95001AEE4B /* BuildingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingListViewController.m; sourceTree = "<group>"; };
+		29B63D651785C2B1001AEE4B /* FloorListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloorListViewController.h; sourceTree = "<group>"; };
+		29B63D661785C2B2001AEE4B /* FloorListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloorListViewController.m; sourceTree = "<group>"; };
+		29B63D681785C367001AEE4B /* RoomListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomListViewController.h; sourceTree = "<group>"; };
+		29B63D691785C369001AEE4B /* RoomListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomListViewController.m; sourceTree = "<group>"; };
+		29B63D6B1785C4D8001AEE4B /* SearchOccupantsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchOccupantsViewController.h; sourceTree = "<group>"; };
+		29B63D6C1785C4D8001AEE4B /* SearchOccupantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchOccupantsViewController.m; sourceTree = "<group>"; };
+		29B63D6E1785C881001AEE4B /* InfoUNINEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoUNINEViewController.h; sourceTree = "<group>"; };
+		29B63D6F1785C881001AEE4B /* InfoUNINEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoUNINEViewController.m; sourceTree = "<group>"; };
+		29EAB97F178696F50043BD86 /* ChangeFloorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeFloorViewController.h; sourceTree = "<group>"; };
+		29EAB980178696F50043BD86 /* ChangeFloorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeFloorViewController.m; sourceTree = "<group>"; };
+		29EAB982178698280043BD86 /* LegendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegendViewController.h; sourceTree = "<group>"; };
+		29EAB983178698280043BD86 /* LegendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegendViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,28 +112,97 @@
 		2930D43F1785A3E500A4DCD2 /* BiluneGeoMobile */ = {
 			isa = PBXGroup;
 			children = (
+				29B63D571785ABDF001AEE4B /* core */,
+				29B63D561785ABC0001AEE4B /* resources */,
+				29B63D541785AB90001AEE4B /* views */,
+				29B63D531785AB86001AEE4B /* config */,
 				2930D4481785A3E500A4DCD2 /* AppDelegate.h */,
 				2930D4491785A3E500A4DCD2 /* AppDelegate.m */,
-				2930D4511785A3E500A4DCD2 /* MainStoryboard.storyboard */,
-				2930D4541785A3E500A4DCD2 /* ViewController.h */,
-				2930D4551785A3E500A4DCD2 /* ViewController.m */,
-				2930D4401785A3E500A4DCD2 /* Supporting Files */,
+				2930D4451785A3E500A4DCD2 /* main.m */,
 			);
 			path = BiluneGeoMobile;
 			sourceTree = "<group>";
 		};
-		2930D4401785A3E500A4DCD2 /* Supporting Files */ = {
+		29B63D531785AB86001AEE4B /* config */ = {
 			isa = PBXGroup;
 			children = (
+				2930D4471785A3E500A4DCD2 /* BiluneGeoMobile-Prefix.pch */,
 				2930D4411785A3E500A4DCD2 /* BiluneGeoMobile-Info.plist */,
 				2930D4421785A3E500A4DCD2 /* InfoPlist.strings */,
-				2930D4451785A3E500A4DCD2 /* main.m */,
-				2930D4471785A3E500A4DCD2 /* BiluneGeoMobile-Prefix.pch */,
+			);
+			name = config;
+			sourceTree = "<group>";
+		};
+		29B63D541785AB90001AEE4B /* views */ = {
+			isa = PBXGroup;
+			children = (
+				29B63D581785AC12001AEE4B /* controllers */,
+				2930D4511785A3E500A4DCD2 /* BiluneGeoMobile.storyboard */,
+				29B63D551785AB9D001AEE4B /* shared */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		29B63D551785AB9D001AEE4B /* shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = shared;
+			sourceTree = "<group>";
+		};
+		29B63D561785ABC0001AEE4B /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				29B63D591785AC48001AEE4B /* images */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		29B63D571785ABDF001AEE4B /* core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		29B63D581785AC12001AEE4B /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2930D4541785A3E500A4DCD2 /* MainMenuViewController.h */,
+				2930D4551785A3E500A4DCD2 /* MainMenuViewController.m */,
+				29B63D5C1785B6EB001AEE4B /* MapViewController.h */,
+				29B63D5D1785B6EC001AEE4B /* MapViewController.m */,
+				29B63D621785BB95001AEE4B /* BuildingListViewController.h */,
+				29B63D631785BB95001AEE4B /* BuildingListViewController.m */,
+				29B63D651785C2B1001AEE4B /* FloorListViewController.h */,
+				29B63D661785C2B2001AEE4B /* FloorListViewController.m */,
+				29B63D681785C367001AEE4B /* RoomListViewController.h */,
+				29B63D691785C369001AEE4B /* RoomListViewController.m */,
+				29B63D6B1785C4D8001AEE4B /* SearchOccupantsViewController.h */,
+				29B63D6C1785C4D8001AEE4B /* SearchOccupantsViewController.m */,
+				29B63D6E1785C881001AEE4B /* InfoUNINEViewController.h */,
+				29B63D6F1785C881001AEE4B /* InfoUNINEViewController.m */,
+				29EAB97F178696F50043BD86 /* ChangeFloorViewController.h */,
+				29EAB980178696F50043BD86 /* ChangeFloorViewController.m */,
+				29EAB982178698280043BD86 /* LegendViewController.h */,
+				29EAB983178698280043BD86 /* LegendViewController.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		29B63D591785AC48001AEE4B /* images */ = {
+			isa = PBXGroup;
+			children = (
+				29B63D611785B9D9001AEE4B /* northArrow.png */,
+				29B63D601785B8D8001AEE4B /* info.png */,
+				29B63D5F1785B8C1001AEE4B /* gps32.png */,
+				29B63D5B1785B2CA001AEE4B /* bilune_page_background01.jpg */,
+				29B63D5A1785B2B9001AEE4B /* logo_unine_bleu.png */,
 				2930D44B1785A3E500A4DCD2 /* Default.png */,
 				2930D44D1785A3E500A4DCD2 /* Default@2x.png */,
 				2930D44F1785A3E500A4DCD2 /* Default-568h@2x.png */,
 			);
-			name = "Supporting Files";
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +260,7 @@
 				2930D44C1785A3E500A4DCD2 /* Default.png in Resources */,
 				2930D44E1785A3E500A4DCD2 /* Default@2x.png in Resources */,
 				2930D4501785A3E500A4DCD2 /* Default-568h@2x.png in Resources */,
-				2930D4531785A3E500A4DCD2 /* MainStoryboard.storyboard in Resources */,
+				2930D4531785A3E500A4DCD2 /* BiluneGeoMobile.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,7 +273,15 @@
 			files = (
 				2930D4461785A3E500A4DCD2 /* main.m in Sources */,
 				2930D44A1785A3E500A4DCD2 /* AppDelegate.m in Sources */,
-				2930D4561785A3E500A4DCD2 /* ViewController.m in Sources */,
+				2930D4561785A3E500A4DCD2 /* MainMenuViewController.m in Sources */,
+				29B63D5E1785B6EC001AEE4B /* MapViewController.m in Sources */,
+				29B63D641785BB97001AEE4B /* BuildingListViewController.m in Sources */,
+				29B63D671785C2B2001AEE4B /* FloorListViewController.m in Sources */,
+				29B63D6A1785C36A001AEE4B /* RoomListViewController.m in Sources */,
+				29B63D6D1785C4D8001AEE4B /* SearchOccupantsViewController.m in Sources */,
+				29B63D701785C881001AEE4B /* InfoUNINEViewController.m in Sources */,
+				29EAB981178696F50043BD86 /* ChangeFloorViewController.m in Sources */,
+				29EAB984178698280043BD86 /* LegendViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,12 +296,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		2930D4511785A3E500A4DCD2 /* MainStoryboard.storyboard */ = {
+		2930D4511785A3E500A4DCD2 /* BiluneGeoMobile.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2930D4521785A3E500A4DCD2 /* en */,
 			);
-			name = MainStoryboard.storyboard;
+			name = BiluneGeoMobile.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -298,6 +404,7 @@
 				2930D45B1785A3E500A4DCD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
