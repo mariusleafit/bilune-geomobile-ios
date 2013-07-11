@@ -10,4 +10,14 @@
 
 @interface Occupant : NSObject
 
+@property (nonatomic, strong) NSString *endpoint;
+@property (nonatomic, strong) NSNumber *floorID;
+@property (nonatomic, strong) NSString *locCode;
+@property (nonatomic, strong) NSString *locTypeDesignation;
+@property (nonatomic, strong) NSString *occupantName;
+
++(id)occupantWidthEndpoint:(NSString *)pEndpoint andFloorID:(NSNumber *)pFloorID andLocCode:(NSString *)pLocCode andLocTypeDesignation:(NSString *)pLocTypeDesignation andOccupantsName:(NSString *)pOccupantsName;
+
++(id)occupantWidthDictionary:(NSDictionary *)data;
+
 @end

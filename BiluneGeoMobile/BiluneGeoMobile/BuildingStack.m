@@ -35,8 +35,8 @@
     if(self.buildings && self.buildings.count > 0) {
         int i = 0;
         while(returnBuilding == nil && self.buildings.count > i) {
-            if(((Building *)buildings[i]).fullURL == fullURL) {
-                returnBuilding = (Building *)buildings[i];
+            if(((Building *)self.buildings[i]).fullURL == fullURL) {
+                returnBuilding = (Building *)self.buildings[i];
             }
             i++;
         }
@@ -50,8 +50,8 @@
     if(self.buildings && self.buildings.count > 0) {
         int i = 0;
         while(returnBuilding == nil && self.buildings.count > i) {
-            if(((Building *)buildings[i]).shortURL == shortURL) {
-                returnBuilding = (Building *)buildings[i];
+            if(((Building *)self.buildings[i]).shortURL == shortURL) {
+                returnBuilding = (Building *)self.buildings[i];
             }
             i++;
         }

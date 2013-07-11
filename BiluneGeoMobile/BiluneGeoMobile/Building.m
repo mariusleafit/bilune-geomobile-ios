@@ -8,7 +8,7 @@
 //
 
 #import "Building.h"
-#import "Floor.h"
+
 
 @interface Building()
 
@@ -41,6 +41,7 @@
 -(NSString *)getBatCode {
     NSString *returnBatCode;
     if(!self.mapName) {
+        NSLog(@"test if substring works ");
         returnBatCode = [self.mapName substringToIndex:1];
     }
     return returnBatCode;
@@ -68,21 +69,80 @@
     //capacity can be increased (by adding more objects) is just an indicator
     NSMutableArray *returnFloorIDs = [NSMutableArray arrayWithCapacity:30];
     for(Floor *floor in [self getVisibleFloors]) {
-        [returnFloorIDs addObject:[floor getFloorID]];
+        [returnFloorIDs addObject:[floor getStrFloorID]];
     }
+    return returnFloorIDs;
 }
 
+-(Floor *)getFloorWidthFloorCode:(NSString *)floorCode {
+    Floor *returnFloor = nil;
+    if(self.floors && self.floors.count > 0) {
+        int i = 0;
+        while(returnFloor == nil && self.floors.count > i) {
+            if(((Floor *)self.floors[i]).floorCode == floorCode) {
+                returnFloor = (Floor *)self.floors[i];
+            }
+            i++;
+        }
+    }
+    return returnFloor;
+}
+
+-(Floor *)getFloorWidthFloorID:(NSNumber *)floorID {
+    Floor *returnFloor = nil;
+    if(self.floors && self.floors.count > 0) {
+        int i = 0;
+        while(returnFloor == nil && self.floors.count > i) {
+            if(((Floor *)self.floors[i]).floorID == floorID) {
+                returnFloor = (Floor *)self.floors[i];
+            }
+            i++;
+        }
+    }
+    return returnFloor;
+}
+
+
 -(void)changeVisibleFloorsWidthFloorCode:(NSString *)floorCode{
-    
+    [self changeVisibleFloorsWidthFloorCodes:[NSArray arrayWithObject:floorCode]];
 }
 
 -(void)changeVisibleFloorsWidthFloorCodes:(NSArray *)floorCodes {
     //get floors to be set visible
     NSMutableArray *newFloors = [NSMutableArray arrayWithCapacity:5];/*capacitiy is just an indicator*/
     for(NSString *floorCode in floorCodes) {
-        
+        if([self getFloorWidthFloorCode:floorCode]) {
+            [newFloors addObject:[self getFloorWidthFloorCode:floorCode]];
+        }
     }
     
+    if(newFloors.count > 0) {
+        //get currently visible floors
+        NSMutableArray *currentFloors = [NSMutableArray arrayWithArray:[self getVisibleFloors]];
+        if(currentFloors.count > 0) {
+            for(Floor *floor in currentFloors){
+                [floor setVisibility:NO];
+            }
+        }
+        
+        //sort newFloors by floorID
+        NSLog(@"Test: Folder sorting");
+        [newFloors sortUsingComparator:^NSComparisonResult(id a, id b) {
+            return[((Floor *)a).floorID compare:((Floor *)b).floorID];
+        }];
+        
+        for(Floor *floor in newFloors) {
+            [floor setVisibility:YES];
+        }
+        
+    }
+}
+
+-(void)hide {
+    
+}
+
+-(void)show {
     
 }
 @end

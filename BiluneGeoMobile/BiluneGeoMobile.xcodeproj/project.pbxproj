@@ -24,6 +24,8 @@
 		29B63D6A1785C36A001AEE4B /* RoomListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D691785C369001AEE4B /* RoomListViewController.m */; };
 		29B63D6D1785C4D8001AEE4B /* SearchOccupantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D6C1785C4D8001AEE4B /* SearchOccupantsViewController.m */; };
 		29B63D701785C881001AEE4B /* InfoUNINEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D6F1785C881001AEE4B /* InfoUNINEViewController.m */; };
+		29DAE97D178C35D50027D47C /* InitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DAE97C178C35D50027D47C /* InitViewController.m */; };
+		29DAE985178C3DAB0027D47C /* Downloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DAE984178C3DAB0027D47C /* Downloader.m */; };
 		29EAB981178696F50043BD86 /* ChangeFloorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EAB980178696F50043BD86 /* ChangeFloorViewController.m */; };
 		29EAB984178698280043BD86 /* LegendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EAB983178698280043BD86 /* LegendViewController.m */; };
 		29EAB9871786A2470043BD86 /* InfoLeafitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EAB9861786A2470043BD86 /* InfoLeafitViewController.m */; };
@@ -59,6 +61,7 @@
 		2930D4521785A3E500A4DCD2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/BiluneGeoMobile.storyboard; sourceTree = "<group>"; };
 		2930D4541785A3E500A4DCD2 /* MainMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		2930D4551785A3E500A4DCD2 /* MainMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		298D1D9B178D80E600FFF5B1 /* DownloaderDataDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloaderDataDelegate.h; sourceTree = "<group>"; };
 		29B63D5A1785B2B9001AEE4B /* logo_unine_bleu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_unine_bleu.png; sourceTree = "<group>"; };
 		29B63D5B1785B2CA001AEE4B /* bilune_page_background01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bilune_page_background01.jpg; sourceTree = "<group>"; };
 		29B63D5C1785B6EB001AEE4B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -76,6 +79,10 @@
 		29B63D6C1785C4D8001AEE4B /* SearchOccupantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchOccupantsViewController.m; sourceTree = "<group>"; };
 		29B63D6E1785C881001AEE4B /* InfoUNINEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoUNINEViewController.h; sourceTree = "<group>"; };
 		29B63D6F1785C881001AEE4B /* InfoUNINEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoUNINEViewController.m; sourceTree = "<group>"; };
+		29DAE97B178C35D50027D47C /* InitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitViewController.h; sourceTree = "<group>"; };
+		29DAE97C178C35D50027D47C /* InitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitViewController.m; sourceTree = "<group>"; };
+		29DAE983178C3DAB0027D47C /* Downloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Downloader.h; sourceTree = "<group>"; };
+		29DAE984178C3DAB0027D47C /* Downloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Downloader.m; sourceTree = "<group>"; };
 		29EAB97F178696F50043BD86 /* ChangeFloorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeFloorViewController.h; sourceTree = "<group>"; };
 		29EAB980178696F50043BD86 /* ChangeFloorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeFloorViewController.m; sourceTree = "<group>"; };
 		29EAB982178698280043BD86 /* LegendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegendViewController.h; sourceTree = "<group>"; };
@@ -192,6 +199,7 @@
 		29B63D571785ABDF001AEE4B /* core */ = {
 			isa = PBXGroup;
 			children = (
+				29DAE97E178C3CB50027D47C /* helpers */,
 				29EABB971786BE770043BD86 /* models */,
 			);
 			name = core;
@@ -220,6 +228,8 @@
 				29EAB983178698280043BD86 /* LegendViewController.m */,
 				29EAB9851786A2470043BD86 /* InfoLeafitViewController.h */,
 				29EAB9861786A2470043BD86 /* InfoLeafitViewController.m */,
+				29DAE97B178C35D50027D47C /* InitViewController.h */,
+				29DAE97C178C35D50027D47C /* InitViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -238,6 +248,24 @@
 				2930D44F1785A3E500A4DCD2 /* Default-568h@2x.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		29DAE97E178C3CB50027D47C /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				29DAE982178C3D920027D47C /* downloader */,
+			);
+			name = helpers;
+			sourceTree = "<group>";
+		};
+		29DAE982178C3D920027D47C /* downloader */ = {
+			isa = PBXGroup;
+			children = (
+				29DAE983178C3DAB0027D47C /* Downloader.h */,
+				29DAE984178C3DAB0027D47C /* Downloader.m */,
+				298D1D9B178D80E600FFF5B1 /* DownloaderDataDelegate.h */,
+			);
+			name = downloader;
 			sourceTree = "<group>";
 		};
 		29EABB971786BE770043BD86 /* models */ = {
@@ -368,6 +396,8 @@
 				29EABBA91786BFC10043BD86 /* Occupant.m in Sources */,
 				29EABBAC1786BFD10043BD86 /* Legend.m in Sources */,
 				29EABBAF1786BFDC0043BD86 /* LegendEntry.m in Sources */,
+				29DAE97D178C35D50027D47C /* InitViewController.m in Sources */,
+				29DAE985178C3DAB0027D47C /* Downloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

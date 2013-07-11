@@ -13,10 +13,10 @@
     
 }
 
-@property (nonatomic, strong, readonly) NSURL *fullURL;
-@property (nonatomic, strong, readonly) NSString *shortURL;
-@property (nonatomic, strong, readonly) NSString *mapName;
-@property (nonatomic, strong, readonly) NSString *address;
+@property (nonatomic, strong) NSURL *fullURL;
+@property (nonatomic, strong) NSString *shortURL;
+@property (nonatomic, strong) NSString *mapName;
+@property (nonatomic, strong) NSString *address;
 
 /*
  @property (nonatomic, strong, readonly) AGSEnvelope *extent;
@@ -31,7 +31,7 @@
 -(NSArray *)getVisibleFloors;
 -(NSArray *)getVisibleFloorIDs;
 -(Floor *)getFloorWidthFloorCode:(NSString *)floorCode;
--(Floor *)getFloorWidthFloorID:(NSInteger *)floorID;
+-(Floor *)getFloorWidthFloorID:(NSNumber *)floorID;
 -(void)changeVisibleFloorsWidthFloorCode:(NSString *)floorCode;
 -(void)changeVisibleFloorsWidthFloorCodes:(NSArray *)floorCodes;
 

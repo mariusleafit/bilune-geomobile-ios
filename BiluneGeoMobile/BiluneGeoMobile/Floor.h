@@ -7,19 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Building.h"
+
+@class Building;
 
 @interface Floor : NSObject {
     
 }
+
+@property(strong, nonatomic) NSNumber *floorID;
+@property(strong, nonatomic) NSString *floorName;
+@property(strong, nonatomic) NSString *floorCode;
+@property(strong, nonatomic) Building *parentBuilding;
+
 +(Floor *)createWidthData:(NSDictionary *)data andParentBuilding:(Building *)parentBuilding;
 
 -(NSURL *)getParentBuildingURL;
--(Building *)getParentBuilding;
--(NSString *)getFloorID;
--(NSInteger *)getIntFloorID;
--(NSString *)getFloorCode;
--(NSString *)getFloorName;
+-(NSString *)getStrFloorID;
 -(NSURL *)getFloorURL;
 
 -(void)setVisibility:(BOOL)visibility;
