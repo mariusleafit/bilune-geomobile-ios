@@ -10,5 +10,9 @@
 #import "DownloaderDataDelegate.h"
 
 @interface InitViewController : UIViewController<DownloaderDataDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *loaderImage;
+@property (weak, nonatomic) IBOutlet UILabel *alertText;
+@property (weak, nonatomic) IBOutlet UIButton *retryButton;
+- (IBAction)retryDownload:(id)sender;
 
 @end

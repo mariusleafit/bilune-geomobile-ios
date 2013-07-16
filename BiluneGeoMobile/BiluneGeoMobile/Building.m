@@ -8,6 +8,7 @@
 //
 
 #import "Building.h"
+#import "Constants.h"
 
 
 @interface Building()
@@ -33,7 +34,9 @@
 +(Building *) createWidthData:(NSDictionary *)data {
     Building *returnBuilding = [[Building alloc]init];
     
-    //init
+    //init with NSDictionary
+    returnBuilding.shortURL = (NSString *)[data valueForKey:@"Url"];
+    //returnBuilding.fullURL = [NSString stringWithFormat:@"%@%@/MapServer", [Constants BILUNE_MAIN_URL], ((NSString *)[data valueForKey:@"Url"])  ];
     
     return returnBuilding;
 }

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BuildingListViewController : UITableViewController
+@interface BuildingListViewController : UIViewController
+- (IBAction)returnToMenu:(id)sender;
 
 @end

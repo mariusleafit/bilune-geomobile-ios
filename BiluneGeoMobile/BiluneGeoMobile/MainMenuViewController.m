@@ -7,6 +7,8 @@
 //
 
 #import "MainMenuViewController.h"
+#import "SearchOccupantsViewController.h"
+#import "BuildingListViewController.h"
 
 @interface MainMenuViewController ()
 
@@ -26,4 +28,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark IBAction
+
+- (IBAction)showSearchOccupants:(id)sender {
+    //show SearchOccupants
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+    SearchOccupantsViewController *viewController = (SearchOccupantsViewController *)[storyboard instantiateViewControllerWithIdentifier:@"SearchOccupants"];
+    [self presentViewController:viewController animated:YES completion:nil];
+}
+
+- (IBAction)showBuildingList:(id)sender {
+    //show SearchOccupants
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+    BuildingListViewController *viewController = (BuildingListViewController *)[storyboard instantiateViewControllerWithIdentifier:@"BuildingList"];
+    [self presentViewController:viewController animated:YES completion:nil];
+}
 @end

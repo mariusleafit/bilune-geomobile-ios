@@ -10,21 +10,24 @@
 
 @interface BuildingStack()
 
-@property(strong) NSArray *buildingUrls;
-@property(strong) NSArray *buildings;
+@property(strong) NSMutableArray *buildings;
 
 @end
 
 @implementation BuildingStack
 
 @synthesize buildings;
-@synthesize buildingUrls;
 
 ///*create BuildingStack width JSON-data
 +(BuildingStack *) createWidthData:(NSDictionary *)data {
     BuildingStack *returnBuildingStack = [[BuildingStack alloc] init];
     
-    //setValues width data;
+    //initialize width Dictionary
+    // add Buildings
+    for(NSDictionary *buildingDict in data) {
+        [returnBuildingStack.buildings addObject:[Building createWidthData:buildingDict]];
+    }
+    
     
     return returnBuildingStack;
 }
