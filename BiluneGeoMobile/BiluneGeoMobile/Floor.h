@@ -18,6 +18,7 @@
 @property(strong, nonatomic) NSString *floorName;
 @property(strong, nonatomic) NSString *floorCode;
 @property(strong, nonatomic) Building *parentBuilding;
+@property BOOL defaultVisibility;
 
 +(Floor *)createWidthData:(NSDictionary *)data andParentBuilding:(Building *)parentBuilding;
 

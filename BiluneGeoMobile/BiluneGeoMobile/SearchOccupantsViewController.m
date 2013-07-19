@@ -104,10 +104,13 @@ NSMutableArray *filteredSections = nil;
     
         return(NSInteger)([(NSNumber *)[nextSection valueForKey:@"index"] integerValue]  - [(NSNumber *)[currentSection valueForKey:@"index"] integerValue]);
     } else {
+        if(appDelegate == nil) {
+            appDelegate = GetAppDelegate();
+        }
         if(isFiltered) {
             return [filteredOccupants count] - [(NSNumber *)[currentSection valueForKey:@"index"] integerValue];
         } else {
-            return [initialSections count] - [(NSNumber *)[currentSection valueForKey:@"index"] integerValue];
+            return [appDelegate.occupants count] - [(NSNumber *)[currentSection valueForKey:@"index"] integerValue];
         }
     }
 }
@@ -158,6 +161,14 @@ NSMutableArray *filteredSections = nil;
     return cell;
 }
 
+-(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    NSMutableArray *returnArray = [[NSMutableArray alloc] init];
+    for (NSMutableDictionary *dict in initialSections) {
+        [returnArray addObject:[dict valueForKey:@"firstLetter"]];
+    }
+    return returnArray;
+}
+
 #pragma mark UITableViewDelegate
 
 
@@ -184,9 +195,9 @@ NSMutableArray *filteredSections = nil;
         
         //generate filteredSections
         filteredSections = [self generateSectionArrayWidthOccupants:filteredOccupants];
-        
-        [self.occupantsList reloadData];
     }
+    
+    [self.occupantsList reloadData];
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{

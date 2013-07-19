@@ -26,12 +26,12 @@
     return returnOccupant;
 }
 
-+(id)occupantWidthDictionary:(NSDictionary *)data {
-    NSString *endpoint = [data objectForKey:@"Endpoint"];
-    NSNumber *floorID = [data objectForKey:@"FloorID"];
-    NSString *locCode = [data objectForKey:@"LocCode"];
-    NSString *locTypeDesignation = [data objectForKey:@"LocTypeDesignation"];
-    NSString *occupantName = [data objectForKey:@"Name"];
++(id)occupantWidthDictionary:(NSDictionary *)data4 {
+    NSString *endpoint = [data4 objectForKey:@"Endpoint"];
+    NSNumber *floorID = [data4 objectForKey:@"FloorID"];
+    NSString *locCode = [data4 objectForKey:@"LocCode"];
+    NSString *locTypeDesignation = [data4 objectForKey:@"LocTypeDesignation"];
+    NSString *occupantName = [data4 objectForKey:@"Name"];
     
     return [Occupant occupantWidthEndpoint:endpoint andFloorID:floorID andLocCode:locCode andLocTypeDesignation:locTypeDesignation andOccupantsName:occupantName];
 }

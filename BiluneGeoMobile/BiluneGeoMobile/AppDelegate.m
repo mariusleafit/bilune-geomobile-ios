@@ -10,7 +10,7 @@
 
 @implementation AppDelegate
 
-@synthesize occupants;
+@synthesize occupants, buildingstack;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

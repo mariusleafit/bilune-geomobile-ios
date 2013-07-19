@@ -18,17 +18,33 @@
 
 @synthesize buildings;
 
+-(id)init {
+    self = [super init];
+    if(self) {
+        self.buildings = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 ///*create BuildingStack width JSON-data
 +(BuildingStack *) createWidthData:(NSDictionary *)data {
+    if(data == nil) {
+        return nil;
+    }
+    
     BuildingStack *returnBuildingStack = [[BuildingStack alloc] init];
     
     //initialize width Dictionary
     // add Buildings
     for(NSDictionary *buildingDict in data) {
-        [returnBuildingStack.buildings addObject:[Building createWidthData:buildingDict]];
+        if(buildingDict != nil) {
+            Building *tmpBuilding = [Building createWidthData:buildingDict];
+            if(tmpBuilding) {
+                [returnBuildingStack.buildings addObject:tmpBuilding];
+            }
+        }
     }
-    
-    
+
     return returnBuildingStack;
 }
 

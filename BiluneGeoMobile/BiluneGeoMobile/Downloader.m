@@ -7,23 +7,45 @@
 //
 
 #import "Downloader.h"
+#import "Constants.h"
 
+
+@interface Downloader()
+@property NSMutableData *responseData;
+
+@end
 ///abstract class
 @implementation Downloader
 
-@synthesize downloadedData;
-@synthesize dataDelegate;
+@synthesize delegates;
+@synthesize downloadUrl;
+@synthesize identifier;
+@synthesize responseData;
 
-NSMutableData *responseData;
-
--(id) initWidthDataDelegate:(id<DownloaderDataDelegate>) paramDataDelegate andDownloadIdentifier:(NSString *)identifier {
+-(id) initWidthDelegate:(id<DownloaderDelegate>) delegate identifier:(NSString *)pIdentifier url:(NSURL *)url{
     self = [super init];
     if(self) {
-        self.dataDelegate = paramDataDelegate;
-        self.downloadIdentifier = identifier;
+        self.delegates = [[NSMutableArray alloc] init];
+        [self addDelegate:delegate];
+        self.identifier = pIdentifier;
+        self.downloadUrl = url;
     }
     
     return(self);
+}
+
+-(void)addDelegate:(id<DownloaderDelegate>)delegate {
+    [delegates addObject:delegate];
+}
+
+-(void)start {
+    //download
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:self.downloadUrl cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:[Constants DOWNLOADTIMEOUT]];
+    
+    // Send an asyncronous request
+    NSURLConnection* occupantsConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:NO];
+    
+    [occupantsConnection start];
 }
 
 #pragma mark - NSURLConnectionDelegate
@@ -59,14 +81,20 @@ NSMutableData *responseData;
     
     // If there was an error decoding the JSON
     if (jsonError) {
-        [self.dataDelegate didFailWidthError:nil andDownloadIdentifier:self.downloadIdentifier];
+        for(id<DownloaderDelegate> delegate in self.delegates) {
+            [delegate didFailWidthError:nil andDownloadIdentifier:self.identifier];
+        } 
     }
     
-    [self.dataDelegate finishedLoadingData:responseDict andDownloadIdentifier:self.downloadIdentifier];
+    for(id<DownloaderDelegate> delegate in self.delegates) {
+        [delegate finishedLoadingData:responseDict andDownloadIdentifier:self.identifier];
+    }
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    [self.dataDelegate didFailWidthError:nil andDownloadIdentifier:self.downloadIdentifier];
+    for(id<DownloaderDelegate> delegate in self.delegates) {
+        [delegate didFailWidthError:error andDownloadIdentifier:identifier];
+    }
 }
 
 

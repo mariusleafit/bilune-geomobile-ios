@@ -7,17 +7,26 @@
 //
 
 #import "BuildingListViewController.h"
+#import "AppDelegate.h"
+#import "Building.h"
 
 @interface BuildingListViewController ()
-
+@property (weak) AppDelegate *appDelegate;
 @end
 
 @implementation BuildingListViewController
 
+@synthesize appDelegate;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.appDelegate = GetAppDelegate();
+	
+    for(Building *b in [appDelegate.buildingstack getBuildings]) {
+        NSLog(b.mapName);
+    }
 }
 
 - (void)didReceiveMemoryWarning

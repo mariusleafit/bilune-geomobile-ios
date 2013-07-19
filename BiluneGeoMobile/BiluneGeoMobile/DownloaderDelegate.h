@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol DownloaderDataDelegate <NSObject>
+@protocol DownloaderDelegate <NSObject>
 
 -(void)finishedLoadingData:(NSDictionary *)data andDownloadIdentifier:(NSString *)identifier;
 -(void)didFailWidthError:(NSError *)error andDownloadIdentifier:(NSString *)identifier;

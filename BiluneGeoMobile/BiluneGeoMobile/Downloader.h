@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DownloaderDataDelegate.h"
+#import "DownloaderDelegate.h"
 
 @interface Downloader : NSObject <NSURLConnectionDelegate>
 
-@property id downloadedData;
-@property NSMutableData *responseData;
-@property (nonatomic, weak)id<DownloaderDataDelegate> dataDelegate;
-@property (nonatomic) NSString *downloadIdentifier;
+@property (nonatomic)NSMutableArray *delegates;
+@property (nonatomic) NSString *identifier;
+@property (nonatomic) NSURL *downloadUrl;
 
--(id) initWidthDataDelegate:(id<DownloaderDataDelegate>) dataDelegate andDownloadIdentifier:(NSString *)identifier;
+-(id) initWidthDelegate:(id<DownloaderDelegate>) delegate identifier:(NSString *)pIdentifier url:(NSURL *)url;
+-(void) addDelegate:(id<DownloaderDelegate>) delegate;
+-(void) start;
 @end

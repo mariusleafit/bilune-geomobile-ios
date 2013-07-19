@@ -13,7 +13,7 @@
 
 @interface Building()
 
-@property(strong) NSArray *floors;
+@property(strong) NSMutableArray *floors;
 
 @end
 
@@ -32,11 +32,34 @@
 */
 
 +(Building *) createWidthData:(NSDictionary *)data {
+    if(data == nil) {
+        return nil;
+    }
+    
     Building *returnBuilding = [[Building alloc]init];
     
     //init with NSDictionary
     returnBuilding.shortURL = (NSString *)[data valueForKey:@"Url"];
-    //returnBuilding.fullURL = [NSString stringWithFormat:@"%@%@/MapServer", [Constants BILUNE_MAIN_URL], ((NSString *)[data valueForKey:@"Url"])  ];
+    returnBuilding.fullURL = [NSString stringWithFormat:@"%@%@/MapServer",[Constants BILUNE_MAIN_URL],[[data valueForKey:@"Url"] stringByReplacingOccurrencesOfString:@"ebilune/" withString:@""]];
+    
+    returnBuilding.mapName = (NSString *)[data valueForKey:@"Name"];
+    
+    returnBuilding.address = (NSString *)[data valueForKey:@"Address"];
+    
+    //Extend: XMin , XMax, YMin, YMax SpatialReference: SpatialReference
+    
+    //getFloors
+    returnBuilding.floors = [[NSMutableArray alloc] init];
+    for (NSDictionary *floorDict in (NSDictionary *)[data valueForKey:@"Floors"]) {
+        if(floorDict != nil) {
+            Floor *tmpFloor = [Floor createWidthData:floorDict andParentBuilding:returnBuilding];
+            if(tmpFloor) {
+                [returnBuilding.floors addObject: tmpFloor];
+            }
+        }
+    }
+    
+    //calculate MaxExtent
     
     return returnBuilding;
 }

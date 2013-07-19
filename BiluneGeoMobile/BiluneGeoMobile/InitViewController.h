@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DownloaderDataDelegate.h"
+#import "DownloaderDelegate.h"
 
-@interface InitViewController : UIViewController<DownloaderDataDelegate>
+@interface InitViewController : UIViewController<DownloaderDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *loaderImage;
 @property (weak, nonatomic) IBOutlet UILabel *alertText;
 @property (weak, nonatomic) IBOutlet UIButton *retryButton;

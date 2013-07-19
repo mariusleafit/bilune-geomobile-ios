@@ -19,12 +19,26 @@
 @synthesize floorName;
 @synthesize floorCode;
 @synthesize parentBuilding;
+@synthesize defaultVisibility;
 
 
 +(Floor *)createWidthData:(NSDictionary *)data andParentBuilding:(Building *)parentBuilding {
+    if(data == nil) {
+        return nil;
+    }
+    
     Floor *returnFloor = [[Floor alloc] init];
     returnFloor.parentBuilding = parentBuilding;
     //load data from JSON
+    returnFloor.floorID = (NSNumber *)[data valueForKey:@"ID"];
+    
+    returnFloor.floorName = (NSString *)[data valueForKey:@"Name"];
+    
+    returnFloor.floorCode = (NSString *)[data valueForKey:@"Code"];
+    
+    returnFloor.defaultVisibility = (BOOL)[data valueForKey:@"defaultVisibility"];
+    
+    //Extend & SpatialReference
     return returnFloor;
 }
 
@@ -47,7 +61,7 @@
 }
 
 -(BOOL) isVisible{
-    
+    return NO;
 }
 
 -(void)hide {

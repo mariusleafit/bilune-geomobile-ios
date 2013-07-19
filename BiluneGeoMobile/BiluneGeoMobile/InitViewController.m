@@ -12,6 +12,7 @@
 #import "Occupant.h"
 #import "MainMenuViewController.h"
 #import "Constants.h"
+#import "DownloadQueue.h"
 
 
 @interface InitViewController ()
@@ -71,16 +72,19 @@ bool errorOccured = false;
     self.loaderImage.animationDuration = 1.5;
     [self.loaderImage startAnimating];
     
+    //download
+    // create the DownloadQueue
+    DownloadQueue *downloadQueue = [[DownloadQueue alloc] init];
+    
     //download occupants
-    Downloader *occupantsDownloader = [[Downloader alloc] initWidthDataDelegate:self andDownloadIdentifier:@"occupants"];
+    Downloader *occupantsDownloader = [[Downloader alloc] initWidthDelegate:self identifier:@"occupants" url:[NSURL URLWithString:[Constants OCCUPANTSURL]]];
     
-    //load content from venus server
-    // Create the connection
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:[Constants OCCUPANTSURL]] cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:[Constants DOWNLOADTIMEOUT]];
+    Downloader *buildingsDownloader = [[Downloader alloc] initWidthDelegate:self identifier:@"buildings" url:[NSURL URLWithString:[Constants BUILDINGSURL]]];
     
-    // Send an asyncronous request on the queue
-    NSURLConnection* connection = [[NSURLConnection alloc] initWithRequest:request delegate:occupantsDownloader];
-    [connection start];
+    [downloadQueue addDownloader:occupantsDownloader];
+    [downloadQueue addDownloader:buildingsDownloader];
+    
+    [downloadQueue start];
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,32 +97,42 @@ bool errorOccured = false;
 #pragma mark - DownloadDataDelegste
 
 -(void)finishedLoadingData:(NSDictionary *)data andDownloadIdentifier:(NSString *)identifier {
-    
-    //downloads
-    AppDelegate *delegate = GetAppDelegate();
-    delegate.occupants = [NSMutableArray arrayWithCapacity:1000];
-    
-    //occupants download
-    if([identifier isEqual: @"occupants"]) {
-        for(NSDictionary *item in data) {
-            [delegate.occupants addObject:[Occupant occupantWidthDictionary:item]];
+    if(!errorOccured) {
+        //downloads
+        AppDelegate *delegate = GetAppDelegate();
+        
+        
+        //occupants download
+        if([identifier isEqual: @"occupants"] && data != nil) {
+            delegate.occupants = [NSMutableArray arrayWithCapacity:1000];
+            for(NSDictionary *item in data) {
+                [delegate.occupants addObject:[Occupant occupantWidthDictionary:item]];
+            }
+            downloadedOccupants = true;
         }
-        downloadedOccupants = true;
-        /*for(Occupant *item in delegate.occupants) {
-            NSLog(@"%@", item.locTypeDesignation);
-        }*/
-    }
-    
-    //building  data download
-    
-    
-    //stop loading animation
-    if(!errorOccured && downloadedOccupants /*&& downloadedBuildings*/) {
-        [self.loaderImage stopAnimating];
-        //show main menu
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
-        MainMenuViewController *viewController = (MainMenuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MainMenu"];
-        [self presentViewController:viewController animated:NO completion:nil];
+
+        //building  data download
+        if([identifier isEqual: @"buildings"] && data != nil) {
+            //parse building
+            NSDictionary *buildingsDict = [data valueForKey:@"Buildings"];
+            if(buildingsDict != nil) {
+                delegate.buildingstack = [BuildingStack createWidthData:buildingsDict];
+            }
+            
+            //!!!Legend!!!
+            
+            
+            downloadedBuildings = true;
+        }
+        
+        //stop loading animation
+        if(!errorOccured && downloadedOccupants && downloadedBuildings) {
+            [self.loaderImage stopAnimating];
+            //show main menu
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+            MainMenuViewController *viewController = (MainMenuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MainMenu"];
+            [self presentViewController:viewController animated:NO completion:nil];
+        }
     }
 }
 
