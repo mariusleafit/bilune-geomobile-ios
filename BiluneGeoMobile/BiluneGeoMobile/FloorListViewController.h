@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Building.h"
 
-@interface FloorListViewController : UIViewController
+@interface FloorListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *buildingImage;
+@property (weak, nonatomic) IBOutlet UILabel *buildingAddress;
+@property (weak, nonatomic) IBOutlet UITableView *floorsTable;
+- (IBAction)returnToBuildingList:(id)sender;
 
+
+-(void) setBuilding:(Building *)pBuilding;
 @end

@@ -7,12 +7,17 @@
 //
 
 #import "RoomListViewController.h"
+#import "AppDelegate.h"
+#import "BuildingImageMapping.h"
+#import "FloorListViewController.h"
 
 @interface RoomListViewController ()
-
+@property (weak) AppDelegate *appDelegate;
 @end
 
 @implementation RoomListViewController
+
+Floor *currentFloor;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,12 +31,34 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	// prepare View
+    NSString *imageName = [[BuildingImageMapping mappingDict] valueForKey:currentFloor.parentBuilding.mapName];
+    if(imageName){
+        [self.buildingImage setImage:[UIImage imageNamed:imageName]];
+    }
+    
+    self.buildingAddress.text = currentFloor.parentBuilding.address;
+    
+    self.floorName.text = currentFloor.floorName;
+    
+    //load Rooms from currentFloor
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) setFloor:(Floor *)pFloor {
+    currentFloor = pFloor;
+}
+
+#pragma mark IBAction
+- (IBAction)returnToEtages:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+    FloorListViewController *viewController = (FloorListViewController *)[storyboard instantiateViewControllerWithIdentifier:@"FloorListView"];
+    [viewController setBuilding:currentFloor.parentBuilding];
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 @end

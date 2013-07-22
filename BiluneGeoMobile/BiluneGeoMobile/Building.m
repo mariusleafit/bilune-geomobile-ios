@@ -66,7 +66,7 @@
 
 -(NSString *)getBatCode {
     NSString *returnBatCode;
-    if(!self.mapName) {
+    if(self.mapName) {
         NSLog(@"test if substring works ");
         returnBatCode = [self.mapName substringToIndex:1];
     }
