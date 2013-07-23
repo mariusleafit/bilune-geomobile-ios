@@ -294,7 +294,6 @@ GeoMobile</string>
                     <connections>
                         <outlet property="occupantsList" destination="7ho-cN-J02" id="ckZ-1M-t6D"/>
                         <outlet property="searchBar" destination="YtD-ed-uMC" id="gnM-ET-Pwe"/>
-                        <segue destination="eDW-V6-DST" kind="modal" id="M5i-XY-Qju"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLL-qq-Jhh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -400,8 +399,9 @@ GeoMobile</string>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Faubourg du Lac 5a 2000 Neuchâtel " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="153" translatesAutoresizingMaskIntoConstraints="NO" id="fE6-hi-Voe">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="Jto-i7-OPR"/>
+                                    <constraint firstAttribute="width" constant="153" id="ZWx-5L-UbQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -488,7 +488,7 @@ GeoMobile</string>
                                     <constraint firstAttribute="height" constant="53" id="Khi-RP-cJ1"/>
                                     <constraint firstAttribute="width" constant="199" id="hpt-of-Xrj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -564,7 +564,6 @@ GeoMobile</string>
                         <outlet property="buildingImage" destination="9sD-YS-Gh5" id="Pqr-9d-4IY"/>
                         <outlet property="floorName" destination="Z8U-7q-7Np" id="U2n-6E-xzv"/>
                         <outlet property="roomList" destination="50r-SR-Q6V" id="r9a-E6-puB"/>
-                        <segue destination="eDW-V6-DST" kind="modal" id="kPw-7U-ffj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fK-aN-RNk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -579,13 +578,6 @@ GeoMobile</string>
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2j6-PK-6Gb">
-                                <items>
-                                    <barButtonItem image="gps32.png" style="plain" id="Etb-oq-VYg" userLabel="Gps Btn"/>
-                                    <barButtonItem image="info.png" style="plain" id="qx7-nl-Qqd" userLabel="Settings Menu Btn"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="nAK-aL-nFp"/>
-                                </items>
-                            </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ef3-PA-wbe">
                                 <subviews>
                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E9S-ov-Tow" userLabel="Info View">
@@ -595,8 +587,8 @@ GeoMobile</string>
                                                     <accessibilityTraits key="traits" none="YES"/>
                                                 </accessibility>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="27" id="DKO-O8-Uxc"/>
-                                                    <constraint firstAttribute="width" constant="310" id="SqO-ty-2hc"/>
+                                                    <constraint firstAttribute="height" constant="25" id="YK9-xl-6Gt"/>
+                                                    <constraint firstAttribute="width" constant="239" id="rHU-Fx-D1S"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -611,34 +603,54 @@ GeoMobile</string>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.75" alpha="0.5" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="RQ4-8o-Dkc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9pz-ho-mer"/>
-                                            <constraint firstItem="UcF-kZ-IcQ" firstAttribute="top" secondItem="RQ4-8o-Dkc" secondAttribute="top" type="default" id="XRb-Pj-W0R"/>
-                                            <constraint firstItem="RQ4-8o-Dkc" firstAttribute="bottom" secondItem="E9S-ov-Tow" secondAttribute="bottom" type="default" id="ZVt-93-JPX"/>
-                                            <constraint firstItem="UcF-kZ-IcQ" firstAttribute="bottom" secondItem="E9S-ov-Tow" secondAttribute="bottom" type="default" id="eXR-kV-fh6"/>
-                                            <constraint firstItem="UcF-kZ-IcQ" firstAttribute="leading" secondItem="E9S-ov-Tow" secondAttribute="leading" constant="-19" id="sZU-nI-tMn"/>
+                                            <constraint firstItem="RQ4-8o-Dkc" firstAttribute="leading" secondItem="UcF-kZ-IcQ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="R31-0y-fDz"/>
+                                            <constraint firstItem="UcF-kZ-IcQ" firstAttribute="leading" secondItem="E9S-ov-Tow" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Zih-2f-qB5"/>
+                                            <constraint firstItem="UcF-kZ-IcQ" firstAttribute="top" secondItem="RQ4-8o-Dkc" secondAttribute="top" type="default" id="Zn0-0i-KFh"/>
+                                            <constraint firstItem="UcF-kZ-IcQ" firstAttribute="centerY" secondItem="E9S-ov-Tow" secondAttribute="centerY" type="default" id="jYn-wd-pJ6"/>
+                                            <constraint firstItem="RQ4-8o-Dkc" firstAttribute="centerY" secondItem="E9S-ov-Tow" secondAttribute="centerY" type="default" id="spM-Zb-HCa"/>
                                         </constraints>
                                     </view>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VW2-SQ-cz3">
+                                        <items>
+                                            <navigationItem title="Carte" id="2Ah-TE-vFm">
+                                                <barButtonItem key="leftBarButtonItem" title="Menu" id="1Lq-Mz-lwm"/>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="E9S-ov-Tow" firstAttribute="leading" secondItem="ef3-PA-wbe" secondAttribute="leading" type="default" id="Efb-0I-41r"/>
-                                    <constraint firstAttribute="bottom" secondItem="E9S-ov-Tow" secondAttribute="bottom" constant="410" id="L4f-K9-l7C"/>
-                                    <constraint firstItem="E9S-ov-Tow" firstAttribute="top" secondItem="ef3-PA-wbe" secondAttribute="top" type="default" id="hLi-LW-GX7"/>
-                                    <constraint firstItem="E9S-ov-Tow" firstAttribute="trailing" secondItem="ef3-PA-wbe" secondAttribute="trailing" type="default" id="mlh-fQ-MMZ"/>
+                                    <constraint firstItem="VW2-SQ-cz3" firstAttribute="trailing" secondItem="ef3-PA-wbe" secondAttribute="trailing" type="default" id="7Bm-2A-1Z1"/>
+                                    <constraint firstItem="E9S-ov-Tow" firstAttribute="leading" secondItem="ef3-PA-wbe" secondAttribute="leading" type="default" id="KAZ-Jb-pGF"/>
+                                    <constraint firstItem="E9S-ov-Tow" firstAttribute="trailing" secondItem="ef3-PA-wbe" secondAttribute="trailing" type="default" id="KmG-sL-QXc"/>
+                                    <constraint firstAttribute="bottom" secondItem="E9S-ov-Tow" secondAttribute="bottom" constant="366" id="c7K-XK-KRz"/>
+                                    <constraint firstItem="E9S-ov-Tow" firstAttribute="top" secondItem="VW2-SQ-cz3" secondAttribute="bottom" type="default" id="duf-ie-Bmc"/>
+                                    <constraint firstItem="VW2-SQ-cz3" firstAttribute="leading" secondItem="ef3-PA-wbe" secondAttribute="leading" type="default" id="g0A-Tt-Fqa"/>
+                                    <constraint firstItem="VW2-SQ-cz3" firstAttribute="top" secondItem="ef3-PA-wbe" secondAttribute="top" type="default" id="sbD-mB-nAJ"/>
                                 </constraints>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2j6-PK-6Gb">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" type="user" id="rsf-uf-Vkk"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem image="gps32.png" style="plain" id="Etb-oq-VYg" userLabel="Gps Btn"/>
+                                    <barButtonItem image="info.png" style="plain" id="qx7-nl-Qqd" userLabel="Settings Menu Btn"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="nAK-aL-nFp"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ef3-PA-wbe" firstAttribute="top" secondItem="rou-u5-8W1" secondAttribute="top" type="default" id="2a1-3V-hVw"/>
                             <constraint firstItem="ef3-PA-wbe" firstAttribute="leading" secondItem="rou-u5-8W1" secondAttribute="leading" type="default" id="970-yc-41k"/>
-                            <constraint firstItem="2j6-PK-6Gb" firstAttribute="leading" secondItem="rou-u5-8W1" secondAttribute="leading" type="default" id="JDt-CR-jfV"/>
-                            <constraint firstItem="ef3-PA-wbe" firstAttribute="bottom" secondItem="2j6-PK-6Gb" secondAttribute="top" type="default" id="ZfL-yc-kq8"/>
-                            <constraint firstItem="2j6-PK-6Gb" firstAttribute="bottom" secondItem="rou-u5-8W1" secondAttribute="bottom" type="default" id="hH0-yM-fhx"/>
+                            <constraint firstItem="2j6-PK-6Gb" firstAttribute="leading" secondItem="rou-u5-8W1" secondAttribute="leading" type="default" id="O8Y-8l-SoZ"/>
+                            <constraint firstItem="2j6-PK-6Gb" firstAttribute="trailing" secondItem="rou-u5-8W1" secondAttribute="trailing" type="default" id="UBT-BI-tXf"/>
+                            <constraint firstItem="2j6-PK-6Gb" firstAttribute="bottom" secondItem="rou-u5-8W1" secondAttribute="bottom" type="default" id="Y3X-CP-aKP"/>
                             <constraint firstItem="ef3-PA-wbe" firstAttribute="trailing" secondItem="rou-u5-8W1" secondAttribute="trailing" type="default" id="lmL-k3-922"/>
-                            <constraint firstItem="2j6-PK-6Gb" firstAttribute="trailing" secondItem="rou-u5-8W1" secondAttribute="trailing" type="default" id="veC-ph-lJr"/>
+                            <constraint firstAttribute="bottom" secondItem="ef3-PA-wbe" secondAttribute="bottom" constant="90" id="ogW-78-Z7U"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Carte" id="Rp8-eM-PX0">
@@ -651,7 +663,7 @@ GeoMobile</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfD-K7-qSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1402" y="-362"/>
+            <point key="canvasLocation" x="1451" y="-443"/>
         </scene>
         <!--InfoUNINE View Controller - Info-->
         <scene sceneID="kqP-DM-Y6S">
@@ -902,12 +914,80 @@ Cette application permet l'interrogation des locaux et des occupants.</string>
         <image name="logo_unine_bleu.png" width="162" height="106"/>
         <image name="northArrow.png" width="207" height="300"/>
     </resources>
+    <classes>
+        <class className="BuildingListCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingListCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addressText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="buildingImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="BuildingListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="returnToMenu:"/>
+                <relationship kind="outlet" name="buildingsList" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="FloorListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FloorListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="returnToBuildingList:"/>
+                <relationship kind="outlet" name="buildingAddress" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="buildingImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floorsTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="InfoUNINEViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoUNINEViewController.h"/>
+        </class>
+        <class className="InitViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InitViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="retryDownload:"/>
+                <relationship kind="outlet" name="alertText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loaderImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="retryButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="LegendViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LegendViewController.h"/>
+        </class>
+        <class className="MainMenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showBuildingList:"/>
+                <relationship kind="action" name="showSearchOccupants:"/>
+            </relationships>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RoomListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="returnToEtages:"/>
+                <relationship kind="outlet" name="buildingAddress" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="buildingImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floorName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="roomList" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SearchOccupantsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchOccupantsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="returnToMenu:"/>
+                <relationship kind="outlet" name="occupantsList" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="kPw-7U-ffj"/>
-    </inferredMetricsTieBreakers>
 </document>
