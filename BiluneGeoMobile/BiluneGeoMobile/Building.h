@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ArcGIS/ArcGIS.h>
 #import "Floor.h"
+#import "Room.h"
 @interface Building : NSObject {
     
     
@@ -18,11 +20,11 @@
 @property (nonatomic, strong) NSString *mapName;
 @property (nonatomic, strong) NSString *address;
 
-/*
- @property (nonatomic, strong, readonly) AGSEnvelope *extent;
- @property (nonatomic, strong, readonly) AGSEnvelope *maxExtent;
- @property (nonatomic, strong, readonly) AGSSpatialReference *spatialReference;
-*/
+
+@property (nonatomic, strong) AGSEnvelope *extent;
+@property (nonatomic, strong) AGSEnvelope *maxExtent;
+@property (nonatomic, strong) AGSSpatialReference *spatialReference;
+
 
 +(Building *)createWidthData:(NSDictionary *)data;
 
@@ -39,11 +41,11 @@
 -(void)show;
 
 
-/*
--GetImage
--(BOOL)isClickedWidthPoint:(AGSPoint *)point andSpatialReference:(AGSSpatialReference *)spatialReference;
--(Room *)getClickedRoomWidthX:(NSNumber*)x andY:(NSNumber *)y;
-*/
+
+-(UIImage *)getImage;
+/*-(BOOL)isClickedWidthPoint:(AGSPoint *)point andSpatialReference:(AGSSpatialReference *)spatialReference;
+-(Room *)getClickedRoomWidthX:(NSNumber*)x andY:(NSNumber *)y;*/
+
 
 
 @end

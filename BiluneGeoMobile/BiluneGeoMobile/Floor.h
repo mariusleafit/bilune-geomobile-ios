@@ -7,18 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ArcGIS/ArcGIS.h>
 
 @class Building;
 
 @interface Floor : NSObject {
-    
+    NSNumber* visibility;
 }
 
 @property(strong, nonatomic) NSNumber *floorID;
 @property(strong, nonatomic) NSString *floorName;
 @property(strong, nonatomic) NSString *floorCode;
 @property(strong, nonatomic) Building *parentBuilding;
+@property (nonatomic, strong) AGSEnvelope *extent;
 @property BOOL defaultVisibility;
+@property(strong, nonatomic) AGSFeatureLayer *featureLayer;
 
 +(Floor *)createWidthData:(NSDictionary *)data andParentBuilding:(Building *)parentBuilding;
 
@@ -26,17 +29,16 @@
 -(NSString *)getStrFloorID;
 -(NSURL *)getFloorURL;
 
--(void)setVisibility:(BOOL)visibility;
+-(void)setVisibility:(BOOL)pVisibility;
 -(BOOL)isVisible;
 
 -(void)hide;
 -(void)show;
 
-/*
+
 -(AGSSpatialReference *)getSpatialReference;
--(AGSEnvelope *)getExtent;
--(Room *)getClickedRoomWidthX:(NSNumber *)x andY:(NSNumber *)y;
+//-(Room *)getClickedRoomWidthX:(NSNumber *)x andY:(NSNumber *)y;
  
  //comparator???
-*/
+
 @end

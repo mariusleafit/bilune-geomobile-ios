@@ -1,4 +1,3 @@
-
 //
 //  Building.m
 //  BiluneGeoMobile
@@ -9,6 +8,7 @@
 
 #import "Building.h"
 #import "Constants.h"
+#import "BuildingImageMapping.h"
 
 
 @interface Building()
@@ -25,11 +25,10 @@
 @synthesize address;
 @synthesize floors;
 
-/*
- @synthesize extent;
- @synthesize maxExtent;
- @synthesize spatialReference;
-*/
+@synthesize extent;
+@synthesize maxExtent;
+@synthesize spatialReference;
+
 
 +(Building *) createWidthData:(NSDictionary *)data {
     if(data == nil) {
@@ -46,7 +45,15 @@
     
     returnBuilding.address = (NSString *)[data valueForKey:@"Address"];
     
-    //Extend: XMin , XMax, YMin, YMax SpatialReference: SpatialReference
+    //Extent & SpatialReference
+    AGSSpatialReference *spatialReference = [[AGSSpatialReference alloc] initWithWKID:[[data valueForKey:@"SpacialReference"] intValue]];
+    returnBuilding.spatialReference = spatialReference;
+    returnBuilding.extent = [[AGSEnvelope alloc]
+                             initWithXmin: [[data valueForKey:@"XMin"] doubleValue]
+                             ymin: [[data valueForKey:@"YMin"] doubleValue]
+                             xmax: [[data valueForKey:@"XMax"] doubleValue]
+                             ymax: [[data valueForKey:@"YMax"] doubleValue]
+                             spatialReference:spatialReference];
     
     //getFloors
     returnBuilding.floors = [[NSMutableArray alloc] init];
@@ -60,9 +67,30 @@
     }
     
     //calculate MaxExtent
+    double xmin = ((Floor *)[returnBuilding.floors objectAtIndex:0]).extent.xmin;
+    double ymin = ((Floor *)[returnBuilding.floors objectAtIndex:0]).extent.ymin;
+    double xmax = ((Floor *)[returnBuilding.floors objectAtIndex:0]).extent.xmax;
+    double ymax = ((Floor *)[returnBuilding.floors objectAtIndex:0]).extent.ymax;
+    for(int i = 1; i < [returnBuilding.floors count]; i++) {
+        if(xmin > ((Floor *)[returnBuilding.floors objectAtIndex:i]).extent.xmin) {
+            xmin = ((Floor *)[returnBuilding.floors objectAtIndex:i]).extent.xmin;
+        }
+        if(ymin > ((Floor *)[returnBuilding.floors objectAtIndex:i]).extent.ymin) {
+            ymin = ((Floor *)[returnBuilding.floors objectAtIndex:i]).extent.ymin;
+        }
+        if(xmax < ((Floor *)[returnBuilding.floors objectAtIndex:i]).extent.xmax) {
+            xmax = ((Floor *)[returnBuilding.floors objectAtIndex:i]).extent.xmax;
+        }
+        if(ymax < ((Floor *)[returnBuilding.floors objectAtIndex:i]).extent.ymax) {
+            ymax = ((Floor *)[returnBuilding.floors objectAtIndex:i]).extent.ymax;
+        }
+    }
+    returnBuilding.maxExtent = [[AGSEnvelope alloc] initWithXmin:xmin ymin:ymin xmax:xmax ymax:ymax spatialReference:returnBuilding.spatialReference];
     
     return returnBuilding;
 }
+
+#pragma mark getters
 
 -(NSString *)getBatCode {
     NSString *returnBatCode;
@@ -128,7 +156,17 @@
     return returnFloor;
 }
 
+-(UIImage *)getImage {
+    NSString *imageName = [[BuildingImageMapping mappingDict] valueForKey:self.mapName];
+    if(imageName){
+        return [UIImage imageNamed:imageName];
+    } else {
+        return nil;
+    }
+}
 
+
+#pragma mark modifiers
 -(void)changeVisibleFloorsWidthFloorCode:(NSString *)floorCode{
     [self changeVisibleFloorsWidthFloorCodes:[NSArray arrayWithObject:floorCode]];
 }

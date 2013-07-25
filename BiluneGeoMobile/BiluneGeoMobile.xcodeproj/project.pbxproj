@@ -54,6 +54,16 @@
 		299C7FA3178ED9B40038FADC /* loader4.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 299C7F98178ED9B40038FADC /* loader4.tiff */; };
 		299C7FA4178ED9B40038FADC /* loader3.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 299C7F99178ED9B40038FADC /* loader3.tiff */; };
 		299C7FA6178ED9D10038FADC /* loader2.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 299C7FA5178ED9D10038FADC /* loader2.tiff */; };
+		29A15A0E179EA81D006A6F46 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A15A0D179EA81D006A6F46 /* CoreLocation.framework */; };
+		29A15A10179EA827006A6F46 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A15A0F179EA827006A6F46 /* CoreText.framework */; };
+		29A15A12179EA847006A6F46 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A15A11179EA847006A6F46 /* libc++.dylib */; };
+		29A15A14179EA855006A6F46 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A15A13179EA855006A6F46 /* libz.dylib */; };
+		29A15A16179EA866006A6F46 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A15A15179EA866006A6F46 /* QuartzCore.framework */; };
+		29A15A18179EA870006A6F46 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A15A17179EA870006A6F46 /* MediaPlayer.framework */; };
+		29A15A1A179EA883006A6F46 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A15A19179EA883006A6F46 /* MobileCoreServices.framework */; };
+		29A15A1C179EA88D006A6F46 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A15A1B179EA88D006A6F46 /* OpenGLES.framework */; };
+		29A15A1E179EA896006A6F46 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A15A1D179EA896006A6F46 /* Security.framework */; };
+		29A15A20179EAB1A006A6F46 /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 29A15A1F179EAB1A006A6F46 /* ArcGIS.bundle */; };
 		29B63D5E1785B6EC001AEE4B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D5D1785B6EC001AEE4B /* MapViewController.m */; };
 		29B63D641785BB97001AEE4B /* BuildingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D631785BB95001AEE4B /* BuildingListViewController.m */; };
 		29B63D671785C2B2001AEE4B /* FloorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D661785C2B2001AEE4B /* FloorListViewController.m */; };
@@ -138,6 +148,16 @@
 		299C7F98178ED9B40038FADC /* loader4.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = loader4.tiff; sourceTree = "<group>"; };
 		299C7F99178ED9B40038FADC /* loader3.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = loader3.tiff; sourceTree = "<group>"; };
 		299C7FA5178ED9D10038FADC /* loader2.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = loader2.tiff; sourceTree = "<group>"; };
+		29A15A0D179EA81D006A6F46 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		29A15A0F179EA827006A6F46 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		29A15A11179EA847006A6F46 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		29A15A13179EA855006A6F46 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		29A15A15179EA866006A6F46 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		29A15A17179EA870006A6F46 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		29A15A19179EA883006A6F46 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		29A15A1B179EA88D006A6F46 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		29A15A1D179EA896006A6F46 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		29A15A1F179EAB1A006A6F46 /* ArcGIS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ArcGIS.bundle; path = ../../../../../../../../Library/SDKs/ArcGIS/iOS/ArcGIS.framework/Versions/Current/Resources/ArcGIS.bundle; sourceTree = "<group>"; };
 		29B63D5A1785B2B9001AEE4B /* logo_unine_bleu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_unine_bleu.png; sourceTree = "<group>"; };
 		29B63D5B1785B2CA001AEE4B /* bilune_page_background01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bilune_page_background01.jpg; sourceTree = "<group>"; };
 		29B63D5C1785B6EB001AEE4B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -190,7 +210,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2930D43A1785A3E500A4DCD2 /* UIKit.framework in Frameworks */,
+				29A15A1E179EA896006A6F46 /* Security.framework in Frameworks */,
+				29A15A1C179EA88D006A6F46 /* OpenGLES.framework in Frameworks */,
+				29A15A1A179EA883006A6F46 /* MobileCoreServices.framework in Frameworks */,
+				29A15A18179EA870006A6F46 /* MediaPlayer.framework in Frameworks */,
+				29A15A16179EA866006A6F46 /* QuartzCore.framework in Frameworks */,
+				29A15A14179EA855006A6F46 /* libz.dylib in Frameworks */,
+				29A15A12179EA847006A6F46 /* libc++.dylib in Frameworks */,
 				2930D43C1785A3E500A4DCD2 /* Foundation.framework in Frameworks */,
+				29A15A10179EA827006A6F46 /* CoreText.framework in Frameworks */,
+				29A15A0E179EA81D006A6F46 /* CoreLocation.framework in Frameworks */,
 				2930D43E1785A3E500A4DCD2 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +247,15 @@
 		2930D4381785A3E500A4DCD2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				29A15A1D179EA896006A6F46 /* Security.framework */,
+				29A15A1B179EA88D006A6F46 /* OpenGLES.framework */,
+				29A15A19179EA883006A6F46 /* MobileCoreServices.framework */,
+				29A15A17179EA870006A6F46 /* MediaPlayer.framework */,
+				29A15A15179EA866006A6F46 /* QuartzCore.framework */,
+				29A15A13179EA855006A6F46 /* libz.dylib */,
+				29A15A11179EA847006A6F46 /* libc++.dylib */,
+				29A15A0F179EA827006A6F46 /* CoreText.framework */,
+				29A15A0D179EA81D006A6F46 /* CoreLocation.framework */,
 				2930D4391785A3E500A4DCD2 /* UIKit.framework */,
 				2930D43B1785A3E500A4DCD2 /* Foundation.framework */,
 				2930D43D1785A3E500A4DCD2 /* CoreGraphics.framework */,
@@ -330,6 +368,7 @@
 		29B63D561785ABC0001AEE4B /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				29A15A1F179EAB1A006A6F46 /* ArcGIS.bundle */,
 				29B63D591785AC48001AEE4B /* images */,
 			);
 			name = resources;
@@ -543,6 +582,7 @@
 				29949A5B179D51A5004C549A /* 30_unimail.jpg in Resources */,
 				29949A5C179D51A5004C549A /* 31_latenium_1e.jpg in Resources */,
 				29949A5D179D51A5004C549A /* 33_vau22.jpg in Resources */,
+				29A15A20179EAB1A006A6F46 /* ArcGIS.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,9 +702,16 @@
 		2930D45A1785A3E500A4DCD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BiluneGeoMobile/BiluneGeoMobile-Prefix.pch";
 				INFOPLIST_FILE = "BiluneGeoMobile/BiluneGeoMobile-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+					"-framework",
+					ArcGIS,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -673,9 +720,16 @@
 		2930D45B1785A3E500A4DCD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BiluneGeoMobile/BiluneGeoMobile-Prefix.pch";
 				INFOPLIST_FILE = "BiluneGeoMobile/BiluneGeoMobile-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+					"-framework",
+					ArcGIS,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

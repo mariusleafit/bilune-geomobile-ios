@@ -55,9 +55,8 @@
     Building *building = [[appDelegate.buildingstack getBuildings] objectAtIndex:indexPath.row];
     if(building) {
         cell.addressText.text  = building.address;
-        NSString *imageName = [[BuildingImageMapping mappingDict] valueForKey:building.mapName];
-        if(imageName){
-            [cell.buildingImage setImage:[UIImage imageNamed:imageName]];
+        if([building getImage]){
+            [cell.buildingImage setImage:[building getImage]];
         }
     }
 

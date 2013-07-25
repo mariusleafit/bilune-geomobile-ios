@@ -11,5 +11,6 @@
 @interface MainMenuViewController : UIViewController
 - (IBAction)showSearchOccupants:(id)sender;
 - (IBAction)showBuildingList:(id)sender;
+- (IBAction)showMap:(id)sender;
 
 @end

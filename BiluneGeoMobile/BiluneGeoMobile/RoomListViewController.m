@@ -32,9 +32,8 @@ Floor *currentFloor;
 {
     [super viewDidLoad];
 	// prepare View
-    NSString *imageName = [[BuildingImageMapping mappingDict] valueForKey:currentFloor.parentBuilding.mapName];
-    if(imageName){
-        [self.buildingImage setImage:[UIImage imageNamed:imageName]];
+    if([currentFloor.parentBuilding getImage]){
+        [self.buildingImage setImage:[currentFloor.parentBuilding getImage]];
     }
     
     self.buildingAddress.text = currentFloor.parentBuilding.address;

@@ -20,6 +20,9 @@
 @synthesize floorCode;
 @synthesize parentBuilding;
 @synthesize defaultVisibility;
+@synthesize extent;
+@synthesize featureLayer;
+
 
 
 +(Floor *)createWidthData:(NSDictionary *)data andParentBuilding:(Building *)parentBuilding {
@@ -29,6 +32,7 @@
     
     Floor *returnFloor = [[Floor alloc] init];
     returnFloor.parentBuilding = parentBuilding;
+    
     //load data from JSON
     returnFloor.floorID = (NSNumber *)[data valueForKey:@"ID"];
     
@@ -36,9 +40,21 @@
     
     returnFloor.floorCode = (NSString *)[data valueForKey:@"Code"];
     
-    returnFloor.defaultVisibility = (BOOL)[data valueForKey:@"defaultVisibility"];
+    returnFloor.defaultVisibility = [((NSNumber *)[data valueForKey:@"DefaultVisibility"]) boolValue];
+    if(returnFloor.defaultVisibility) {
+        [returnFloor setVisibility:YES];
+    } else {
+        [returnFloor setVisibility:NO];
+    }
     
-    //Extend & SpatialReference
+    //Extend
+    returnFloor.extent = [[AGSEnvelope alloc]
+                             initWithXmin: [[data valueForKey:@"XMin"] doubleValue]
+                             ymin: [[data valueForKey:@"YMin"] doubleValue]
+                             xmax: [[data valueForKey:@"XMax"] doubleValue]
+                             ymax: [[data valueForKey:@"YMax"] doubleValue]
+                             spatialReference:[returnFloor getSpatialReference]];
+    
     return returnFloor;
 }
 
@@ -53,15 +69,29 @@
 }
 
 -(NSURL *)getFloorURL {
-    return [NSString stringWithFormat:@"%@/%@", self.getParentBuildingURL, self.getStrFloorID];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", self.getParentBuildingURL, self.getStrFloorID]];
 }
 
--(void) setVisibility:(BOOL)visibility {
-    
+-(AGSSpatialReference *)getSpatialReference {
+    return self.parentBuilding.spatialReference;
+}
+
+-(void) setVisibility:(BOOL)pVisibility {
+    if(pVisibility) {
+        self.featureLayer = [[AGSFeatureLayer alloc] initWithURL:[self getFloorURL] mode:AGSFeatureLayerModeSnapshot];
+    } else {
+        /*
+         * if featurelayer not null destroy it
+         */
+        if(self.featureLayer) {
+            self.featureLayer = nil;
+        }
+    }
+    visibility = [[NSNumber alloc] initWithBool:pVisibility];
 }
 
 -(BOOL) isVisible{
-    return NO;
+    return [visibility boolValue];
 }
 
 -(void)hide {

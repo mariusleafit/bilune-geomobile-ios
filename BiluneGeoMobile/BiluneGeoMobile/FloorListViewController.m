@@ -37,9 +37,8 @@ Building *building;
 	
     //prepare View
     [self.buildingAddress setText:building.address];
-    NSString *imageName = [[BuildingImageMapping mappingDict] valueForKey:building.mapName];
-    if(imageName){
-        [self.buildingImage setImage:[UIImage imageNamed:imageName]];
+    if([building getImage]){
+        [self.buildingImage setImage:[building getImage]];
     }
     
     self.floorsTable.delegate = self;

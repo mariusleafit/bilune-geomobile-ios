@@ -9,6 +9,7 @@
 #import "MainMenuViewController.h"
 #import "SearchOccupantsViewController.h"
 #import "BuildingListViewController.h"
+#import <ArcGIS/ArcGIS.h>
 
 @interface MainMenuViewController ()
 
@@ -41,6 +42,13 @@
     //show SearchOccupants
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
     BuildingListViewController *viewController = (BuildingListViewController *)[storyboard instantiateViewControllerWithIdentifier:@"BuildingList"];
+    [self presentViewController:viewController animated:YES completion:nil];
+}
+
+- (IBAction)showMap:(id)sender {
+    //show SearchOccupants
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+    UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Map"];
     [self presentViewController:viewController animated:YES completion:nil];
 }
 @end
