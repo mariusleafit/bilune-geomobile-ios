@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <ArcGIS/ArcGIS.h>
+#import "ScaleBarView.h"
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController<AGSMapViewTouchDelegate, AGSMapViewLayerDelegate> {
+    int scaleBarValueInMeters;
+}
 @property (weak, nonatomic) IBOutlet AGSMapView *mapView;
+- (IBAction)returnToMenu:(id)sender;
+@property (weak, nonatomic) IBOutlet ScaleBarView *mapScale;
 
 @end

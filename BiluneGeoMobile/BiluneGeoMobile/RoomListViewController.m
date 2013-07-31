@@ -53,6 +53,11 @@ Floor *currentFloor;
     currentFloor = pFloor;
 }
 
+#pragma mark DeviceOrientation
+-(BOOL)shouldAutorotate {
+    return NO;
+}
+
 #pragma mark IBAction
 - (IBAction)returnToEtages:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];

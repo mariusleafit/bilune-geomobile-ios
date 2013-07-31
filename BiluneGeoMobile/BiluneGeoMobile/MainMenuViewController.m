@@ -29,6 +29,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark DeviceOrientation
+-(BOOL)shouldAutorotate {
+    return NO;
+}
+
 #pragma mark IBAction
 
 - (IBAction)showSearchOccupants:(id)sender {

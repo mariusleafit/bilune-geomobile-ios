@@ -1,4 +1,4 @@
-//
+    //
 //  BuildingStack.m
 //  BiluneGeoMobile
 //
@@ -49,13 +49,14 @@
 }
 
 ///*get Building width URL (eg. http://biluneapp.unine.ch/arcgis/rest/services/ebilune/30_unimail_web/MapServer)
--(Building *) getBuildingWidthFullURL:(NSURL *)fullURL{
+-(Building *) getBuildingWidthFullURL:(NSURL *)pFullURL{
     Building *returnBuilding = nil;
     if(self.buildings && self.buildings.count > 0) {
         int i = 0;
         while(returnBuilding == nil && self.buildings.count > i) {
-            if(((Building *)self.buildings[i]).fullURL == fullURL) {
-                returnBuilding = (Building *)self.buildings[i];
+            Building *tmpBuilding = (Building *)self.buildings[i];
+            if([[tmpBuilding.fullURL absoluteString] isEqualToString:[pFullURL absoluteString]]) {
+                returnBuilding = tmpBuilding;
             }
             i++;
         }
@@ -64,13 +65,14 @@
 }
 
 ///*get Building width URL (eg. ebilune/30_unimail_web)
--(Building *) getBuildingWidthShortURL:(NSString *)shortURL {
+-(Building *) getBuildingWidthShortURL:(NSString *)pShortURL {
     Building *returnBuilding = nil;
     if(self.buildings && self.buildings.count > 0) {
         int i = 0;
         while(returnBuilding == nil && self.buildings.count > i) {
-            if(((Building *)self.buildings[i]).shortURL == shortURL) {
-                returnBuilding = (Building *)self.buildings[i];
+            Building *tmpBuilding = (Building *)self.buildings[i];
+            if([tmpBuilding.shortURL isEqualToString:pShortURL]) {
+                returnBuilding = tmpBuilding;
             }
             i++;
         }
@@ -78,18 +80,21 @@
     return returnBuilding;
 }
 
+-(Building *)getBuildingWidthPoint:(AGSPoint *)point andSpatialReference:(AGSSpatialReference *)spatialReference {
+    Building *returnBuilding = nil;
+    int i = 0;
+    while(returnBuilding == nil && i < [self.buildings count]) {
+        Building *tmpBuilding = [self.buildings objectAtIndex:i];
+        if([tmpBuilding isClickedWidthPoint:point andSpatialReference:nil]) {
+            returnBuilding = tmpBuilding;
+        }
+        i++;
+    }
+    return returnBuilding;
+}
+
 -(NSArray *)getBuildings {
     return buildings;
-}
-
-///*sets opacity of all buildings to 1.0
--(void)hideBuildings {
-    
-}
-
-///*sets opacitiy of all buildings to 0
--(void)showBuildings {
-    
 }
 
 @end

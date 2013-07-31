@@ -25,4 +25,11 @@
 +(AGSSpatialReference *)BASEMAP_SPATIALREFERENCE {
     return [[AGSSpatialReference alloc] initWithWKID:102100];
 }
++(AGSSpatialReference *)BILUNE_SPATIALREFERENCE {
+    return [[AGSSpatialReference alloc] initWithWKID:21781];
+}
+
++(int)ZOOMSTATE_TRANSITION_HEIGHT {
+    return 300;
+}
 @end

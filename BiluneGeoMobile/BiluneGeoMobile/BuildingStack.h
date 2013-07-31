@@ -17,16 +17,12 @@
 +(BuildingStack *) createWidthData:(NSDictionary *)data;
 
 ///*get Building width URL (eg. http://biluneapp.unine.ch/arcgis/rest/services/ebilune/30_unimail_web/MapServer)
--(Building *) getBuildingWidthFullURL:(NSURL *)fullURL;
+-(Building *) getBuildingWidthFullURL:(NSURL *)pFullURL;
 ///*get Building width URL (eg. ebilune/30_unimail_web)
--(Building *) getBuildingWidthShortURL:(NSString *)shortURL;
-/*
--(Building *) getClickedBuildingWidthPoint:(AGSPoint *)point andSpatialReference:(AGSSpatialReference *)spatialReference; 
- */
+-(Building *) getBuildingWidthShortURL:(NSString *)pShortURL;
+
+-(Building *) getBuildingWidthPoint:(AGSPoint *)point andSpatialReference:(AGSSpatialReference *)spatialReference;
+
 -(NSArray *) getBuildings;
-///*sets opacity of all buildings to 1.0
--(void) hideBuildings;
-///*sets opacitiy of all buildings to 0
--(void) showBuildings;
 
 @end

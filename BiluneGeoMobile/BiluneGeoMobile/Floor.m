@@ -21,8 +21,6 @@
 @synthesize parentBuilding;
 @synthesize defaultVisibility;
 @synthesize extent;
-@synthesize featureLayer;
-
 
 
 +(Floor *)createWidthData:(NSDictionary *)data andParentBuilding:(Building *)parentBuilding {
@@ -41,11 +39,7 @@
     returnFloor.floorCode = (NSString *)[data valueForKey:@"Code"];
     
     returnFloor.defaultVisibility = [((NSNumber *)[data valueForKey:@"DefaultVisibility"]) boolValue];
-    if(returnFloor.defaultVisibility) {
-        [returnFloor setVisibility:YES];
-    } else {
-        [returnFloor setVisibility:NO];
-    }
+    [returnFloor setVisibility:returnFloor.defaultVisibility];
     
     //Extend
     returnFloor.extent = [[AGSEnvelope alloc]
@@ -77,29 +71,11 @@
 }
 
 -(void) setVisibility:(BOOL)pVisibility {
-    if(pVisibility) {
-        self.featureLayer = [[AGSFeatureLayer alloc] initWithURL:[self getFloorURL] mode:AGSFeatureLayerModeSnapshot];
-    } else {
-        /*
-         * if featurelayer not null destroy it
-         */
-        if(self.featureLayer) {
-            self.featureLayer = nil;
-        }
-    }
     visibility = [[NSNumber alloc] initWithBool:pVisibility];
 }
 
 -(BOOL) isVisible{
     return [visibility boolValue];
-}
-
--(void)hide {
-    
-}
-
--(void)show {
-    
 }
 
 @end

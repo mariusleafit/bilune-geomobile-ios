@@ -29,22 +29,20 @@
 +(Building *)createWidthData:(NSDictionary *)data;
 
 -(NSString *)getBatCode;
+-(NSArray *)getFloorsSortedAsc:(BOOL)asc;
 -(NSArray *)getFloors;
--(NSArray *)getVisibleFloors;
--(NSArray *)getVisibleFloorIDs;
+-(NSArray *)getVisibleFloorsSortedAsc:(BOOL)asc;
+-(NSArray *)getVisibleFloorIDsSortedAsc:(BOOL)asc;
 -(Floor *)getFloorWidthFloorCode:(NSString *)floorCode;
 -(Floor *)getFloorWidthFloorID:(NSNumber *)floorID;
 -(void)changeVisibleFloorsWidthFloorCode:(NSString *)floorCode;
 -(void)changeVisibleFloorsWidthFloorCodes:(NSArray *)floorCodes;
 
--(void)hide;
--(void)show;
-
 
 
 -(UIImage *)getImage;
-/*-(BOOL)isClickedWidthPoint:(AGSPoint *)point andSpatialReference:(AGSSpatialReference *)spatialReference;
--(Room *)getClickedRoomWidthX:(NSNumber*)x andY:(NSNumber *)y;*/
+-(BOOL)isClickedWidthPoint:(AGSPoint *)point andSpatialReference:(AGSSpatialReference *)spatialReference;
+/*-(Room *)getClickedRoomWidthX:(NSNumber*)x andY:(NSNumber *)y;*/
 
 
 

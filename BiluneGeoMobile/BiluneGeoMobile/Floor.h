@@ -21,7 +21,6 @@
 @property(strong, nonatomic) Building *parentBuilding;
 @property (nonatomic, strong) AGSEnvelope *extent;
 @property BOOL defaultVisibility;
-@property(strong, nonatomic) AGSFeatureLayer *featureLayer;
 
 +(Floor *)createWidthData:(NSDictionary *)data andParentBuilding:(Building *)parentBuilding;
 
@@ -31,9 +30,6 @@
 
 -(void)setVisibility:(BOOL)pVisibility;
 -(BOOL)isVisible;
-
--(void)hide;
--(void)show;
 
 
 -(AGSSpatialReference *)getSpatialReference;

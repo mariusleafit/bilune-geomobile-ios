@@ -210,9 +210,12 @@ NSMutableArray *filteredSections = nil;
     isFiltered = false;
 }
 
+#pragma mark DeviceOrientation
+-(BOOL)shouldAutorotate {
+    return NO;
+}
+
 #pragma mark IBAction
-
-
 - (IBAction)returnToMenu:(id)sender {
     //show main menu
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];

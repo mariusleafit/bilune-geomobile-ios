@@ -86,6 +86,11 @@ Building *building;
     [self presentViewController:viewController animated:YES completion:nil];
 }
 
+#pragma mark DeviceOrientation
+-(BOOL)shouldAutorotate {
+    return NO;
+}
+
 #pragma mark IBAction
 
 - (IBAction)returnToBuildingList:(id)sender {

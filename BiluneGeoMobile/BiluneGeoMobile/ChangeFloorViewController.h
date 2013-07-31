@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Building.h"
 
-@interface ChangeFloorViewController : UIViewController
+@interface ChangeFloorViewController : UIViewController<UITableViewDataSource> {
+    Building *building;
+}
+-(void)setBuilding:(Building *)pBuilding;
+@property (weak, nonatomic) IBOutlet UITableView *floorList;
+- (IBAction)returnToMap:(id)sender;
 
 @end

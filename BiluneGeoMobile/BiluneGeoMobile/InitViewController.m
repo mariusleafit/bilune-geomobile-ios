@@ -145,6 +145,11 @@ bool errorOccured = false;
     self.retryButton.hidden = false;
 }
 
+#pragma mark DeviceOrientation
+-(BOOL)shouldAutorotate {
+    return NO;
+}
+
 #pragma mark IBActions
 - (IBAction)retryDownload:(id)sender {
     [self startDownload];

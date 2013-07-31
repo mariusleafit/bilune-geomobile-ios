@@ -75,6 +75,10 @@
     }
 }
 
+#pragma mark DeviceOrientation
+-(BOOL)shouldAutorotate {
+    return NO;
+}
 
 #pragma mark IBAction
 - (IBAction)returnToMenu:(id)sender {

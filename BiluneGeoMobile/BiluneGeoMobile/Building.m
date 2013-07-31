@@ -39,7 +39,7 @@
     
     //init with NSDictionary
     returnBuilding.shortURL = (NSString *)[data valueForKey:@"Url"];
-    returnBuilding.fullURL = [NSString stringWithFormat:@"%@%@/MapServer",[Constants BILUNE_MAIN_URL],[[data valueForKey:@"Url"] stringByReplacingOccurrencesOfString:@"ebilune/" withString:@""]];
+    returnBuilding.fullURL = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@/MapServer",[Constants BILUNE_MAIN_URL],[[data valueForKey:@"Url"] stringByReplacingOccurrencesOfString:@"ebilune/" withString:@""]]];
     
     returnBuilding.mapName = (NSString *)[data valueForKey:@"Name"];
     
@@ -105,7 +105,30 @@
     return self.floors;
 }
 
--(NSArray *)getVisibleFloors {
+-(NSArray *)getFloorsSortedAsc:(BOOL)asc {
+    NSArray *sortedArray = [self.floors sortedArrayUsingComparator:^(Floor *a, Floor *b) {
+        if(asc) {
+            if(a.floorID > b.floorID) {
+                return (NSComparisonResult)NSOrderedAscending;
+            } else if(a.floorID < b.floorID) {
+                return (NSComparisonResult)NSOrderedDescending;
+            } else {
+                return (NSComparisonResult)NSOrderedSame;
+            }
+        } else {
+            if(a.floorID < b.floorID) {
+                return (NSComparisonResult)NSOrderedAscending;
+            } else if(a.floorID > b.floorID) {
+                return (NSComparisonResult)NSOrderedDescending;
+            } else {
+                return (NSComparisonResult)NSOrderedSame;
+            }
+        }
+    }];
+    return sortedArray;
+}
+
+-(NSArray *)getVisibleFloorsSortedAsc:(BOOL)asc {
     //capacity can be increased (by adding more objects) is just an indicator
     NSMutableArray *returnFloors = [NSMutableArray arrayWithCapacity:30];
     if(self.floors && self.floors.count > 0) {
@@ -115,14 +138,34 @@
             }
         }
     }
-    return [NSArray arrayWithArray:returnFloors];
+    
+    NSArray *sortedArray = [returnFloors sortedArrayUsingComparator:^(Floor *a, Floor *b) {
+        if(asc) {
+            if(a.floorID > b.floorID) {
+                return (NSComparisonResult)NSOrderedAscending;
+            } else if(a.floorID < b.floorID) {
+                return (NSComparisonResult)NSOrderedDescending;
+            } else {
+                return (NSComparisonResult)NSOrderedSame;
+            }
+        } else {
+            if(a.floorID < b.floorID) {
+                return (NSComparisonResult)NSOrderedAscending;
+            } else if(a.floorID > b.floorID) {
+                return (NSComparisonResult)NSOrderedDescending;
+            } else {
+                return (NSComparisonResult)NSOrderedSame;
+            }
+        }
+    }];
+    return sortedArray;
 }
 
 ///returns String array
--(NSArray *)getVisibleFloorIDs {
+-(NSArray *)getVisibleFloorIDsSortedAsc:(BOOL)asc {
     //capacity can be increased (by adding more objects) is just an indicator
     NSMutableArray *returnFloorIDs = [NSMutableArray arrayWithCapacity:30];
-    for(Floor *floor in [self getVisibleFloors]) {
+    for(Floor *floor in [self getVisibleFloorsSortedAsc:asc]) {
         [returnFloorIDs addObject:[floor getStrFloorID]];
     }
     return returnFloorIDs;
@@ -165,6 +208,16 @@
     }
 }
 
+-(BOOL)isClickedWidthPoint:(AGSPoint *)point andSpatialReference:(AGSSpatialReference *)spatialReference {
+    BOOL flag = false;
+    AGSGeometryEngine *geometryEngine = [AGSGeometryEngine defaultGeometryEngine];
+    AGSPoint *projectedPoint = (AGSPoint *)[geometryEngine projectGeometry:point toSpatialReference:[Constants BILUNE_SPATIALREFERENCE]];
+    if([geometryEngine geometry:self.maxExtent containsGeometry:projectedPoint]) {
+        flag = true;
+    }
+    return flag;
+}
+
 
 #pragma mark modifiers
 -(void)changeVisibleFloorsWidthFloorCode:(NSString *)floorCode{
@@ -182,7 +235,7 @@
     
     if(newFloors.count > 0) {
         //get currently visible floors
-        NSMutableArray *currentFloors = [NSMutableArray arrayWithArray:[self getVisibleFloors]];
+        NSMutableArray *currentFloors = [NSMutableArray arrayWithArray:[self getVisibleFloorsSortedAsc:true]];
         if(currentFloors.count > 0) {
             for(Floor *floor in currentFloors){
                 [floor setVisibility:NO];
@@ -202,11 +255,4 @@
     }
 }
 
--(void)hide {
-    
-}
-
--(void)show {
-    
-}
 @end

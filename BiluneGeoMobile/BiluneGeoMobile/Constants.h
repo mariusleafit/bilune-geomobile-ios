@@ -23,4 +23,8 @@
 
 +(AGSEnvelope *) INITIAL_EXTENT;
 +(AGSSpatialReference *) BASEMAP_SPATIALREFERENCE;
++(AGSSpatialReference *) BILUNE_SPATIALREFERENCE;
+
+//at which length of the scale should the buildings be hidden and overview displayed
++(int) ZOOMSTATE_TRANSITION_HEIGHT;
 @end
