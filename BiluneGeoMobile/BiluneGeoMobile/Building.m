@@ -255,4 +255,10 @@
     }
 }
 
+-(void)resetFloorVisibility {
+    for (Floor *floor in self.floors) {
+        [floor resetVisibility];
+    }
+}
+
 @end

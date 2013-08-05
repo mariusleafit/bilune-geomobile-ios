@@ -38,7 +38,8 @@
 -(void)changeVisibleFloorsWidthFloorCode:(NSString *)floorCode;
 -(void)changeVisibleFloorsWidthFloorCodes:(NSArray *)floorCodes;
 
-
+//set the Visibility of the Floors to the defaultVisibility
+-(void)resetFloorVisibility;
 
 -(UIImage *)getImage;
 -(BOOL)isClickedWidthPoint:(AGSPoint *)point andSpatialReference:(AGSSpatialReference *)spatialReference;

@@ -41,6 +41,10 @@
     building = pBuilding;
 }
 
+-(void)setMapViewController:(MapViewController *)pMapViewController {
+    mapViewController = pMapViewController;
+}
+
 #pragma mark UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[building getFloors] count];
@@ -60,6 +64,7 @@
     if(floor) {
         cell.floorName.text = floor.floorName;
         [cell.visibilitySwitch setOn:floor.isVisible];
+        cell.floor = floor;
     }
     
     return cell;
@@ -71,8 +76,26 @@
     return NO;
 }
 
-- (IBAction)returnToCarte:(id)sender {
-}
+#pragma mark IBAction
 - (IBAction)returnToMap:(id)sender {
+    //show SearchOccupants
+    /*UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+    UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Map"];
+    [self presentViewController:viewController animated:YES completion:nil];*/
+    
+    //is at least one floor visible?
+    BOOL isVisible = false;
+    for(Floor *floor in [building getFloors]) {
+        if([floor isVisible]) {
+            isVisible = true;
+        }
+    }
+    //set visibility back to default
+    if(!isVisible) {
+        [building resetFloorVisibility];
+    }
+    [mapViewController updateVisibleFloorsFromBuilding:building];
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 @end

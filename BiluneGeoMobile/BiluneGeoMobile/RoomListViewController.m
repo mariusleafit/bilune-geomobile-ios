@@ -60,9 +60,10 @@ Floor *currentFloor;
 
 #pragma mark IBAction
 - (IBAction)returnToEtages:(id)sender {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+    /*UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
     FloorListViewController *viewController = (FloorListViewController *)[storyboard instantiateViewControllerWithIdentifier:@"FloorListView"];
     [viewController setBuilding:currentFloor.parentBuilding];
-    [self presentViewController:viewController animated:YES completion:nil];
+    [self presentViewController:viewController animated:YES completion:nil];*/
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

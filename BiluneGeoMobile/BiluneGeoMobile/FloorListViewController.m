@@ -95,9 +95,10 @@ Building *building;
 
 - (IBAction)returnToBuildingList:(id)sender {
     //show SearchOccupants
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+    /*UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
     UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"BuildingList"];
-    [self presentViewController:viewController animated:YES completion:nil];
+    [self presentViewController:viewController animated:YES completion:nil];*/
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

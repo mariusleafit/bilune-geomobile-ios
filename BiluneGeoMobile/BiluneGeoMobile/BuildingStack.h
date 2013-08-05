@@ -25,4 +25,5 @@
 
 -(NSArray *) getBuildings;
 
+-(void) resetFloorVisibility;
 @end

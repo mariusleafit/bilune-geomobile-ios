@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Building.h"
+#import "MapViewController.h"
 
 @interface ChangeFloorViewController : UIViewController<UITableViewDataSource> {
     Building *building;
+    MapViewController *mapViewController;
 }
 -(void)setBuilding:(Building *)pBuilding;
 @property (weak, nonatomic) IBOutlet UITableView *floorList;
 - (IBAction)returnToMap:(id)sender;
-
+-(void)setMapViewController:(MapViewController *)pMapViewController;
 @end

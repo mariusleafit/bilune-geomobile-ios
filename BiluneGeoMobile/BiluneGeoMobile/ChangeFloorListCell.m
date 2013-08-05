@@ -26,4 +26,7 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)changeVisibility:(id)sender {
+    [self.floor setVisibility:((UISwitch *)sender).isOn];
+}
 @end

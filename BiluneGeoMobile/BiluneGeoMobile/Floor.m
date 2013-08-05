@@ -74,6 +74,10 @@
     visibility = [[NSNumber alloc] initWithBool:pVisibility];
 }
 
+-(void)resetVisibility {
+    visibility = [[NSNumber alloc] initWithBool:self.defaultVisibility];
+}
+
 -(BOOL) isVisible{
     return [visibility boolValue];
 }

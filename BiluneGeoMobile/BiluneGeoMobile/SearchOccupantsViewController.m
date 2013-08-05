@@ -218,9 +218,10 @@ NSMutableArray *filteredSections = nil;
 #pragma mark IBAction
 - (IBAction)returnToMenu:(id)sender {
     //show main menu
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+    /*UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
     MainMenuViewController *viewController = (MainMenuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MainMenu"];
-    [self presentViewController:viewController animated:YES completion:nil];
+    [self presentViewController:viewController animated:YES completion:nil];*/
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

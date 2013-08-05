@@ -830,7 +830,7 @@ Cette application permet l'interrogation des locaux et des occupants.</string>
         <!--Change Floor View Controller - Etages-->
         <scene sceneID="xg8-1M-wqh">
             <objects>
-                <viewController id="68y-oW-L3j" customClass="ChangeFloorViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangeFloor" id="68y-oW-L3j" customClass="ChangeFloorViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UPe-D9-tWA">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -877,7 +877,11 @@ Cette application permet l'interrogation des locaux et des occupants.</string>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7AG-42-SAL"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7AG-42-SAL">
+                                                    <connections>
+                                                        <action selector="changeVisibility:" destination="nBe-fC-vqO" eventType="valueChanged" id="6Nz-yd-fUW"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -976,100 +980,6 @@ Cette application permet l'interrogation des locaux et des occupants.</string>
         <image name="logo_unine_bleu.png" width="162" height="106"/>
         <image name="northArrow.png" width="207" height="300"/>
     </resources>
-    <classes>
-        <class className="BuildingListCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingListCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addressText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="buildingImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="BuildingListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="returnToMenu:"/>
-                <relationship kind="outlet" name="buildingsList" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="ChangeFloorListCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChangeFloorListCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="floorName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="visibilitySwitch" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="ChangeFloorViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChangeFloorViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="returnToMap:"/>
-                <relationship kind="outlet" name="floorList" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="FloorListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FloorListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="returnToBuildingList:"/>
-                <relationship kind="outlet" name="buildingAddress" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="buildingImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="floorsTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="InfoUNINEViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoUNINEViewController.h"/>
-        </class>
-        <class className="InitViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InitViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="retryDownload:"/>
-                <relationship kind="outlet" name="alertText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loaderImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="retryButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="LegendViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LegendViewController.h"/>
-        </class>
-        <class className="MainMenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showBuildingList:"/>
-                <relationship kind="action" name="showMap:"/>
-                <relationship kind="action" name="showSearchOccupants:"/>
-            </relationships>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="returnToMenu:"/>
-                <relationship kind="outlet" name="mapScale" candidateClass="ScaleBarView"/>
-                <relationship kind="outlet" name="mapView" candidateClass="AGSMapView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="RoomListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="returnToEtages:"/>
-                <relationship kind="outlet" name="buildingAddress" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="buildingImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="floorName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="roomList" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="ScaleBarView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScaleBarView.h"/>
-        </class>
-        <class className="SearchOccupantsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchOccupantsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="returnToMenu:"/>
-                <relationship kind="outlet" name="occupantsList" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

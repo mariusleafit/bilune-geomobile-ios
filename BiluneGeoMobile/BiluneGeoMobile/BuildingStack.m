@@ -97,4 +97,10 @@
     return buildings;
 }
 
+-(void)resetFloorVisibility {
+    for(Building *building in self.buildings) {
+        [building resetFloorVisibility];
+    }
+}
+
 @end

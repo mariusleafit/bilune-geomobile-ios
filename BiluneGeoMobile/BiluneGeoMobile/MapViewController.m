@@ -84,6 +84,7 @@
     self.overviewLayer = [[OverviewLayer alloc] initWidthGraphicsLayer:overviewGraphicsLayer andBuildingStack:self.appDelegate.buildingstack];
     
     //init buildings
+    [self.appDelegate.buildingstack resetFloorVisibility];
     for (Building *building in [self.appDelegate.buildingstack getBuildings]) {
         for(Floor *floor in [building getVisibleFloorsSortedAsc:false]) {
             [self.mapView addMapLayer:[[AGSFeatureLayer alloc] initWithURL:[floor getFloorURL] mode:AGSFeatureLayerModeSnapshot] withName:[ [floor getFloorURL] absoluteString]];
@@ -182,7 +183,12 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
         ChangeFloorViewController *viewController = (ChangeFloorViewController *)[storyboard instantiateViewControllerWithIdentifier:@"ChangeFloor"];
         [viewController setBuilding:clickedBuilding];
+        [viewController setMapViewController:self];
         [self presentViewController:viewController animated:YES completion:nil];
+        
+        
+        
+        //[self presentModalViewController:settingsMenuController animated:YES];
     }
 }
 
@@ -194,8 +200,9 @@
 #pragma mark IBAction
 - (IBAction)returnToMenu:(id)sender {
     //show SearchOccupants
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+    /*UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
     UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MainMenu"];
-    [self presentViewController:viewController animated:YES completion:nil];
+    [self presentViewController:viewController animated:YES completion:nil];*/
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

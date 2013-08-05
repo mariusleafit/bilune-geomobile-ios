@@ -28,6 +28,9 @@
 -(NSString *)getStrFloorID;
 -(NSURL *)getFloorURL;
 
+//sets the Visiblity to the defaultVisibility
+-(void)resetVisibility;
+
 -(void)setVisibility:(BOOL)pVisibility;
 -(BOOL)isVisible;
 
