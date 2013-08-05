@@ -58,7 +58,6 @@
 }
 
 -(NSString *)getStrFloorID {
-    NSLog(@"Test Floor getStrFloorID");
     return [NSString stringWithFormat:@"%@", self.floorID];
 }
 

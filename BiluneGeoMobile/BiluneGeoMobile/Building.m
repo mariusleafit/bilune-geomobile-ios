@@ -176,7 +176,7 @@
     if(self.floors && self.floors.count > 0) {
         int i = 0;
         while(returnFloor == nil && self.floors.count > i) {
-            if(((Floor *)self.floors[i]).floorCode == floorCode) {
+            if([((Floor *)self.floors[i]).floorCode isEqualToString:floorCode]) {
                 returnFloor = (Floor *)self.floors[i];
             }
             i++;
@@ -190,7 +190,7 @@
     if(self.floors && self.floors.count > 0) {
         int i = 0;
         while(returnFloor == nil && self.floors.count > i) {
-            if(((Floor *)self.floors[i]).floorID == floorID) {
+            if([((Floor *)self.floors[i]).floorID isEqualToNumber:floorID]) {
                 returnFloor = (Floor *)self.floors[i];
             }
             i++;

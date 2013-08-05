@@ -11,18 +11,26 @@
 #import "AppDelegate.h"
 #import "OverviewLayer.h"
 #import "ChangeFloorViewController.h"
+#import "RoomHelper.h"
+#import "RoomFromObjectIDQuery.h"
+#import "RoomInfoViewController.h"
 
-@interface MapViewController ()
+@interface MapViewController () {
+    RoomFromObjectIDQuery *getClickedRoomQuery;
+    Room *clickedRoom;
+}
 @property (weak) AppDelegate *appDelegate;
 @property (strong, nonatomic) OverviewLayer *overviewLayer;
 @property (nonatomic) AGSTiledMapServiceLayer *sateliteBasemap;
 @property (nonatomic) AGSTiledMapServiceLayer *roadBasemap;
+@property (strong, nonatomic) AGSGraphicsLayer *roomMarkingLayer;
+
 @end
 
 @implementation MapViewController
 
 
-@synthesize mapView, sateliteBasemap, roadBasemap;
+@synthesize mapView, sateliteBasemap, roadBasemap, roomMarkingLayer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -93,6 +101,10 @@
     
     [self setVisibilityOfBuildings:NO];
     [self.overviewLayer setVisibility:YES];
+    
+    //init roomMarkingLayer
+    self.roomMarkingLayer = [[AGSGraphicsLayer alloc] initWithSpatialReference:[Constants BILUNE_SPATIALREFERENCE]];
+    [self.mapView addMapLayer:self.roomMarkingLayer withName:@"roomMarkingLayer"];
     
     self.mapView.allowRotationByPinching = true;
 }
@@ -171,6 +183,54 @@
                 [self.mapView zoomToEnvelope:clickedBuilding.extent animated:YES];
             }
         }
+    } else if(scaleBarValueInMeters <= [Constants ZOOMSTATE_TRANSITION_HEIGHT]) {
+        //to make sure that there is only one request at the same time
+        if(getClickedRoomQuery == nil) {
+            //reset clicked room
+            clickedRoom = nil;
+            
+            __block int objectID;
+            __block NSString *floorUrlFull = nil;
+            __block AGSPolygon *roomPolygon = nil;
+            
+            //if there are multiple clicked Graphics --> get the roomGraphic
+            [graphics enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+                AGSGraphic *tmpGraphic = (AGSGraphic *)obj[0];
+                NSString *tmpKey = (NSString *)key;
+                
+                //is room?
+                if([tmpGraphic attributeAsStringForKey:@"OBJECTID"]) {
+                    objectID = [tmpGraphic attributeAsUnsignedIntForKey:@"OBJECTID" exists:nil];
+                    floorUrlFull = tmpKey;
+                    roomPolygon = (AGSPolygon *)tmpGraphic.geometry;
+                    *stop = YES;
+                }
+            }];
+            //query room
+            if(floorUrlFull) {
+                //mark Room on map
+                AGSSimpleFillSymbol *roomMarkerSymbol = [[AGSSimpleFillSymbol alloc] initWithColor:[UIColor colorWithRed:170 green:170 blue:170 alpha:0.5] outlineColor:nil];
+                AGSGraphic *roomMarkerGraphic = [AGSGraphic graphicWithGeometry:roomPolygon symbol:roomMarkerSymbol attributes:nil infoTemplateDelegate:nil];
+                [self.roomMarkingLayer removeAllGraphics];
+                [self.roomMarkingLayer addGraphic:roomMarkerGraphic];
+                //add pin
+                /*AGSPictureMarkerSymbol *pinSymbol = [[AGSPictureMarkerSymbol alloc] initWithImage:[UIImage imageNamed:@"pin32.png"]];
+                AGSGraphic *pinGraphic = [AGSGraphic graphicWithGeometry:mappoint symbol:pinSymbol attributes:nil infoTemplateDelegate:nil];
+                [self.roomMarkingLayer addGraphic:pinGraphic];*/
+
+                //display callout (gets updated when request is finished
+                self.mapView.callout.title = @"...";
+                self.mapView.callout.detail = @"...";
+                self.mapView.callout.delegate = nil;
+                [self.mapView.callout showCalloutAt:mappoint pixelOffset:CGPointMake(0.0f, 0.0f) animated:YES];
+            
+                getClickedRoomQuery = [[RoomFromObjectIDQuery alloc] initWidthUrl:[NSURL URLWithString:floorUrlFull] andName:@"RoomFromObjectIDQuery" andDelegate:self andObjectID:objectID andBuildingStack:self.appDelegate.buildingstack];
+                [getClickedRoomQuery execute];
+            } else {
+                [self.roomMarkingLayer removeAllGraphics];
+                self.mapView.callout.hidden = true;
+            }
+        }
     }
 }
 
@@ -189,6 +249,42 @@
         
         
         //[self presentModalViewController:settingsMenuController animated:YES];
+    }
+}
+
+#pragma mark RoomQueryDelegate
+-(void)roomQueryRoomFound:(Room *)room andQueryName:(NSString *)queryName{
+    
+    if([queryName isEqualToString:@"RoomFromObjectIDQuery"]) {
+        if(room) {
+            //display callout
+            mapView.callout.title = room.name;
+            mapView.callout.detail = @"Cliquez pour plus de détails..";
+            mapView.callout.delegate = self;
+            getClickedRoomQuery = nil;
+            
+            clickedRoom = room;
+        } else {
+            mapView.callout.hidden = true;
+        }
+    }
+}
+
+-(void)roomQueryErrorOccured:(NSString *)queryName {
+    NSLog(@"room error occured");
+    getClickedRoomQuery = nil;
+    mapView.callout.hidden = true;
+}
+
+#pragma mark AGSCalloutDelegate
+-(void)didClickAccessoryButtonForCallout:(AGSCallout *)callout {
+    if(clickedRoom) {
+        //display RoominfoView
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+        RoomInfoViewController *viewController = (RoomInfoViewController *)[storyboard instantiateViewControllerWithIdentifier:@"RoomInfo"];
+        [viewController setRoom:clickedRoom];
+        [self presentViewController:viewController animated:YES completion:nil];
+
     }
 }
 

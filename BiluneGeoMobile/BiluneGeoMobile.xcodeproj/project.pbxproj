@@ -20,6 +20,10 @@
 		2930D4561785A3E500A4DCD2 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2930D4551785A3E500A4DCD2 /* MainMenuViewController.m */; };
 		298B8BBB1790271900FD1EF3 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B8BBA1790271900FD1EF3 /* Constants.m */; };
 		2991A724179960D5007F6E19 /* BuildingListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2991A723179960D5007F6E19 /* BuildingListCell.m */; };
+		29941DCE17AF7F7400386CE7 /* RoomHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 29941DCD17AF7F7400386CE7 /* RoomHelper.m */; };
+		29941DD217AF9AFB00386CE7 /* RoomFromObjectIDQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 29941DD117AF9AFB00386CE7 /* RoomFromObjectIDQuery.m */; };
+		29941DD517AFD71100386CE7 /* pin32.png in Resources */ = {isa = PBXBuildFile; fileRef = 29941DD417AFD71100386CE7 /* pin32.png */; };
+		29941DD817AFE29D00386CE7 /* RoomInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29941DD717AFE29D00386CE7 /* RoomInfoViewController.m */; };
 		29949A49179D51A5004C549A /* 01_snicolas4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29949A34179D51A5004C549A /* 01_snicolas4.jpg */; };
 		29949A4A179D51A5004C549A /* 02_boine20.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29949A35179D51A5004C549A /* 02_boine20.jpg */; };
 		29949A4B179D51A5004C549A /* 06_fbglac5a.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29949A36179D51A5004C549A /* 06_fbglac5a.jpg */; };
@@ -116,6 +120,14 @@
 		298D1D9B178D80E600FFF5B1 /* DownloaderDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloaderDelegate.h; sourceTree = "<group>"; };
 		2991A722179960D5007F6E19 /* BuildingListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingListCell.h; sourceTree = "<group>"; };
 		2991A723179960D5007F6E19 /* BuildingListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingListCell.m; sourceTree = "<group>"; };
+		29941DCC17AF7F7400386CE7 /* RoomHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomHelper.h; sourceTree = "<group>"; };
+		29941DCD17AF7F7400386CE7 /* RoomHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomHelper.m; sourceTree = "<group>"; };
+		29941DD017AF9AFB00386CE7 /* RoomFromObjectIDQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomFromObjectIDQuery.h; sourceTree = "<group>"; };
+		29941DD117AF9AFB00386CE7 /* RoomFromObjectIDQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomFromObjectIDQuery.m; sourceTree = "<group>"; };
+		29941DD317AF9D0500386CE7 /* RoomQueryDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoomQueryDelegate.h; sourceTree = "<group>"; };
+		29941DD417AFD71100386CE7 /* pin32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin32.png; sourceTree = "<group>"; };
+		29941DD617AFE29D00386CE7 /* RoomInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomInfoViewController.h; sourceTree = "<group>"; };
+		29941DD717AFE29D00386CE7 /* RoomInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomInfoViewController.m; sourceTree = "<group>"; };
 		29949A34179D51A5004C549A /* 01_snicolas4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01_snicolas4.jpg; sourceTree = "<group>"; };
 		29949A35179D51A5004C549A /* 02_boine20.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02_boine20.jpg; sourceTree = "<group>"; };
 		29949A36179D51A5004C549A /* 06_fbglac5a.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 06_fbglac5a.jpg; sourceTree = "<group>"; };
@@ -297,6 +309,16 @@
 			name = customcells;
 			sourceTree = "<group>";
 		};
+		29941DCF17AF9A8200386CE7 /* queries */ = {
+			isa = PBXGroup;
+			children = (
+				29941DD017AF9AFB00386CE7 /* RoomFromObjectIDQuery.h */,
+				29941DD117AF9AFB00386CE7 /* RoomFromObjectIDQuery.m */,
+				29941DD317AF9D0500386CE7 /* RoomQueryDelegate.h */,
+			);
+			name = queries;
+			sourceTree = "<group>";
+		};
 		29949A32179D50FB004C549A /* loader */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +452,8 @@
 				29EAB9861786A2470043BD86 /* InfoLeafitViewController.m */,
 				29DAE97B178C35D50027D47C /* InitViewController.h */,
 				29DAE97C178C35D50027D47C /* InitViewController.m */,
+				29941DD617AFE29D00386CE7 /* RoomInfoViewController.h */,
+				29941DD717AFE29D00386CE7 /* RoomInfoViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -437,6 +461,7 @@
 		29B63D591785AC48001AEE4B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				29941DD417AFD71100386CE7 /* pin32.png */,
 				29949A33179D5156004C549A /* buildings */,
 				29949A32179D50FB004C549A /* loader */,
 				29EAB9881786A5490043BD86 /* 5cm_transparent_no_10101.png */,
@@ -455,8 +480,11 @@
 		29DAE97E178C3CB50027D47C /* helpers */ = {
 			isa = PBXGroup;
 			children = (
+				29941DCF17AF9A8200386CE7 /* queries */,
 				299A113217A29BEC00F1E4CD /* overview */,
 				29DAE982178C3D920027D47C /* downloader */,
+				29941DCC17AF7F7400386CE7 /* RoomHelper.h */,
+				29941DCD17AF7F7400386CE7 /* RoomHelper.m */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -606,6 +634,7 @@
 				29949A5C179D51A5004C549A /* 31_latenium_1e.jpg in Resources */,
 				29949A5D179D51A5004C549A /* 33_vau22.jpg in Resources */,
 				29A15A20179EAB1A006A6F46 /* ArcGIS.bundle in Resources */,
+				29941DD517AFD71100386CE7 /* pin32.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +673,9 @@
 				299A113517A29C0C00F1E4CD /* OverviewLayer.m in Sources */,
 				299616D217A7EC700027AE6B /* ScaleBarView.m in Sources */,
 				299D301917A93280004A4C05 /* ChangeFloorListCell.m in Sources */,
+				29941DCE17AF7F7400386CE7 /* RoomHelper.m in Sources */,
+				29941DD217AF9AFB00386CE7 /* RoomFromObjectIDQuery.m in Sources */,
+				29941DD817AFE29D00386CE7 /* RoomInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

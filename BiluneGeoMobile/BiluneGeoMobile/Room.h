@@ -18,14 +18,14 @@
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *occupants;
-@property (nonatomic, strong) NSString /*AGSPolygon*/ *polygon;
+@property (nonatomic, strong) AGSPolygon *polygon;
 @property (nonatomic) Floor *parentFloor;
 @property (nonatomic, strong) Building *parentBuilding;
 @property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) NSString *area;
 
-+(Room *)createWidthName:(NSString *)name andOccupants:(NSString *)occupants andPolygon:/*(AGSPolygon *)*/(NSString *)polygon andParentFloor:(Floor *)floor
++(Room *)createWidthName:(NSString *)name andOccupants:(NSString *)occupants andPolygon:(AGSPolygon *)polygon andParentFloor:(Floor *)floor
        andParentBuilding:(Building *)building andAddress:(NSString *)address andType:(NSString *)type andArea:(NSString *)area;
 
 

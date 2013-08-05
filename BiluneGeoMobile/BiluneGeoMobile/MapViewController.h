@@ -10,8 +10,9 @@
 #import <ArcGIS/ArcGIS.h>
 #import "ScaleBarView.h"
 #import "Building.h"
+#import "RoomQueryDelegate.h"
 
-@interface MapViewController : UIViewController<AGSMapViewTouchDelegate, AGSMapViewLayerDelegate> {
+@interface MapViewController : UIViewController<AGSMapViewTouchDelegate, AGSMapViewLayerDelegate, RoomQueryDelegate, AGSCalloutDelegate> {
     int scaleBarValueInMeters;
 }
 @property (weak, nonatomic) IBOutlet AGSMapView *mapView;

@@ -21,7 +21,7 @@
 @synthesize type;
 @synthesize area;
 
-+(Room *)createWidthName:(NSString *)name andOccupants:(NSString *)occupants andPolygon:(NSString *)polygon andParentFloor:(Floor *)floor andParentBuilding:(Building *)building andAddress:(NSString *)address andType:(NSString *)type andArea:(NSString *)area {
++(Room *)createWidthName:(NSString *)name andOccupants:(NSString *)occupants andPolygon:(AGSPolygon *)polygon andParentFloor:(Floor *)floor andParentBuilding:(Building *)building andAddress:(NSString *)address andType:(NSString *)type andArea:(NSString *)area {
     
     Room *returnRoom = [[Room alloc] init ];
     returnRoom.name = name;
