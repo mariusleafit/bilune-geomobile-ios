@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
-@interface LegendViewController : UIViewController
-
+@interface LegendViewController : UIViewController<UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *legendTable;
+@property (weak, nonatomic) AppDelegate *appDelegate;
+- (IBAction)returnToMap:(id)sender;
 @end

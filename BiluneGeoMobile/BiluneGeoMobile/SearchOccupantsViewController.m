@@ -10,8 +10,12 @@
 #import "MainMenuViewController.h"
 #import "AppDelegate.h"
 #import "Occupant.h"
+#import "RoomFromOccupantQuery.h"
+#import "MapViewController.h"
 
-@interface SearchOccupantsViewController ()
+@interface SearchOccupantsViewController () {
+    RoomFromOccupantQuery *roomFormOccupantQuery;
+}
 
 @end
 
@@ -144,17 +148,7 @@ NSMutableArray *filteredSections = nil;
     //get cell
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    Occupant *occupant = nil;
-    if(isFiltered) {
-        NSNumber *indexOfFirstOccupantOfSection = [(NSMutableDictionary *)filteredSections[indexPath.section] valueForKey:@"index"];
-        occupant = [filteredOccupants objectAtIndex:([indexOfFirstOccupantOfSection integerValue] + indexPath.row)];
-    } else {
-        if(appDelegate == nil) {
-            appDelegate = GetAppDelegate();
-        }
-        NSNumber *indexOfFirstOccupantOfSection = [(NSMutableDictionary *)initialSections[indexPath.section] valueForKey:@"index"];
-        occupant = [appDelegate.occupants objectAtIndex:([indexOfFirstOccupantOfSection integerValue] + indexPath.row)];
-    }
+    Occupant *occupant = [self getOccupantAtIndexPath:indexPath];
     
     [cell.textLabel setText:occupant.occupantName];
     [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@: %@", occupant.locTypeDesignation, occupant.locCode]];
@@ -169,8 +163,50 @@ NSMutableArray *filteredSections = nil;
     return returnArray;
 }
 
-#pragma mark UITableViewDelegate
+-(Occupant *)getOccupantAtIndexPath:(NSIndexPath *)indexPath {
+    Occupant *returnOccupant = nil;
+    
+    if(isFiltered) {
+        NSNumber *indexOfFirstOccupantOfSection = [(NSMutableDictionary *)filteredSections[indexPath.section] valueForKey:@"index"];
+        returnOccupant = [filteredOccupants objectAtIndex:([indexOfFirstOccupantOfSection integerValue] + indexPath.row)];
+    } else {
+        if(appDelegate == nil) {
+            appDelegate = GetAppDelegate();
+        }
+        NSNumber *indexOfFirstOccupantOfSection = [(NSMutableDictionary *)initialSections[indexPath.section] valueForKey:@"index"];
+        returnOccupant = [appDelegate.occupants objectAtIndex:([indexOfFirstOccupantOfSection integerValue] + indexPath.row)];
+    }
+    
+    return returnOccupant;
+}
 
+#pragma mark UITableViewDelegate
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Occupant *occupant = [self getOccupantAtIndexPath:indexPath];
+    
+    roomFormOccupantQuery = [[RoomFromOccupantQuery alloc] initWidthOccupant:occupant andName:@"RoomFromOccupantQuery" andDelegate:self andBuildingStack:appDelegate.buildingstack];
+    [roomFormOccupantQuery execute];
+}
+
+#pragma mark RoomQueryDelegate
+-(void)roomQueryRoomFound:(Room *)room andQueryName:(NSString *)queryName{
+    
+    if([queryName isEqualToString:@"RoomFromOccupantQuery"]) {
+        if(room) {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+            MapViewController *viewController = (MapViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Map"];
+            [viewController setRoomToZoomTo:room];
+            [self presentViewController:viewController animated:YES completion:nil];
+        } else {
+            NSLog(@"room not found");
+        }
+    }
+}
+
+-(void)roomQueryErrorOccured:(NSString *)queryName {
+    NSLog(@"room error occured");
+    roomFormOccupantQuery = nil;
+}
 
 #pragma mark UISearchBarDelegate
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
@@ -218,9 +254,6 @@ NSMutableArray *filteredSections = nil;
 #pragma mark IBAction
 - (IBAction)returnToMenu:(id)sender {
     //show main menu
-    /*UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
-    MainMenuViewController *viewController = (MainMenuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MainMenu"];
-    [self presentViewController:viewController animated:YES completion:nil];*/
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

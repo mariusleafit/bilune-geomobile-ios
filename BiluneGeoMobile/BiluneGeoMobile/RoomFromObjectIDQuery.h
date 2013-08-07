@@ -12,7 +12,7 @@
 #import "BuildingStack.h"
 
 @interface RoomFromObjectIDQuery : NSObject <AGSQueryTaskDelegate>
--(id)initWidthUrl:(NSURL *)url andName:(NSString *)queryName andDelegate:(id<RoomQueryDelegate>)delegate andObjectID:(int)objectID andBuildingStack:(BuildingStack *)buildingStack;
+-(id)initWidthUrl:(NSURL *)url andName:(NSString *)name andDelegate:(id<RoomQueryDelegate>)delegate andObjectID:(int)objectID andBuildingStack:(BuildingStack *)buildingStack;
 
 -(void)execute;
 @end

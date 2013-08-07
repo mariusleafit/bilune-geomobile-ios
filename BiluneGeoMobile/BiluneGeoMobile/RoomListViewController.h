@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Floor.h"
+#import "MultipleRoomsQueryDelegate.h"
 
-@interface RoomListViewController : UIViewController
+@interface RoomListViewController : UIViewController<MultipleRoomsQueryDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *buildingImage;
 @property (weak, nonatomic) IBOutlet UILabel *buildingAddress;
 @property (weak, nonatomic) IBOutlet UILabel *floorName;

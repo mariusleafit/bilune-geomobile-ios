@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RoomQueryDelegate.h"
 
-@interface SearchOccupantsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface SearchOccupantsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, RoomQueryDelegate>
 - (IBAction)returnToMenu:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *occupantsList;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;

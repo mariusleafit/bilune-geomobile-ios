@@ -517,7 +517,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="50r-SR-Q6V">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="5fY-QX-Yu3" detailTextLabel="k2G-1Z-D10" style="IBUITableViewCellStyleSubtitle" id="ocJ-1q-Frc">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RoomCell" textLabel="5fY-QX-Yu3" detailTextLabel="k2G-1Z-D10" style="IBUITableViewCellStyleSubtitle" id="ocJ-1q-Frc">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -630,9 +630,14 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VW2-SQ-cz3">
                                 <items>
                                     <navigationItem title="Carte" id="2Ah-TE-vFm">
-                                        <barButtonItem key="leftBarButtonItem" title="Menu" id="1Lq-Mz-lwm">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="1Lq-Mz-lwm">
                                             <connections>
                                                 <action selector="returnToMenu:" destination="eDW-V6-DST" id="l4p-aJ-hxn"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Overview" id="QSD-pm-Uee">
+                                            <connections>
+                                                <action selector="showMapOverview:" destination="eDW-V6-DST" id="iHK-fo-0RN"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -645,7 +650,12 @@
                                 <items>
                                     <barButtonItem image="gps32.png" style="plain" id="Etb-oq-VYg" userLabel="Gps Btn"/>
                                     <barButtonItem image="info.png" style="plain" id="qx7-nl-Qqd" userLabel="Settings Menu Btn"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="nAK-aL-nFp"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="bwU-9P-yxR"/>
+                                    <barButtonItem title="Legende" id="e3X-Wq-2fG">
+                                        <connections>
+                                            <action selector="showLegend:" destination="eDW-V6-DST" id="kvV-Px-LEx"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -675,6 +685,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="WcH-Kz-WHs"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="compass" destination="RQ4-8o-Dkc" id="ivs-rc-lBT"/>
                         <outlet property="mapScale" destination="Pgv-84-f7h" id="kDz-6p-Y7x"/>
                         <outlet property="mapView" destination="yJ9-I3-zRY" id="pd0-dN-MOO"/>
                         <segue destination="06f-vv-2hC" kind="push" id="Hv1-2o-zFA"/>
@@ -829,6 +840,72 @@
             </objects>
             <point key="canvasLocation" x="2567" y="-362"/>
         </scene>
+        <!--Room Info View Controller-->
+        <scene sceneID="yr0-WX-71B">
+            <objects>
+                <viewController storyboardIdentifier="RoomInfo" id="zql-bw-u0b" customClass="RoomInfoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rye-3t-ltF">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qCU-1L-m9y">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RoomInfoCell" textLabel="P8C-zF-5Zi" detailTextLabel="rjG-Pu-981" style="IBUITableViewCellStyleSubtitle" id="afe-Sa-uq0">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8C-zF-5Zi">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="47" translatesAutoresizingMaskIntoConstraints="NO" id="rjG-Pu-981">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8R-BY-j6e">
+                                <items>
+                                    <navigationItem title="Title" id="Dw6-cs-uxA">
+                                        <barButtonItem key="leftBarButtonItem" title="Carte" id="kXE-o5-JZZ">
+                                            <connections>
+                                                <action selector="returnToMap:" destination="zql-bw-u0b" id="6lp-mS-7LC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qCU-1L-m9y" firstAttribute="leading" secondItem="rye-3t-ltF" secondAttribute="leading" type="default" id="0zK-Lu-T9y"/>
+                            <constraint firstItem="a8R-BY-j6e" firstAttribute="leading" secondItem="rye-3t-ltF" secondAttribute="leading" type="default" id="H8X-Kj-g2v"/>
+                            <constraint firstItem="a8R-BY-j6e" firstAttribute="trailing" secondItem="rye-3t-ltF" secondAttribute="trailing" type="default" id="JGF-Ar-NlB"/>
+                            <constraint firstItem="qCU-1L-m9y" firstAttribute="top" secondItem="a8R-BY-j6e" secondAttribute="bottom" type="default" id="ct7-vb-yz4"/>
+                            <constraint firstItem="qCU-1L-m9y" firstAttribute="trailing" secondItem="rye-3t-ltF" secondAttribute="trailing" type="default" id="fu1-qP-Sw8"/>
+                            <constraint firstItem="a8R-BY-j6e" firstAttribute="top" secondItem="rye-3t-ltF" secondAttribute="top" type="default" id="jmy-aj-zWj"/>
+                            <constraint firstItem="qCU-1L-m9y" firstAttribute="bottom" secondItem="rye-3t-ltF" secondAttribute="bottom" type="default" id="ypv-Gj-cFR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="infoTable" destination="qCU-1L-m9y" id="UHe-5u-WYt"/>
+                        <outlet property="titleBar" destination="Dw6-cs-uxA" id="Rhz-p2-W41"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bqE-q2-Ud3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1445" y="-1257"/>
+        </scene>
         <!--Change Floor View Controller - Etages-->
         <scene sceneID="xg8-1M-wqh">
             <objects>
@@ -938,18 +1015,63 @@
         <!--Legend View Controller - Legende-->
         <scene sceneID="tsT-TY-LZi">
             <objects>
-                <viewController id="mAX-ZP-HSv" customClass="LegendViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Legend" id="mAX-ZP-HSv" customClass="LegendViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="akY-Nc-bk2">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="V3c-KV-7cn">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="62" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="V3c-KV-7cn">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="legendEntryCell" id="Udf-bc-6dQ" customClass="LegendListCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="62"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qtz-T0-oim">
+                                                    <color key="backgroundColor" red="0.177946928" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="7Pk-g9-EnY"/>
+                                                        <constraint firstAttribute="width" constant="33" id="LtB-ez-5Kt"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4l-Ak-IXj">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="239" id="uvn-Nf-IU2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="s4l-Ak-IXj" firstAttribute="centerY" secondItem="Qtz-T0-oim" secondAttribute="centerY" type="default" id="Mql-km-TiK"/>
+                                            <constraint firstItem="s4l-Ak-IXj" firstAttribute="leading" secondItem="Udf-bc-6dQ" secondAttribute="leading" constant="71" id="c8X-WI-1dD"/>
+                                            <constraint firstItem="s4l-Ak-IXj" firstAttribute="top" secondItem="Udf-bc-6dQ" secondAttribute="top" constant="20" type="default" id="niX-B8-GWs"/>
+                                            <constraint firstItem="Qtz-T0-oim" firstAttribute="leading" secondItem="Udf-bc-6dQ" secondAttribute="leading" constant="20" type="default" id="pdj-Mu-Lck"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="colorLabel" destination="Qtz-T0-oim" id="2IY-DC-dVc"/>
+                                            <outlet property="titleLabel" destination="s4l-Ak-IXj" id="QxJ-Gd-owp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySj-DH-faP">
                                 <items>
                                     <navigationItem title="Legende" id="hUD-tt-cls">
-                                        <barButtonItem key="leftBarButtonItem" title="Carte" id="DlI-Fz-sD4"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Carte" id="DlI-Fz-sD4">
+                                            <connections>
+                                                <action selector="returnToMap:" destination="mAX-ZP-HSv" id="hF1-2j-tXH"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -968,6 +1090,9 @@
                     <navigationItem key="navigationItem" title="Legende" id="8bO-w5-hBY">
                         <barButtonItem key="leftBarButtonItem" title="Carte" id="FVh-wd-yeT"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="legendTable" destination="V3c-KV-7cn" id="461-W0-XaU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cda-0j-w9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -983,6 +1108,12 @@
         <image name="northArrow.png" width="207" height="300"/>
     </resources>
     <classes>
+        <class className="AGSMapView" superclassName="AGSMapViewBase">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AGSMapView.h"/>
+        </class>
+        <class className="AGSMapViewBase" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AGSMapViewBase.h"/>
+        </class>
         <class className="BuildingListCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingListCell.h"/>
             <relationships>
@@ -1033,8 +1164,19 @@
                 <relationship kind="outlet" name="retryButton" candidateClass="UIButton"/>
             </relationships>
         </class>
+        <class className="LegendListCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LegendListCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="colorLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="LegendViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LegendViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="returnToMap:"/>
+                <relationship kind="outlet" name="legendTable" candidateClass="UITableView"/>
+            </relationships>
         </class>
         <class className="MainMenuViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
@@ -1048,12 +1190,23 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
                 <relationship kind="action" name="returnToMenu:"/>
+                <relationship kind="action" name="showLegend:"/>
+                <relationship kind="action" name="showMapOverview:"/>
+                <relationship kind="outlet" name="compass" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="mapScale" candidateClass="ScaleBarView"/>
                 <relationship kind="outlet" name="mapView" candidateClass="AGSMapView"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RoomInfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomInfoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="returnToMap:"/>
+                <relationship kind="outlet" name="infoTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="titleBar" candidateClass="UINavigationItem"/>
+            </relationships>
         </class>
         <class className="RoomListViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomListViewController.h"/>

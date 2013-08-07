@@ -13,6 +13,7 @@
 #import "MainMenuViewController.h"
 #import "Constants.h"
 #import "DownloadQueue.h"
+#import "LegendEntry.h"
 
 
 @interface InitViewController ()
@@ -119,7 +120,12 @@ bool errorOccured = false;
                 delegate.buildingstack = [BuildingStack createWidthData:buildingsDict];
             }
             
-            //!!!Legend!!!
+            //parse Legend
+            delegate.legendEntries = [NSMutableArray arrayWithCapacity:30];
+            NSDictionary *legendDict = (NSDictionary *)[data valueForKey:@"Legend"];
+            for (NSDictionary *legendEntryDict in legendDict) {
+                [delegate.legendEntries addObject:[[LegendEntry alloc] initWidthDictionary:legendEntryDict]];
+            }
             
             
             downloadedBuildings = true;

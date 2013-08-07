@@ -18,6 +18,7 @@
 @interface MapViewController () {
     RoomFromObjectIDQuery *getClickedRoomQuery;
     Room *clickedRoom;
+    Room *roomToZoomTo;
 }
 @property (weak) AppDelegate *appDelegate;
 @property (strong, nonatomic) OverviewLayer *overviewLayer;
@@ -71,6 +72,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)setRoomToZoomTo:(Room *)room {
+    roomToZoomTo = room;
+}
+
+#pragma mark memory management
+-(void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion {
+    [self.mapView removeFromSuperview];
+    [super dismissViewControllerAnimated:flag completion:completion];
+}
+
 #pragma mark MapView preparation
 -(void)mapViewDidLoad:(AGSMapView *)mapView {
     
@@ -86,6 +97,42 @@
     //set initial Extent
     [self.mapView zoomToEnvelope:[Constants INITIAL_EXTENT] animated:NO];
     
+    //init roomMarkingLayer
+    self.roomMarkingLayer = [[AGSGraphicsLayer alloc] initWithSpatialReference:[Constants BILUNE_SPATIALREFERENCE]];
+    
+    
+    //if roomToZoomTo was set
+    if(roomToZoomTo) {
+        //project polygon
+        AGSPoint *projectedPolygon = (AGSPoint *)[[AGSGeometryEngine defaultGeometryEngine] projectGeometry:roomToZoomTo.polygon toSpatialReference:[Constants BASEMAP_SPATIALREFERENCE]];
+
+        //set initial Extent
+        [self.mapView zoomToEnvelope:projectedPolygon.envelope animated:NO];
+        
+        //change visible floors
+        [roomToZoomTo.parentBuilding changeVisibleFloorsWidthFloorCode:roomToZoomTo.parentFloor.floorCode];
+        //add building to mapView
+        [self.mapView addMapLayer:[[AGSFeatureLayer alloc] initWithURL:[roomToZoomTo.parentFloor getFloorURL] mode:AGSFeatureLayerModeSnapshot] withName:[ [roomToZoomTo.parentFloor getFloorURL] absoluteString]];
+        
+                
+        //mark room
+        AGSSimpleFillSymbol *roomMarkerSymbol = [[AGSSimpleFillSymbol alloc] initWithColor:[UIColor colorWithRed:(170/255.0) green:(170/255.0) blue:(170/255.0) alpha:0.5] outlineColor:nil];
+        AGSGraphic *roomMarkerGraphic = [AGSGraphic graphicWithGeometry:projectedPolygon symbol:roomMarkerSymbol attributes:nil infoTemplateDelegate:nil];
+        [self.roomMarkingLayer removeAllGraphics];
+        [self.roomMarkingLayer addGraphic:roomMarkerGraphic];
+        
+        //add pin
+        AGSPictureMarkerSymbol *pinSymbol = [[AGSPictureMarkerSymbol alloc] initWithImage:[UIImage imageNamed:@"pin32.png"]];
+        AGSGraphic *pinGraphic = [AGSGraphic graphicWithGeometry:projectedPolygon.envelope.center symbol:pinSymbol attributes:nil infoTemplateDelegate:nil];
+        [self.roomMarkingLayer addGraphic:pinGraphic];
+        
+        //show callout
+        self.mapView.callout.title = roomToZoomTo.name;
+        self.mapView.callout.detail = @"Cliquez pour plus de détails..";
+        self.mapView.callout.delegate = self;
+        [self.mapView.callout showCalloutAt:projectedPolygon.envelope.center pixelOffset:CGPointMake(0.0f, 0.0f) animated:NO];
+    }
+    
     //init OverviewLayer
     AGSGraphicsLayer *overviewGraphicsLayer = [[AGSGraphicsLayer alloc] initWithSpatialReference:[Constants BASEMAP_SPATIALREFERENCE]];
     [self.mapView addMapLayer:overviewGraphicsLayer withName:@"overviewLayer"];
@@ -94,24 +141,32 @@
     //init buildings
     [self.appDelegate.buildingstack resetFloorVisibility];
     for (Building *building in [self.appDelegate.buildingstack getBuildings]) {
-        for(Floor *floor in [building getVisibleFloorsSortedAsc:false]) {
-            [self.mapView addMapLayer:[[AGSFeatureLayer alloc] initWithURL:[floor getFloorURL] mode:AGSFeatureLayerModeSnapshot] withName:[ [floor getFloorURL] absoluteString]];
+        if(building != roomToZoomTo.parentBuilding) {
+            for(Floor *floor in [building getVisibleFloorsSortedAsc:false]) {
+                [self.mapView addMapLayer:[[AGSFeatureLayer alloc] initWithURL:[floor getFloorURL] mode:AGSFeatureLayerModeSnapshot] withName:[ [floor getFloorURL] absoluteString]];
+            }
         }
     }
     
-    [self setVisibilityOfBuildings:NO];
-    [self.overviewLayer setVisibility:YES];
+    if(roomToZoomTo) {
+        [self setVisibilityOfBuildings:YES];
+        [self.overviewLayer setVisibility:NO];
+    } else {
+        [self setVisibilityOfBuildings:NO];
+        [self.overviewLayer setVisibility:YES];
+    }
     
-    //init roomMarkingLayer
-    self.roomMarkingLayer = [[AGSGraphicsLayer alloc] initWithSpatialReference:[Constants BILUNE_SPATIALREFERENCE]];
     [self.mapView addMapLayer:self.roomMarkingLayer withName:@"roomMarkingLayer"];
     
     self.mapView.allowRotationByPinching = true;
 }
 
+
 #pragma mark ZoomManagement
 -(void) respondToPan: (NSNotification *)notification {
     NSLog(@"ausschnitt geändert");
+    
+    NSLog([NSString stringWithFormat:@"%f",self.mapView.rotationAngle]);
 }
 
 -(void) respondToZoom: (NSNotification *)notification {
@@ -188,6 +243,7 @@
         if(getClickedRoomQuery == nil) {
             //reset clicked room
             clickedRoom = nil;
+            roomToZoomTo = nil;
             
             __block int objectID;
             __block NSString *floorUrlFull = nil;
@@ -209,14 +265,10 @@
             //query room
             if(floorUrlFull) {
                 //mark Room on map
-                AGSSimpleFillSymbol *roomMarkerSymbol = [[AGSSimpleFillSymbol alloc] initWithColor:[UIColor colorWithRed:170 green:170 blue:170 alpha:0.5] outlineColor:nil];
+                AGSSimpleFillSymbol *roomMarkerSymbol = [[AGSSimpleFillSymbol alloc] initWithColor:[UIColor colorWithRed:(170/255.0) green:(170/255.0) blue:(170/255.0) alpha:0.5] outlineColor:nil];
                 AGSGraphic *roomMarkerGraphic = [AGSGraphic graphicWithGeometry:roomPolygon symbol:roomMarkerSymbol attributes:nil infoTemplateDelegate:nil];
                 [self.roomMarkingLayer removeAllGraphics];
                 [self.roomMarkingLayer addGraphic:roomMarkerGraphic];
-                //add pin
-                /*AGSPictureMarkerSymbol *pinSymbol = [[AGSPictureMarkerSymbol alloc] initWithImage:[UIImage imageNamed:@"pin32.png"]];
-                AGSGraphic *pinGraphic = [AGSGraphic graphicWithGeometry:mappoint symbol:pinSymbol attributes:nil infoTemplateDelegate:nil];
-                [self.roomMarkingLayer addGraphic:pinGraphic];*/
 
                 //display callout (gets updated when request is finished
                 self.mapView.callout.title = @"...";
@@ -245,10 +297,6 @@
         [viewController setBuilding:clickedBuilding];
         [viewController setMapViewController:self];
         [self presentViewController:viewController animated:YES completion:nil];
-        
-        
-        
-        //[self presentModalViewController:settingsMenuController animated:YES];
     }
 }
 
@@ -284,6 +332,12 @@
         RoomInfoViewController *viewController = (RoomInfoViewController *)[storyboard instantiateViewControllerWithIdentifier:@"RoomInfo"];
         [viewController setRoom:clickedRoom];
         [self presentViewController:viewController animated:YES completion:nil];
+    } else if(roomToZoomTo) {
+        //display RoominfoView
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+        RoomInfoViewController *viewController = (RoomInfoViewController *)[storyboard instantiateViewControllerWithIdentifier:@"RoomInfo"];
+        [viewController setRoom:roomToZoomTo];
+        [self presentViewController:viewController animated:YES completion:nil];
 
     }
 }
@@ -295,10 +349,19 @@
 
 #pragma mark IBAction
 - (IBAction)returnToMenu:(id)sender {
-    //show SearchOccupants
-    /*UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
-    UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MainMenu"];
-    [self presentViewController:viewController animated:YES completion:nil];*/
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)showMapOverview:(id)sender {
+    [self.mapView zoomToEnvelope:[Constants INITIAL_EXTENT] animated:YES];
+    [roomMarkingLayer removeAllGraphics];
+    //self.mapView.callout.hidden = true;
+}
+
+- (IBAction)showLegend:(id)sender {
+    //showLegend
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+    UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Legend"];
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 @end

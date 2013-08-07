@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2919AEB917B2476D00B12DC3 /* LegendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2919AEB817B2476D00B12DC3 /* LegendListCell.m */; };
 		2930D43A1785A3E500A4DCD2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2930D4391785A3E500A4DCD2 /* UIKit.framework */; };
 		2930D43C1785A3E500A4DCD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2930D43B1785A3E500A4DCD2 /* Foundation.framework */; };
 		2930D43E1785A3E500A4DCD2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2930D43D1785A3E500A4DCD2 /* CoreGraphics.framework */; };
@@ -71,6 +72,8 @@
 		29A15A1C179EA88D006A6F46 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A15A1B179EA88D006A6F46 /* OpenGLES.framework */; };
 		29A15A1E179EA896006A6F46 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A15A1D179EA896006A6F46 /* Security.framework */; };
 		29A15A20179EAB1A006A6F46 /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 29A15A1F179EAB1A006A6F46 /* ArcGIS.bundle */; };
+		29A4FD7617B0E29F00BF9DA2 /* RoomFromOccupantQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A4FD7517B0E29F00BF9DA2 /* RoomFromOccupantQuery.m */; };
+		29A4FD7C17B1127300BF9DA2 /* RoomsFromFloorQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A4FD7B17B1127300BF9DA2 /* RoomsFromFloorQuery.m */; };
 		29B63D5E1785B6EC001AEE4B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D5D1785B6EC001AEE4B /* MapViewController.m */; };
 		29B63D641785BB97001AEE4B /* BuildingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D631785BB95001AEE4B /* BuildingListViewController.m */; };
 		29B63D671785C2B2001AEE4B /* FloorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D661785C2B2001AEE4B /* FloorListViewController.m */; };
@@ -94,11 +97,12 @@
 		29EABBA21786BF870043BD86 /* Floor.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EABBA11786BF870043BD86 /* Floor.m */; };
 		29EABBA61786BFAD0043BD86 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EABBA51786BFAC0043BD86 /* Room.m */; };
 		29EABBA91786BFC10043BD86 /* Occupant.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EABBA81786BFC10043BD86 /* Occupant.m */; };
-		29EABBAC1786BFD10043BD86 /* Legend.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EABBAB1786BFD10043BD86 /* Legend.m */; };
 		29EABBAF1786BFDC0043BD86 /* LegendEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EABBAE1786BFDC0043BD86 /* LegendEntry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2919AEB717B2476D00B12DC3 /* LegendListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegendListCell.h; sourceTree = "<group>"; };
+		2919AEB817B2476D00B12DC3 /* LegendListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegendListCell.m; sourceTree = "<group>"; };
 		2930D4361785A3E500A4DCD2 /* BiluneGeoMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiluneGeoMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2930D4391785A3E500A4DCD2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2930D43B1785A3E500A4DCD2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -179,6 +183,11 @@
 		29A15A1B179EA88D006A6F46 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		29A15A1D179EA896006A6F46 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		29A15A1F179EAB1A006A6F46 /* ArcGIS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ArcGIS.bundle; path = ../../../../../../../../Library/SDKs/ArcGIS/iOS/ArcGIS.framework/Versions/Current/Resources/ArcGIS.bundle; sourceTree = "<group>"; };
+		29A4FD7417B0E29F00BF9DA2 /* RoomFromOccupantQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomFromOccupantQuery.h; sourceTree = "<group>"; };
+		29A4FD7517B0E29F00BF9DA2 /* RoomFromOccupantQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomFromOccupantQuery.m; sourceTree = "<group>"; };
+		29A4FD7A17B1127300BF9DA2 /* RoomsFromFloorQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsFromFloorQuery.h; sourceTree = "<group>"; };
+		29A4FD7B17B1127300BF9DA2 /* RoomsFromFloorQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsFromFloorQuery.m; sourceTree = "<group>"; };
+		29A4FD7D17B1155000BF9DA2 /* MultipleRoomsQueryDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultipleRoomsQueryDelegate.h; sourceTree = "<group>"; };
 		29B63D5A1785B2B9001AEE4B /* logo_unine_bleu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_unine_bleu.png; sourceTree = "<group>"; };
 		29B63D5B1785B2CA001AEE4B /* bilune_page_background01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bilune_page_background01.jpg; sourceTree = "<group>"; };
 		29B63D5C1785B6EB001AEE4B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -219,8 +228,6 @@
 		29EABBA51786BFAC0043BD86 /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
 		29EABBA71786BFC10043BD86 /* Occupant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Occupant.h; sourceTree = "<group>"; };
 		29EABBA81786BFC10043BD86 /* Occupant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Occupant.m; sourceTree = "<group>"; };
-		29EABBAA1786BFD10043BD86 /* Legend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Legend.h; sourceTree = "<group>"; };
-		29EABBAB1786BFD10043BD86 /* Legend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Legend.m; sourceTree = "<group>"; };
 		29EABBAD1786BFDC0043BD86 /* LegendEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegendEntry.h; sourceTree = "<group>"; };
 		29EABBAE1786BFDC0043BD86 /* LegendEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegendEntry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -305,6 +312,8 @@
 				2991A723179960D5007F6E19 /* BuildingListCell.m */,
 				299D301717A93280004A4C05 /* ChangeFloorListCell.h */,
 				299D301817A93280004A4C05 /* ChangeFloorListCell.m */,
+				2919AEB717B2476D00B12DC3 /* LegendListCell.h */,
+				2919AEB817B2476D00B12DC3 /* LegendListCell.m */,
 			);
 			name = customcells;
 			sourceTree = "<group>";
@@ -315,6 +324,11 @@
 				29941DD017AF9AFB00386CE7 /* RoomFromObjectIDQuery.h */,
 				29941DD117AF9AFB00386CE7 /* RoomFromObjectIDQuery.m */,
 				29941DD317AF9D0500386CE7 /* RoomQueryDelegate.h */,
+				29A4FD7417B0E29F00BF9DA2 /* RoomFromOccupantQuery.h */,
+				29A4FD7517B0E29F00BF9DA2 /* RoomFromOccupantQuery.m */,
+				29A4FD7A17B1127300BF9DA2 /* RoomsFromFloorQuery.h */,
+				29A4FD7B17B1127300BF9DA2 /* RoomsFromFloorQuery.m */,
+				29A4FD7D17B1155000BF9DA2 /* MultipleRoomsQueryDelegate.h */,
 			);
 			name = queries;
 			sourceTree = "<group>";
@@ -530,8 +544,6 @@
 		29EABB9C1786BF4F0043BD86 /* legend */ = {
 			isa = PBXGroup;
 			children = (
-				29EABBAA1786BFD10043BD86 /* Legend.h */,
-				29EABBAB1786BFD10043BD86 /* Legend.m */,
 				29EABBAD1786BFDC0043BD86 /* LegendEntry.h */,
 				29EABBAE1786BFDC0043BD86 /* LegendEntry.m */,
 			);
@@ -662,7 +674,6 @@
 				29EABBA21786BF870043BD86 /* Floor.m in Sources */,
 				29EABBA61786BFAD0043BD86 /* Room.m in Sources */,
 				29EABBA91786BFC10043BD86 /* Occupant.m in Sources */,
-				29EABBAC1786BFD10043BD86 /* Legend.m in Sources */,
 				29EABBAF1786BFDC0043BD86 /* LegendEntry.m in Sources */,
 				29DAE97D178C35D50027D47C /* InitViewController.m in Sources */,
 				29DAE985178C3DAB0027D47C /* Downloader.m in Sources */,
@@ -676,6 +687,9 @@
 				29941DCE17AF7F7400386CE7 /* RoomHelper.m in Sources */,
 				29941DD217AF9AFB00386CE7 /* RoomFromObjectIDQuery.m in Sources */,
 				29941DD817AFE29D00386CE7 /* RoomInfoViewController.m in Sources */,
+				29A4FD7617B0E29F00BF9DA2 /* RoomFromOccupantQuery.m in Sources */,
+				29A4FD7C17B1127300BF9DA2 /* RoomsFromFloorQuery.m in Sources */,
+				2919AEB917B2476D00B12DC3 /* LegendListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,6 +774,8 @@
 		2930D45A1785A3E500A4DCD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: ueli Schrag (KDD3557E9N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ueli Schrag (KDD3557E9N)";
 				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BiluneGeoMobile/BiluneGeoMobile-Prefix.pch";
@@ -771,6 +787,8 @@
 					ArcGIS,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -778,6 +796,8 @@
 		2930D45B1785A3E500A4DCD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: ueli Schrag (KDD3557E9N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ueli Schrag (KDD3557E9N)";
 				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BiluneGeoMobile/BiluneGeoMobile-Prefix.pch";
@@ -789,6 +809,8 @@
 					ArcGIS,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

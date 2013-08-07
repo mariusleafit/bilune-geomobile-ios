@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSString *locCode;
 @property (nonatomic, strong) NSString *locTypeDesignation;
 @property (nonatomic, strong) NSString *occupantName;
+@property (nonatomic, strong) NSURL *floorUrlFull;
+@property (nonatomic, strong) NSURL *buildingUrlFull;
 
 +(id)occupantWidthEndpoint:(NSString *)pEndpoint andFloorID:(NSNumber *)pFloorID andLocCode:(NSString *)pLocCode andLocTypeDesignation:(NSString *)pLocTypeDesignation andOccupantsName:(NSString *)pOccupantsName;
 

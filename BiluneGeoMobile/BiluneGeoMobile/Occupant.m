@@ -7,6 +7,7 @@
 //
 
 #import "Occupant.h"
+#import "Constants.h"
 
 @implementation Occupant
 
@@ -15,6 +16,8 @@
 @synthesize locCode;
 @synthesize locTypeDesignation;
 @synthesize occupantName;
+@synthesize floorUrlFull;
+@synthesize buildingUrlFull;
 
 +(id)occupantWidthEndpoint:(NSString *)pEndpoint andFloorID:(NSNumber *)pFloorID andLocCode:(NSString *)pLocCode andLocTypeDesignation:(NSString *)pLocTypeDesignation andOccupantsName:(NSString *)pOccupantsName {
     Occupant *returnOccupant = [[Occupant alloc] init];
@@ -23,6 +26,11 @@
     returnOccupant.locCode = pLocCode;
     returnOccupant.locTypeDesignation = pLocTypeDesignation;
     returnOccupant.occupantName = pOccupantsName;
+    
+    NSString *cuttedEndpoint = [pEndpoint stringByReplacingOccurrencesOfString:@"ebilune/" withString:@""];
+    
+    returnOccupant.floorUrlFull = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@/MapServer/%@",[Constants BILUNE_MAIN_URL],cuttedEndpoint,pFloorID]];
+    returnOccupant.buildingUrlFull = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@/MapServer",[Constants BILUNE_MAIN_URL],cuttedEndpoint]];
     return returnOccupant;
 }
 

@@ -31,7 +31,7 @@
     returnRoom.parentBuilding = building;
     returnRoom.address = address;
     returnRoom.type = type;
-    returnRoom.area = area;
+    returnRoom.area = [NSString stringWithFormat:@"%0.1f",[area floatValue]];
     
     return returnRoom;
 }

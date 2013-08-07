@@ -16,7 +16,12 @@
     int scaleBarValueInMeters;
 }
 @property (weak, nonatomic) IBOutlet AGSMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIImageView *compass;
 - (IBAction)returnToMenu:(id)sender;
+- (IBAction)showMapOverview:(id)sender;
+- (IBAction)showLegend:(id)sender;
 -(void) updateVisibleFloorsFromBuilding:(Building *)building;
 @property (weak, nonatomic) IBOutlet ScaleBarView *mapScale;
+///set before display of view --> map gets zoomed to this room and room gets highlighted
+-(void)setRoomToZoomTo:(Room *)room;
 @end

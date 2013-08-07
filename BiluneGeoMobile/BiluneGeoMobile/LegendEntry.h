@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface LegendEntry : NSObject
-
+-(id)initWidthColor:(UIColor *)color title:(NSString *)title;
+-(id)initWidthDictionary:(NSDictionary *)dict;
+@property (strong, nonatomic) UIColor *color;
+@property (strong, nonatomic) NSString *title;
 @end
