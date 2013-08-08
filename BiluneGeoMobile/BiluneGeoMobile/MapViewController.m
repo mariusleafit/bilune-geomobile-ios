@@ -248,7 +248,7 @@
     }
     
     //show visible Floors
-    for(Floor *floor in [building getVisibleFloorsSortedAsc:false]) {
+    for(Floor *floor in [building getVisibleFloorsSortedAsc:YES]) {
         [self.mapView addMapLayer:[[AGSFeatureLayer alloc] initWithURL:[floor getFloorURL] mode:AGSFeatureLayerModeSnapshot] withName:[ [floor getFloorURL] absoluteString]];
     }
 }

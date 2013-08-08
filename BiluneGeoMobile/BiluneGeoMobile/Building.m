@@ -106,26 +106,7 @@
 }
 
 -(NSArray *)getFloorsSortedAsc:(BOOL)asc {
-    NSArray *sortedArray = [self.floors sortedArrayUsingComparator:^(Floor *a, Floor *b) {
-        if(asc) {
-            if(a.floorID > b.floorID) {
-                return (NSComparisonResult)NSOrderedAscending;
-            } else if(a.floorID < b.floorID) {
-                return (NSComparisonResult)NSOrderedDescending;
-            } else {
-                return (NSComparisonResult)NSOrderedSame;
-            }
-        } else {
-            if(a.floorID < b.floorID) {
-                return (NSComparisonResult)NSOrderedAscending;
-            } else if(a.floorID > b.floorID) {
-                return (NSComparisonResult)NSOrderedDescending;
-            } else {
-                return (NSComparisonResult)NSOrderedSame;
-            }
-        }
-    }];
-    return sortedArray;
+    return [self sortFloorArray:self.floors asc:asc];
 }
 
 -(NSArray *)getVisibleFloorsSortedAsc:(BOOL)asc {
@@ -139,24 +120,29 @@
         }
     }
     
-    NSArray *sortedArray = [returnFloors sortedArrayUsingComparator:^(Floor *a, Floor *b) {
-        if(asc) {
-            if(a.floorID > b.floorID) {
-                return (NSComparisonResult)NSOrderedAscending;
-            } else if(a.floorID < b.floorID) {
+    return [self sortFloorArray:returnFloors asc:asc];
+}
+
+-(NSArray *)sortFloorArray:(NSArray *)unsortedArray asc:(BOOL)asc {
+    NSArray *sortedArray = [unsortedArray sortedArrayUsingComparator:^(Floor *a, Floor *b) {
+        if(!asc) {
+            if([a.floorID intValue] > [b.floorID intValue]) {
                 return (NSComparisonResult)NSOrderedDescending;
+            } else if([a.floorID intValue] < [b.floorID intValue]) {
+                return (NSComparisonResult)NSOrderedAscending;
             } else {
                 return (NSComparisonResult)NSOrderedSame;
             }
         } else {
-            if(a.floorID < b.floorID) {
-                return (NSComparisonResult)NSOrderedAscending;
-            } else if(a.floorID > b.floorID) {
+            if([a.floorID intValue] < [b.floorID intValue]) {
                 return (NSComparisonResult)NSOrderedDescending;
+            } else if([a.floorID intValue] > [b.floorID intValue]) {
+                return (NSComparisonResult)NSOrderedAscending;
             } else {
                 return (NSComparisonResult)NSOrderedSame;
             }
         }
+
     }];
     return sortedArray;
 }

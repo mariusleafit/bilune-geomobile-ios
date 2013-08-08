@@ -60,7 +60,7 @@
     }
     
     //get Floor
-    Floor *floor = [[building getFloorsSortedAsc:YES] objectAtIndex:indexPath.row];
+    Floor *floor = [[building getFloorsSortedAsc:NO] objectAtIndex:indexPath.row];
     if(floor) {
         cell.floorName.text = floor.floorName;
         [cell.visibilitySwitch setOn:floor.isVisible];
@@ -78,11 +78,6 @@
 
 #pragma mark IBAction
 - (IBAction)returnToMap:(id)sender {
-    //show SearchOccupants
-    /*UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
-    UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Map"];
-    [self presentViewController:viewController animated:YES completion:nil];*/
-    
     //is at least one floor visible?
     BOOL isVisible = false;
     for(Floor *floor in [building getFloors]) {
