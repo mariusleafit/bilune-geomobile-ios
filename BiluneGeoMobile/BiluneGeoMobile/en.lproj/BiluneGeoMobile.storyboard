@@ -582,51 +582,52 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yJ9-I3-zRY" customClass="AGSMapView">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" priority="1" constant="459" type="user" id="4yg-y6-XyC"/>
+                                    <constraint firstAttribute="height" priority="242" constant="459" type="user" id="4yg-y6-XyC"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgv-84-f7h" customClass="ScaleBarView">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="06Q-hh-ahf"/>
-                                    <constraint firstAttribute="width" constant="160" id="Q0o-mT-bbT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E9S-ov-Tow" userLabel="Info View">
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Touchez la carte pour + d'infos" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="UcF-kZ-IcQ" userLabel="Info Label">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Localisation des bâtiments  de l'Université de Neuchâtel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="10" preferredMaxLayoutWidth="239" translatesAutoresizingMaskIntoConstraints="NO" id="UcF-kZ-IcQ" userLabel="Info Label">
                                         <accessibility key="accessibilityConfiguration" hint="tap the map for further infos" label="tap the map for further infos">
                                             <accessibilityTraits key="traits" none="YES"/>
                                         </accessibility>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="CGX-0x-N5u"/>
                                             <constraint firstAttribute="width" constant="239" id="rHU-Fx-D1S"/>
+                                            <constraint firstAttribute="height" constant="43" id="ukC-eT-SPl"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="redraw" image="northArrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="RQ4-8o-Dkc" userLabel="northArrow">
+                                    <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="redraw" image="compass.png" translatesAutoresizingMaskIntoConstraints="NO" id="RQ4-8o-Dkc" userLabel="northArrow">
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
                                         </accessibility>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="rAF-2y-Rwa"/>
+                                            <constraint firstAttribute="height" constant="41" id="BLZ-ga-cOm"/>
+                                            <constraint firstAttribute="width" constant="41" id="lI4-sf-ytY"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.23999999999999999" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="UcF-kZ-IcQ" firstAttribute="bottom" secondItem="RQ4-8o-Dkc" secondAttribute="bottom" type="default" id="8Nz-Nt-8fi"/>
-                                    <constraint firstItem="RQ4-8o-Dkc" firstAttribute="top" secondItem="UcF-kZ-IcQ" secondAttribute="top" type="default" id="Jfw-Xa-nfI"/>
-                                    <constraint firstItem="UcF-kZ-IcQ" firstAttribute="leading" secondItem="E9S-ov-Tow" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Zih-2f-qB5"/>
-                                    <constraint firstItem="UcF-kZ-IcQ" firstAttribute="top" secondItem="E9S-ov-Tow" secondAttribute="top" constant="8" id="oEj-2m-rzT"/>
-                                    <constraint firstAttribute="trailing" secondItem="RQ4-8o-Dkc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="vsS-uy-yJK"/>
+                                    <constraint firstItem="RQ4-8o-Dkc" firstAttribute="top" secondItem="E9S-ov-Tow" secondAttribute="top" constant="3" id="76U-Js-6Gc"/>
+                                    <constraint firstItem="UcF-kZ-IcQ" firstAttribute="centerX" secondItem="E9S-ov-Tow" secondAttribute="centerX" type="user" id="sRT-2O-9x8"/>
+                                    <constraint firstAttribute="trailing" secondItem="RQ4-8o-Dkc" secondAttribute="trailing" constant="6" id="u2N-EN-wYg"/>
+                                    <constraint firstItem="UcF-kZ-IcQ" firstAttribute="top" secondItem="E9S-ov-Tow" secondAttribute="top" type="default" id="za2-7D-1Bw"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgv-84-f7h" customClass="ScaleBarView">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="06Q-hh-ahf"/>
+                                    <constraint firstAttribute="width" constant="160" type="user" id="bdz-dH-Yli"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VW2-SQ-cz3">
                                 <items>
                                     <navigationItem title="Carte" id="2Ah-TE-vFm">
@@ -648,8 +649,21 @@
                                     <constraint firstAttribute="height" constant="44" type="user" id="rsf-uf-Vkk"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem image="gps32.png" style="plain" id="Etb-oq-VYg" userLabel="Gps Btn"/>
-                                    <barButtonItem image="info.png" style="plain" id="qx7-nl-Qqd" userLabel="Settings Menu Btn"/>
+                                    <barButtonItem image="gps32.png" style="plain" id="Etb-oq-VYg" userLabel="Gps Btn">
+                                        <connections>
+                                            <action selector="toggleGPS:" destination="eDW-V6-DST" id="8GG-bB-k5n"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="info.png" style="plain" id="qx7-nl-Qqd" userLabel="Settings Menu Btn">
+                                        <connections>
+                                            <action selector="showInfo:" destination="eDW-V6-DST" id="jcy-A9-AIX"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="globe.png" style="plain" id="7qF-lO-lgt" userLabel="Settings Menu Btn">
+                                        <connections>
+                                            <action selector="toggleSatelite:" destination="eDW-V6-DST" id="tsQ-6T-Wur"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="bwU-9P-yxR"/>
                                     <barButtonItem title="Legende" id="e3X-Wq-2fG">
                                         <connections>
@@ -662,23 +676,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yJ9-I3-zRY" firstAttribute="leading" secondItem="rou-u5-8W1" secondAttribute="leading" type="default" id="3Az-oc-c4V"/>
-                            <constraint firstAttribute="bottom" secondItem="E9S-ov-Tow" secondAttribute="bottom" priority="1" constant="459" type="user" id="65g-Gs-l6L"/>
-                            <constraint firstItem="E9S-ov-Tow" firstAttribute="centerY" secondItem="rou-u5-8W1" secondAttribute="centerY" priority="1" type="user" id="90g-C4-otm"/>
-                            <constraint firstItem="Pgv-84-f7h" firstAttribute="bottom" secondItem="2j6-PK-6Gb" secondAttribute="top" type="default" id="Hrk-e2-3GL"/>
-                            <constraint firstItem="E9S-ov-Tow" firstAttribute="leading" secondItem="rou-u5-8W1" secondAttribute="leading" type="default" id="Lrl-4D-dIJ"/>
-                            <constraint firstAttribute="bottom" secondItem="yJ9-I3-zRY" secondAttribute="bottom" constant="45" type="user" id="O48-Ku-1qH"/>
+                            <constraint firstItem="Pgv-84-f7h" firstAttribute="bottom" secondItem="2j6-PK-6Gb" secondAttribute="top" type="default" id="4S7-uJ-IAT"/>
+                            <constraint firstItem="E9S-ov-Tow" firstAttribute="leading" secondItem="rou-u5-8W1" secondAttribute="leading" type="default" id="9FP-6e-KRf"/>
+                            <constraint firstItem="yJ9-I3-zRY" firstAttribute="trailing" secondItem="rou-u5-8W1" secondAttribute="trailing" type="user" id="AVv-ei-SdB"/>
+                            <constraint firstItem="E9S-ov-Tow" firstAttribute="top" secondItem="yJ9-I3-zRY" secondAttribute="top" type="user" id="Fkk-Uo-yBb"/>
                             <constraint firstItem="2j6-PK-6Gb" firstAttribute="leading" secondItem="rou-u5-8W1" secondAttribute="leading" type="default" id="O8Y-8l-SoZ"/>
-                            <constraint firstItem="E9S-ov-Tow" firstAttribute="top" secondItem="VW2-SQ-cz3" secondAttribute="bottom" type="default" id="OJe-ab-kFa"/>
-                            <constraint firstItem="Pgv-84-f7h" firstAttribute="trailing" secondItem="rou-u5-8W1" secondAttribute="trailing" type="default" id="SM8-t9-noE"/>
                             <constraint firstItem="2j6-PK-6Gb" firstAttribute="trailing" secondItem="rou-u5-8W1" secondAttribute="trailing" type="default" id="UBT-BI-tXf"/>
-                            <constraint firstAttribute="bottom" secondItem="E9S-ov-Tow" secondAttribute="bottom" priority="1" constant="465" type="user" id="Wa4-0C-H60"/>
+                            <constraint firstItem="E9S-ov-Tow" firstAttribute="top" secondItem="VW2-SQ-cz3" secondAttribute="bottom" type="user" id="WPr-B5-LYe"/>
                             <constraint firstItem="VW2-SQ-cz3" firstAttribute="leading" secondItem="rou-u5-8W1" secondAttribute="leading" type="default" id="WuN-GT-Bwe"/>
                             <constraint firstItem="2j6-PK-6Gb" firstAttribute="bottom" secondItem="rou-u5-8W1" secondAttribute="bottom" type="default" id="Y3X-CP-aKP"/>
-                            <constraint firstItem="E9S-ov-Tow" firstAttribute="trailing" secondItem="rou-u5-8W1" secondAttribute="trailing" type="default" id="ilB-IJ-VTa"/>
+                            <constraint firstItem="Pgv-84-f7h" firstAttribute="leading" secondItem="rou-u5-8W1" secondAttribute="leading" priority="1" constant="155" type="user" id="ZG4-Uo-kr1"/>
+                            <constraint firstAttribute="trailing" secondItem="Pgv-84-f7h" secondAttribute="trailing" constant="5" type="user" id="gpG-eG-vMI"/>
                             <constraint firstItem="VW2-SQ-cz3" firstAttribute="top" secondItem="rou-u5-8W1" secondAttribute="top" type="user" id="kEc-fV-Qb4"/>
+                            <constraint firstAttribute="bottom" secondItem="E9S-ov-Tow" secondAttribute="bottom" priority="1" constant="456" type="user" id="kns-8D-qzT"/>
                             <constraint firstAttribute="bottom" secondItem="Pgv-84-f7h" secondAttribute="bottom" priority="1" constant="54" type="user" id="lWI-4m-d4q"/>
+                            <constraint firstItem="E9S-ov-Tow" firstAttribute="trailing" secondItem="rou-u5-8W1" secondAttribute="trailing" type="default" id="phK-xp-J38"/>
+                            <constraint firstItem="yJ9-I3-zRY" firstAttribute="top" secondItem="VW2-SQ-cz3" secondAttribute="bottom" type="user" id="qrA-ag-SYn"/>
                             <constraint firstItem="VW2-SQ-cz3" firstAttribute="trailing" secondItem="rou-u5-8W1" secondAttribute="trailing" type="default" id="sqS-Ob-uwh"/>
-                            <constraint firstItem="yJ9-I3-zRY" firstAttribute="trailing" secondItem="rou-u5-8W1" secondAttribute="trailing" type="default" id="uOB-u9-uaM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Carte" id="Rp8-eM-PX0">
@@ -686,8 +700,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="compass" destination="RQ4-8o-Dkc" id="ivs-rc-lBT"/>
+                        <outlet property="gpsButton" destination="Etb-oq-VYg" id="s36-8O-NOq"/>
+                        <outlet property="mapInfoText" destination="UcF-kZ-IcQ" id="TVU-lG-JDz"/>
                         <outlet property="mapScale" destination="Pgv-84-f7h" id="kDz-6p-Y7x"/>
                         <outlet property="mapView" destination="yJ9-I3-zRY" id="pd0-dN-MOO"/>
+                        <outlet property="sateliteButton" destination="7qF-lO-lgt" id="rt0-MS-hos"/>
                         <segue destination="06f-vv-2hC" kind="push" id="Hv1-2o-zFA"/>
                         <segue destination="68y-oW-L3j" kind="push" id="u6Q-YO-XoM"/>
                     </connections>
@@ -696,30 +713,90 @@
             </objects>
             <point key="canvasLocation" x="1451" y="-443"/>
         </scene>
-        <!--InfoUNINE View Controller - Info-->
+        <!--Info View Controller - Info-->
         <scene sceneID="kqP-DM-Y6S">
             <objects>
-                <viewController id="06f-vv-2hC" customClass="InfoUNINEViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoUNINE" id="06f-vv-2hC" customClass="InfoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O90-2h-PhW">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="Kaq-jA-DaK">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lb-W1-yYA">
+                                <items>
+                                    <navigationItem title="Info" id="48M-0e-CSQ">
+                                        <barButtonItem key="leftBarButtonItem" title="Carte" id="JLT-Fg-C2y">
+                                            <connections>
+                                                <action selector="returnToMap:" destination="06f-vv-2hC" id="1e8-Sw-RPH"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O5d-7f-nkC">
+                                <segments>
+                                    <segment title="Info"/>
+                                    <segment title="Dev."/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeInfoPage:" destination="06f-vv-2hC" eventType="valueChanged" id="2dm-LD-f2K"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUv-hd-Vt1">
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Application iOS  développée par Leafit." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="cEI-F5-aF5">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="53" id="adD-Qx-4Vh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="5cm_transparent_no_10101.png" translatesAutoresizingMaskIntoConstraints="NO" id="v2V-5z-7EL">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="4BQ-GE-e3V"/>
+                                            <constraint firstAttribute="height" constant="98" id="ajf-GK-yVZ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Version 1.0, 18 septembre 2013" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="271" translatesAutoresizingMaskIntoConstraints="NO" id="4BI-oM-UAr">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="271" id="8P1-57-aZj"/>
+                                            <constraint firstAttribute="height" constant="51" id="raV-Yf-pEg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=" Pour toute information et commentaires:                              hotline.sitel@unine.ch" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="242" translatesAutoresizingMaskIntoConstraints="NO" id="ndn-Ic-Wx5">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="242" id="Lfd-dT-B16"/>
+                                            <constraint firstAttribute="height" constant="90" id="SyS-4w-4Io"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="38" id="rC7-wx-LWf"/>
+                                    <constraint firstAttribute="height" priority="1" constant="400" type="user" id="1X9-dW-hFC"/>
+                                    <constraint firstItem="v2V-5z-7EL" firstAttribute="centerX" secondItem="ndn-Ic-Wx5" secondAttribute="centerX" type="default" id="A95-1l-OtR"/>
+                                    <constraint firstItem="4BI-oM-UAr" firstAttribute="centerX" secondItem="cEI-F5-aF5" secondAttribute="centerX" type="default" id="Tkh-Dr-141"/>
+                                    <constraint firstAttribute="trailing" secondItem="cEI-F5-aF5" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="WvR-DW-3do"/>
+                                    <constraint firstItem="cEI-F5-aF5" firstAttribute="top" secondItem="YUv-hd-Vt1" secondAttribute="top" constant="3" id="Yha-Br-Epp"/>
+                                    <constraint firstItem="ndn-Ic-Wx5" firstAttribute="top" secondItem="YUv-hd-Vt1" secondAttribute="top" constant="118" id="caW-rb-Vd4"/>
+                                    <constraint firstItem="cEI-F5-aF5" firstAttribute="leading" secondItem="YUv-hd-Vt1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="e5C-WT-94T"/>
+                                    <constraint firstItem="ndn-Ic-Wx5" firstAttribute="centerX" secondItem="4BI-oM-UAr" secondAttribute="centerX" type="default" id="hXD-wS-v0w"/>
+                                    <constraint firstAttribute="bottom" secondItem="v2V-5z-7EL" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="j9K-F0-yUI"/>
+                                    <constraint firstItem="4BI-oM-UAr" firstAttribute="top" secondItem="cEI-F5-aF5" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="nOG-Tg-qUA"/>
                                 </constraints>
-                                <color key="pageIndicatorTintColor" red="0.49337569060000003" green="0.63670759430000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.019703331800000001" green="0.037471295879999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </pageControl>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUF-7K-LSi">
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="10" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="qo1-Ja-ECT" userLabel="Info Text Lbl">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" minimumFontSize="10" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="qo1-Ja-ECT" userLabel="Info Text Lbl">
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="117" id="ebm-xh-ufs"/>
+                                            <constraint firstAttribute="height" constant="74" id="K7e-NW-Hom"/>
                                         </constraints>
-                                        <string key="text">Cet accès permet la cartographie interactive via un iPhone des locaux et des attributs associés de chaque étage.
-                                            
-                                            Cette application permet l'interrogation des locaux et des occupants.</string>
+                                        <string key="text">Cet accès permet la cartographie interactive via un iPhone des locaux et des attributs associés de chaque étage.                                         </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -739,6 +816,7 @@
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="xQS-pp-cJP">
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="5FV-hx-hCH"/>
                                             <constraint firstAttribute="height" constant="60" id="IQ0-mR-aPR"/>
                                         </constraints>
                                         <string key="text">Extrait de BILUNE - Système d'information des locaux de l'Université de Neuchâtel, © 2012, SITEL Service informatique et télématique </string>
@@ -746,29 +824,48 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cette application permet l'interrogation des locaux et des occupants." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="295" translatesAutoresizingMaskIntoConstraints="NO" id="S39-6w-UfB">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="295" id="l0j-bo-tGi"/>
+                                            <constraint firstAttribute="height" constant="41" id="poe-8Q-0bk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="OcI-aO-8Cf" firstAttribute="top" secondItem="FUF-7K-LSi" secondAttribute="top" constant="214" id="6QD-SL-ASb"/>
-                                    <constraint firstAttribute="bottom" secondItem="xQS-pp-cJP" secondAttribute="bottom" constant="35" id="8Bj-3i-W3B"/>
+                                    <constraint firstItem="S39-6w-UfB" firstAttribute="top" secondItem="FUF-7K-LSi" secondAttribute="top" constant="120" id="4Im-cv-P6w"/>
                                     <constraint firstAttribute="trailing" secondItem="7gw-9s-wZU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="EM5-Zi-NYM"/>
-                                    <constraint firstItem="xQS-pp-cJP" firstAttribute="leading" secondItem="FUF-7K-LSi" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="GfA-q3-98W"/>
-                                    <constraint firstItem="qo1-Ja-ECT" firstAttribute="top" secondItem="FUF-7K-LSi" secondAttribute="top" constant="81" id="Ll0-zi-MPQ"/>
-                                    <constraint firstItem="7gw-9s-wZU" firstAttribute="top" secondItem="FUF-7K-LSi" secondAttribute="top" constant="21" id="Qla-dP-hz4"/>
-                                    <constraint firstAttribute="trailing" secondItem="xQS-pp-cJP" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ZAL-3Z-l05"/>
+                                    <constraint firstItem="xQS-pp-cJP" firstAttribute="top" secondItem="OcI-aO-8Cf" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="HaH-ik-JhL"/>
+                                    <constraint firstItem="OcI-aO-8Cf" firstAttribute="centerX" secondItem="xQS-pp-cJP" secondAttribute="centerX" type="default" id="Krb-XW-lKH"/>
+                                    <constraint firstAttribute="height" priority="621" constant="400" type="user" id="L7C-yM-dbL"/>
+                                    <constraint firstItem="qo1-Ja-ECT" firstAttribute="top" secondItem="FUF-7K-LSi" secondAttribute="top" constant="42" id="ORB-hT-XSi"/>
+                                    <constraint firstItem="S39-6w-UfB" firstAttribute="centerX" secondItem="qo1-Ja-ECT" secondAttribute="centerX" type="default" id="Sz9-BI-z56"/>
+                                    <constraint firstItem="OcI-aO-8Cf" firstAttribute="leading" secondItem="FUF-7K-LSi" secondAttribute="leading" constant="53" id="WBn-Zq-jvt"/>
                                     <constraint firstItem="7gw-9s-wZU" firstAttribute="leading" secondItem="FUF-7K-LSi" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="efb-7w-y7G"/>
+                                    <constraint firstItem="7gw-9s-wZU" firstAttribute="top" secondItem="FUF-7K-LSi" secondAttribute="top" constant="9" id="no4-3x-zuG"/>
+                                    <constraint firstItem="xQS-pp-cJP" firstAttribute="bottom" secondItem="FUF-7K-LSi" secondAttribute="bottom" type="default" id="ss2-Uq-svy"/>
                                     <constraint firstItem="qo1-Ja-ECT" firstAttribute="leading" secondItem="FUF-7K-LSi" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="w0a-Cw-tjQ"/>
-                                    <constraint firstItem="xQS-pp-cJP" firstAttribute="centerX" secondItem="OcI-aO-8Cf" secondAttribute="centerX" type="default" id="xso-0i-agO"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="FUF-7K-LSi" secondAttribute="bottom" constant="74" id="I79-qt-7yB"/>
-                            <constraint firstItem="FUF-7K-LSi" firstAttribute="top" secondItem="O90-2h-PhW" secondAttribute="top" type="default" id="Sbd-0o-9T7"/>
-                            <constraint firstAttribute="bottom" secondItem="Kaq-jA-DaK" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="hSD-WK-t3i"/>
+                            <constraint firstItem="3lb-W1-yYA" firstAttribute="trailing" secondItem="O90-2h-PhW" secondAttribute="trailing" type="default" id="BkL-lg-a9Z"/>
+                            <constraint firstItem="YUv-hd-Vt1" firstAttribute="centerX" secondItem="O5d-7f-nkC" secondAttribute="centerX" type="default" id="E04-ox-9LZ"/>
+                            <constraint firstAttribute="bottom" secondItem="O5d-7f-nkC" secondAttribute="bottom" constant="20" type="user" id="EBE-gY-Csv"/>
+                            <constraint firstAttribute="bottom" secondItem="O5d-7f-nkC" secondAttribute="bottom" priority="1" constant="20" symbolic="YES" type="user" id="Kzp-Rq-WhP"/>
+                            <constraint firstItem="YUv-hd-Vt1" firstAttribute="leading" secondItem="O90-2h-PhW" secondAttribute="leading" type="default" id="NUh-fc-YlW"/>
+                            <constraint firstItem="3lb-W1-yYA" firstAttribute="top" secondItem="O90-2h-PhW" secondAttribute="top" type="user" id="TfR-sv-vep"/>
+                            <constraint firstItem="YUv-hd-Vt1" firstAttribute="trailing" secondItem="O90-2h-PhW" secondAttribute="trailing" type="default" id="WmR-Dl-Mba"/>
+                            <constraint firstItem="O5d-7f-nkC" firstAttribute="top" secondItem="FUF-7K-LSi" secondAttribute="bottom" constant="26" type="user" id="ZbU-Qk-JIj"/>
+                            <constraint firstItem="FUF-7K-LSi" firstAttribute="top" secondItem="O90-2h-PhW" secondAttribute="top" constant="59" type="user" id="gN8-5k-P0W"/>
+                            <constraint firstItem="YUv-hd-Vt1" firstAttribute="top" secondItem="3lb-W1-yYA" secondAttribute="bottom" constant="30" type="user" id="hA9-Sg-pKz"/>
+                            <constraint firstItem="3lb-W1-yYA" firstAttribute="leading" secondItem="O90-2h-PhW" secondAttribute="leading" type="default" id="iCk-sz-KO1"/>
+                            <constraint firstItem="YUv-hd-Vt1" firstAttribute="centerY" secondItem="O90-2h-PhW" secondAttribute="centerY" type="user" id="kLV-Ty-yDd"/>
                             <constraint firstItem="FUF-7K-LSi" firstAttribute="leading" secondItem="O90-2h-PhW" secondAttribute="leading" type="default" id="orl-Vp-E7w"/>
-                            <constraint firstItem="Kaq-jA-DaK" firstAttribute="centerX" secondItem="FUF-7K-LSi" secondAttribute="centerX" type="default" id="p1g-s8-13I"/>
                             <constraint firstItem="FUF-7K-LSi" firstAttribute="trailing" secondItem="O90-2h-PhW" secondAttribute="trailing" type="default" id="tRJ-cH-mVb"/>
                         </constraints>
                     </view>
@@ -776,69 +873,13 @@
                         <barButtonItem key="leftBarButtonItem" title="Carte" id="a4p-el-CIS"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="ShF-0f-zbn" kind="push" id="MVa-6e-HlL"/>
+                        <outlet property="appInfoContainer" destination="FUF-7K-LSi" id="Pna-X2-OU2"/>
+                        <outlet property="devInfoContainer" destination="YUv-hd-Vt1" id="VMv-L3-sUz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dik-zQ-Boa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2036" y="-362"/>
-        </scene>
-        <!--View Controller - Info-->
-        <scene sceneID="49t-cb-GeF">
-            <objects>
-                <viewController id="ShF-0f-zbn" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zY1-sW-Qh2">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="vPh-cU-bVU">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="38" id="l6x-3a-LEh"/>
-                                </constraints>
-                                <color key="pageIndicatorTintColor" red="0.49337569060000003" green="0.63670759430000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.019703331800000001" green="0.037471295879999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </pageControl>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="uab-y2-wc6">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="151" id="qVn-oB-yn2"/>
-                                </constraints>
-                                <string key="text">Application iOS
-                                    
-                                    développée par Leafit,
-                                    
-                                    Version 1.0, 18 septembre 2013
-                                    
-                                    Pour toute information et commentaires:
-                                    hotline.sitel@unine.ch</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="5cm_transparent_no_10101.png" translatesAutoresizingMaskIntoConstraints="NO" id="52H-ay-dOe">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="MRW-ZJ-mVR"/>
-                                    <constraint firstAttribute="height" constant="98" id="ZQz-nd-M0c"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="vPh-cU-bVU" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="5ot-9T-14N"/>
-                            <constraint firstItem="52H-ay-dOe" firstAttribute="centerX" secondItem="uab-y2-wc6" secondAttribute="centerX" type="default" id="EeE-t1-Loc"/>
-                            <constraint firstItem="uab-y2-wc6" firstAttribute="leading" secondItem="zY1-sW-Qh2" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="bDC-HZ-uCn"/>
-                            <constraint firstItem="52H-ay-dOe" firstAttribute="centerX" secondItem="vPh-cU-bVU" secondAttribute="centerX" type="default" id="eI3-jl-yOb"/>
-                            <constraint firstItem="52H-ay-dOe" firstAttribute="top" secondItem="uab-y2-wc6" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gCd-5H-KVj"/>
-                            <constraint firstItem="uab-y2-wc6" firstAttribute="top" secondItem="zY1-sW-Qh2" secondAttribute="top" constant="33" id="ok7-j2-2eU"/>
-                            <constraint firstAttribute="trailing" secondItem="uab-y2-wc6" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qxw-yg-u9T"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Info" id="ueT-oO-krZ">
-                        <barButtonItem key="leftBarButtonItem" title="Carte" id="oHp-Q4-12y"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u6P-Wa-Btq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2567" y="-362"/>
+            <point key="canvasLocation" x="2036" y="-359"/>
         </scene>
         <!--Room Info View Controller-->
         <scene sceneID="yr0-WX-71B">
@@ -1102,10 +1143,11 @@
     <resources>
         <image name="5cm_transparent_no_10101.png" width="591" height="258"/>
         <image name="bilune_page_background01.jpg" width="900" height="288"/>
+        <image name="compass.png" width="64" height="66"/>
+        <image name="globe.png" width="32" height="32"/>
         <image name="gps32.png" width="32" height="32"/>
         <image name="info.png" width="32" height="32"/>
         <image name="logo_unine_bleu.png" width="162" height="106"/>
-        <image name="northArrow.png" width="207" height="300"/>
     </resources>
     <classes>
         <class className="AGSMapView" superclassName="AGSMapViewBase">
@@ -1152,8 +1194,14 @@
                 <relationship kind="outlet" name="floorsTable" candidateClass="UITableView"/>
             </relationships>
         </class>
-        <class className="InfoUNINEViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoUNINEViewController.h"/>
+        <class className="InfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeInfoPage:"/>
+                <relationship kind="action" name="returnToMap:"/>
+                <relationship kind="outlet" name="appInfoContainer" candidateClass="UIView"/>
+                <relationship kind="outlet" name="devInfoContainer" candidateClass="UIView"/>
+            </relationships>
         </class>
         <class className="InitViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/InitViewController.h"/>
@@ -1190,11 +1238,17 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
                 <relationship kind="action" name="returnToMenu:"/>
+                <relationship kind="action" name="showInfo:"/>
                 <relationship kind="action" name="showLegend:"/>
                 <relationship kind="action" name="showMapOverview:"/>
+                <relationship kind="action" name="toggleGPS:"/>
+                <relationship kind="action" name="toggleSatelite:"/>
                 <relationship kind="outlet" name="compass" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="gpsButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="mapInfoText" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mapScale" candidateClass="ScaleBarView"/>
                 <relationship kind="outlet" name="mapView" candidateClass="AGSMapView"/>
+                <relationship kind="outlet" name="sateliteButton" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">

@@ -34,6 +34,7 @@
             //create marker
             AGSSimpleMarkerSymbol *buildingMarker = [[AGSSimpleMarkerSymbol alloc] initWithColor:[[UIColor alloc] initWithRed:(255/255.0) green:(104/255.0) blue:(110/255.0) alpha:1 ]];
             [buildingMarker setStyle:AGSSimpleMarkerSymbolStyleSquare];
+            [buildingMarker setSize:CGSizeMake(20, 20)];
             [buildingMarker setOutline:[[AGSSimpleLineSymbol alloc] initWithColor:[[UIColor alloc] initWithRed:1 green:0 blue:0 alpha:1] width:1 ]];
             
             //create attributes

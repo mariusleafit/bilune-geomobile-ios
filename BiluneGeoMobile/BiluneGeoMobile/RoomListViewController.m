@@ -108,7 +108,8 @@ Floor *currentFloor;
 }
 
 -(void)roomQueryErrorOccured:(NSString *)queryName {
-    NSLog(@"errormessage!!");
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Erreur" message:@"Impossible de charger les données, veuillez vérifier l'état du réseau." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];
 }
 
 #pragma mark DeviceOrientation

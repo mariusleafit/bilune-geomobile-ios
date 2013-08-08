@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 leafit. All rights reserved.
 //
 
-#import "InfoUNINEViewController.h"
+#import "InfoViewController.h"
 
-@interface InfoUNINEViewController ()
+@interface InfoViewController ()
 
 @end
 
-@implementation InfoUNINEViewController
+@implementation InfoViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    //hide devInfo and show appInfo
+    self.devInfoContainer.hidden = true;
+    self.appInfoContainer.hidden = false;
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,4 +43,19 @@
     return NO;
 }
 
+
+#pragma mark IBAction
+
+- (IBAction)returnToMap:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)changeInfoPage:(id)sender {
+    if(self.devInfoContainer.hidden) {
+        self.devInfoContainer.hidden = false;
+        self.appInfoContainer.hidden = true;
+    } else {
+        self.devInfoContainer.hidden = true;
+        self.appInfoContainer.hidden = false;
+    }
+}
 @end

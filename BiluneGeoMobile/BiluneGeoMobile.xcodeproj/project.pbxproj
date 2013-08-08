@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2919AEB917B2476D00B12DC3 /* LegendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2919AEB817B2476D00B12DC3 /* LegendListCell.m */; };
+		2919AEBB17B28EF700B12DC3 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 2919AEBA17B28EF700B12DC3 /* compass.png */; };
 		2930D43A1785A3E500A4DCD2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2930D4391785A3E500A4DCD2 /* UIKit.framework */; };
 		2930D43C1785A3E500A4DCD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2930D43B1785A3E500A4DCD2 /* Foundation.framework */; };
 		2930D43E1785A3E500A4DCD2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2930D43D1785A3E500A4DCD2 /* CoreGraphics.framework */; };
@@ -79,7 +80,7 @@
 		29B63D671785C2B2001AEE4B /* FloorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D661785C2B2001AEE4B /* FloorListViewController.m */; };
 		29B63D6A1785C36A001AEE4B /* RoomListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D691785C369001AEE4B /* RoomListViewController.m */; };
 		29B63D6D1785C4D8001AEE4B /* SearchOccupantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D6C1785C4D8001AEE4B /* SearchOccupantsViewController.m */; };
-		29B63D701785C881001AEE4B /* InfoUNINEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D6F1785C881001AEE4B /* InfoUNINEViewController.m */; };
+		29B63D701785C881001AEE4B /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D6F1785C881001AEE4B /* InfoViewController.m */; };
 		29DAE97D178C35D50027D47C /* InitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DAE97C178C35D50027D47C /* InitViewController.m */; };
 		29DAE985178C3DAB0027D47C /* Downloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DAE984178C3DAB0027D47C /* Downloader.m */; };
 		29E13A48179808E900CD8281 /* DownloadQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E13A47179808E900CD8281 /* DownloadQueue.m */; };
@@ -98,11 +99,13 @@
 		29EABBA61786BFAD0043BD86 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EABBA51786BFAC0043BD86 /* Room.m */; };
 		29EABBA91786BFC10043BD86 /* Occupant.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EABBA81786BFC10043BD86 /* Occupant.m */; };
 		29EABBAF1786BFDC0043BD86 /* LegendEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EABBAE1786BFDC0043BD86 /* LegendEntry.m */; };
+		29FEB94217B39DF400E47FB3 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 29FEB94117B39DF400E47FB3 /* globe.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2919AEB717B2476D00B12DC3 /* LegendListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegendListCell.h; sourceTree = "<group>"; };
 		2919AEB817B2476D00B12DC3 /* LegendListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegendListCell.m; sourceTree = "<group>"; };
+		2919AEBA17B28EF700B12DC3 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
 		2930D4361785A3E500A4DCD2 /* BiluneGeoMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiluneGeoMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2930D4391785A3E500A4DCD2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2930D43B1785A3E500A4DCD2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -203,8 +206,8 @@
 		29B63D691785C369001AEE4B /* RoomListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomListViewController.m; sourceTree = "<group>"; };
 		29B63D6B1785C4D8001AEE4B /* SearchOccupantsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchOccupantsViewController.h; sourceTree = "<group>"; };
 		29B63D6C1785C4D8001AEE4B /* SearchOccupantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchOccupantsViewController.m; sourceTree = "<group>"; };
-		29B63D6E1785C881001AEE4B /* InfoUNINEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoUNINEViewController.h; sourceTree = "<group>"; };
-		29B63D6F1785C881001AEE4B /* InfoUNINEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoUNINEViewController.m; sourceTree = "<group>"; };
+		29B63D6E1785C881001AEE4B /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		29B63D6F1785C881001AEE4B /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		29DAE97B178C35D50027D47C /* InitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitViewController.h; sourceTree = "<group>"; };
 		29DAE97C178C35D50027D47C /* InitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitViewController.m; sourceTree = "<group>"; };
 		29DAE983178C3DAB0027D47C /* Downloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Downloader.h; sourceTree = "<group>"; };
@@ -230,6 +233,7 @@
 		29EABBA81786BFC10043BD86 /* Occupant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Occupant.m; sourceTree = "<group>"; };
 		29EABBAD1786BFDC0043BD86 /* LegendEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegendEntry.h; sourceTree = "<group>"; };
 		29EABBAE1786BFDC0043BD86 /* LegendEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegendEntry.m; sourceTree = "<group>"; };
+		29FEB94117B39DF400E47FB3 /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,8 +460,8 @@
 				29B63D691785C369001AEE4B /* RoomListViewController.m */,
 				29B63D6B1785C4D8001AEE4B /* SearchOccupantsViewController.h */,
 				29B63D6C1785C4D8001AEE4B /* SearchOccupantsViewController.m */,
-				29B63D6E1785C881001AEE4B /* InfoUNINEViewController.h */,
-				29B63D6F1785C881001AEE4B /* InfoUNINEViewController.m */,
+				29B63D6E1785C881001AEE4B /* InfoViewController.h */,
+				29B63D6F1785C881001AEE4B /* InfoViewController.m */,
 				29EAB97F178696F50043BD86 /* ChangeFloorViewController.h */,
 				29EAB980178696F50043BD86 /* ChangeFloorViewController.m */,
 				29EAB982178698280043BD86 /* LegendViewController.h */,
@@ -475,6 +479,8 @@
 		29B63D591785AC48001AEE4B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				29FEB94117B39DF400E47FB3 /* globe.png */,
+				2919AEBA17B28EF700B12DC3 /* compass.png */,
 				29941DD417AFD71100386CE7 /* pin32.png */,
 				29949A33179D5156004C549A /* buildings */,
 				29949A32179D50FB004C549A /* loader */,
@@ -647,6 +653,8 @@
 				29949A5D179D51A5004C549A /* 33_vau22.jpg in Resources */,
 				29A15A20179EAB1A006A6F46 /* ArcGIS.bundle in Resources */,
 				29941DD517AFD71100386CE7 /* pin32.png in Resources */,
+				2919AEBB17B28EF700B12DC3 /* compass.png in Resources */,
+				29FEB94217B39DF400E47FB3 /* globe.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,7 +673,7 @@
 				29B63D671785C2B2001AEE4B /* FloorListViewController.m in Sources */,
 				29B63D6A1785C36A001AEE4B /* RoomListViewController.m in Sources */,
 				29B63D6D1785C4D8001AEE4B /* SearchOccupantsViewController.m in Sources */,
-				29B63D701785C881001AEE4B /* InfoUNINEViewController.m in Sources */,
+				29B63D701785C881001AEE4B /* InfoViewController.m in Sources */,
 				29EAB981178696F50043BD86 /* ChangeFloorViewController.m in Sources */,
 				29EAB984178698280043BD86 /* LegendViewController.m in Sources */,
 				29EAB9871786A2470043BD86 /* InfoLeafitViewController.m in Sources */,

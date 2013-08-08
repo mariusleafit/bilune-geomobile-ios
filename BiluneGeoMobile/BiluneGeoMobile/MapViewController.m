@@ -57,6 +57,11 @@
     [self.mapView addMapLayer:roadBasemap withName:@"roadBasemap"];
     [sateliteBasemap setVisible:NO];
     
+    //add ovserver for maprotation
+    [self.mapView addObserver:self forKeyPath:@"rotationAngle" options:(NSKeyValueObservingOptionNew) context:NULL];
+    
+    
+    
     //set delegates
     self.mapView.touchDelegate = self;
     self.mapView.layerDelegate = self;
@@ -64,7 +69,14 @@
     
 }
 
-
+- (void)viewDidUnload {
+    //Stop the GPS, undo the map rotation (if any)
+    if(self.mapView.locationDisplay.dataSourceStarted){
+        [self.mapView.locationDisplay stopDataSource];
+        self.mapView.rotationAngle = 0;
+    }
+    self.mapView = nil;
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -77,10 +89,10 @@
 }
 
 #pragma mark memory management
--(void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion {
+/*-(void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion {
     [self.mapView removeFromSuperview];
     [super dismissViewControllerAnimated:flag completion:completion];
-}
+}*/
 
 #pragma mark MapView preparation
 -(void)mapViewDidLoad:(AGSMapView *)mapView {
@@ -144,6 +156,7 @@
         if(building != roomToZoomTo.parentBuilding) {
             for(Floor *floor in [building getVisibleFloorsSortedAsc:false]) {
                 [self.mapView addMapLayer:[[AGSFeatureLayer alloc] initWithURL:[floor getFloorURL] mode:AGSFeatureLayerModeSnapshot] withName:[ [floor getFloorURL] absoluteString]];
+                //[self.mapView addMapLayer:[[AGSDynamicMapServiceLayer alloc] initWithURL:floor.parentBuilding.fullURL] withName:[floor.parentBuilding.fullURL absoluteString]];
             }
         }
     }
@@ -165,9 +178,7 @@
 #pragma mark ZoomManagement
 -(void) respondToPan: (NSNotification *)notification {
     NSLog(@"ausschnitt geändert");
-    
-    NSLog([NSString stringWithFormat:@"%f",self.mapView.rotationAngle]);
-}
+    }
 
 -(void) respondToZoom: (NSNotification *)notification {
     //manage zoomStateTransisitons (eg. from Overviewlayer to Buildings)
@@ -190,6 +201,9 @@
     [self.overviewLayer setVisibility:NO];
     //show Buildings
     [self setVisibilityOfBuildings:YES];
+    
+    //show text for Buildings
+    self.mapInfoText.text = @"1 click = info de la salle\nClick long = changement d'étage";
 }
 
 //if buildings were visible and now overviewlayer
@@ -199,6 +213,10 @@
     
     //showOverview
     [self.overviewLayer setVisibility:YES];
+    
+    //show text for overview
+    self.mapInfoText.text = @"Localisation des bâtiments\nde l'Université de Neuchâtel";
+    
 }
 
 -(void) setVisibilityOfBuildings:(BOOL)visibility{
@@ -210,6 +228,15 @@
                 [layer setOpacity:0.0];
             }
         }
+    }
+}
+
+#pragma mark Map rotation Management
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    //if rotationAngle changed
+    if([keyPath isEqual:@"rotationAngle"]){
+        CGAffineTransform transform = CGAffineTransformMakeRotation(-(self.mapView.rotationAngle*3.14)/180);
+        [self.compass setTransform:transform];
     }
 }
 
@@ -319,9 +346,10 @@
 }
 
 -(void)roomQueryErrorOccured:(NSString *)queryName {
-    NSLog(@"room error occured");
     getClickedRoomQuery = nil;
     mapView.callout.hidden = true;
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Erreur" message:@"Impossible de charger les données, veuillez vérifier l'état du réseau." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];
 }
 
 #pragma mark AGSCalloutDelegate
@@ -347,6 +375,14 @@
     return YES;
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    //Pass the interface orientation on to the map's gps so that
+    //it can re-position the gps symbol appropriately in
+    //compass navigation mode
+    self.mapView.locationDisplay.interfaceOrientation = interfaceOrientation;
+    return YES;
+}
+
 #pragma mark IBAction
 - (IBAction)returnToMenu:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -363,5 +399,34 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
     UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Legend"];
     [self presentViewController:viewController animated:YES completion:nil];
+}
+
+- (IBAction)toggleGPS:(id)sender {
+    if(self.mapView.locationDisplay.dataSourceStarted){
+        [self.mapView.locationDisplay stopDataSource];
+        self.mapView.locationDisplay.autoPanMode = AGSLocationDisplayAutoPanModeOff;
+        self.gpsButton.tintColor = [UIColor whiteColor];
+    } else {
+        [self.mapView.locationDisplay startDataSource];
+        self.mapView.locationDisplay.autoPanMode = AGSLocationDisplayAutoPanModeDefault;
+        self.gpsButton.tintColor = [UIColor greenColor];
+    }
+}
+- (IBAction)showInfo:(id)sender {
+    //show Info
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+    UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"InfoUNINE"];
+    [self presentViewController:viewController animated:YES completion:nil];
+}
+- (IBAction)toggleSatelite:(id)sender {
+    if(self.sateliteBasemap.isVisible) {
+        [self.sateliteBasemap setVisible:NO];
+        [self.roadBasemap setVisible:YES];
+        self.sateliteButton.tintColor = [UIColor whiteColor];
+    } else {
+        [self.sateliteBasemap setVisible:YES];
+        [self.roadBasemap setVisible:NO];
+         self.sateliteButton.tintColor = [UIColor greenColor];
+    }
 }
 @end

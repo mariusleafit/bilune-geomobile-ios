@@ -15,6 +15,7 @@
 @interface MapViewController : UIViewController<AGSMapViewTouchDelegate, AGSMapViewLayerDelegate, RoomQueryDelegate, AGSCalloutDelegate> {
     int scaleBarValueInMeters;
 }
+- (IBAction)showInfo:(id)sender;
 @property (weak, nonatomic) IBOutlet AGSMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIImageView *compass;
 - (IBAction)returnToMenu:(id)sender;
@@ -24,4 +25,9 @@
 @property (weak, nonatomic) IBOutlet ScaleBarView *mapScale;
 ///set before display of view --> map gets zoomed to this room and room gets highlighted
 -(void)setRoomToZoomTo:(Room *)room;
+- (IBAction)toggleGPS:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *gpsButton;
+- (IBAction)toggleSatelite:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sateliteButton;
+@property (weak, nonatomic) IBOutlet UILabel *mapInfoText;
 @end
