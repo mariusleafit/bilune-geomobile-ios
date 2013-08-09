@@ -73,6 +73,7 @@
 		29A15A1C179EA88D006A6F46 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A15A1B179EA88D006A6F46 /* OpenGLES.framework */; };
 		29A15A1E179EA896006A6F46 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A15A1D179EA896006A6F46 /* Security.framework */; };
 		29A15A20179EAB1A006A6F46 /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 29A15A1F179EAB1A006A6F46 /* ArcGIS.bundle */; };
+		29A48C8917B50C5E003E3D8F /* CompassView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A48C8817B50C5D003E3D8F /* CompassView.m */; };
 		29A4FD7617B0E29F00BF9DA2 /* RoomFromOccupantQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A4FD7517B0E29F00BF9DA2 /* RoomFromOccupantQuery.m */; };
 		29A4FD7C17B1127300BF9DA2 /* RoomsFromFloorQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A4FD7B17B1127300BF9DA2 /* RoomsFromFloorQuery.m */; };
 		29B63D5E1785B6EC001AEE4B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D5D1785B6EC001AEE4B /* MapViewController.m */; };
@@ -186,6 +187,8 @@
 		29A15A1B179EA88D006A6F46 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		29A15A1D179EA896006A6F46 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		29A15A1F179EAB1A006A6F46 /* ArcGIS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ArcGIS.bundle; path = ../../../../../../../../Library/SDKs/ArcGIS/iOS/ArcGIS.framework/Versions/Current/Resources/ArcGIS.bundle; sourceTree = "<group>"; };
+		29A48C8717B50C5D003E3D8F /* CompassView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompassView.h; sourceTree = "<group>"; };
+		29A48C8817B50C5D003E3D8F /* CompassView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompassView.m; sourceTree = "<group>"; };
 		29A4FD7417B0E29F00BF9DA2 /* RoomFromOccupantQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomFromOccupantQuery.h; sourceTree = "<group>"; };
 		29A4FD7517B0E29F00BF9DA2 /* RoomFromOccupantQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomFromOccupantQuery.m; sourceTree = "<group>"; };
 		29A4FD7A17B1127300BF9DA2 /* RoomsFromFloorQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsFromFloorQuery.h; sourceTree = "<group>"; };
@@ -423,6 +426,8 @@
 			children = (
 				299616D017A7EC700027AE6B /* ScaleBarView.h */,
 				299616D117A7EC700027AE6B /* ScaleBarView.m */,
+				29A48C8717B50C5D003E3D8F /* CompassView.h */,
+				29A48C8817B50C5D003E3D8F /* CompassView.m */,
 			);
 			name = shared;
 			sourceTree = "<group>";
@@ -698,6 +703,7 @@
 				29A4FD7617B0E29F00BF9DA2 /* RoomFromOccupantQuery.m in Sources */,
 				29A4FD7C17B1127300BF9DA2 /* RoomsFromFloorQuery.m in Sources */,
 				2919AEB917B2476D00B12DC3 /* LegendListCell.m in Sources */,
+				29A48C8917B50C5E003E3D8F /* CompassView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

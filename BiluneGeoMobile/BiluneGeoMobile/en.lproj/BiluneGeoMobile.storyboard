@@ -601,21 +601,19 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="redraw" image="compass.png" translatesAutoresizingMaskIntoConstraints="NO" id="RQ4-8o-Dkc" userLabel="northArrow">
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
-                                        </accessibility>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ebc-4J-B7O" customClass="CompassView">
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="41" id="BLZ-ga-cOm"/>
-                                            <constraint firstAttribute="width" constant="41" id="lI4-sf-ytY"/>
+                                            <constraint firstAttribute="width" constant="41" type="user" id="G7w-fo-ZRG"/>
+                                            <constraint firstAttribute="height" constant="41" type="user" id="h6Q-b1-Yhz"/>
                                         </constraints>
-                                    </imageView>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.23999999999999999" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="RQ4-8o-Dkc" firstAttribute="top" secondItem="E9S-ov-Tow" secondAttribute="top" constant="3" id="76U-Js-6Gc"/>
+                                    <constraint firstItem="Ebc-4J-B7O" firstAttribute="top" secondItem="E9S-ov-Tow" secondAttribute="top" constant="3" id="BP0-rH-kUu"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ebc-4J-B7O" secondAttribute="trailing" constant="5" type="user" id="ZrN-7O-jCH"/>
                                     <constraint firstItem="UcF-kZ-IcQ" firstAttribute="centerX" secondItem="E9S-ov-Tow" secondAttribute="centerX" type="user" id="sRT-2O-9x8"/>
-                                    <constraint firstAttribute="trailing" secondItem="RQ4-8o-Dkc" secondAttribute="trailing" constant="6" id="u2N-EN-wYg"/>
                                     <constraint firstItem="UcF-kZ-IcQ" firstAttribute="top" secondItem="E9S-ov-Tow" secondAttribute="top" type="default" id="za2-7D-1Bw"/>
                                 </constraints>
                             </view>
@@ -677,7 +675,7 @@
                         <constraints>
                             <constraint firstItem="yJ9-I3-zRY" firstAttribute="leading" secondItem="rou-u5-8W1" secondAttribute="leading" type="default" id="3Az-oc-c4V"/>
                             <constraint firstItem="Pgv-84-f7h" firstAttribute="bottom" secondItem="2j6-PK-6Gb" secondAttribute="top" type="default" id="4S7-uJ-IAT"/>
-                            <constraint firstItem="E9S-ov-Tow" firstAttribute="leading" secondItem="rou-u5-8W1" secondAttribute="leading" type="default" id="9FP-6e-KRf"/>
+                            <constraint firstItem="E9S-ov-Tow" firstAttribute="leading" secondItem="rou-u5-8W1" secondAttribute="leading" type="user" id="9FP-6e-KRf"/>
                             <constraint firstItem="yJ9-I3-zRY" firstAttribute="trailing" secondItem="rou-u5-8W1" secondAttribute="trailing" type="user" id="AVv-ei-SdB"/>
                             <constraint firstItem="E9S-ov-Tow" firstAttribute="top" secondItem="yJ9-I3-zRY" secondAttribute="top" type="user" id="Fkk-Uo-yBb"/>
                             <constraint firstItem="2j6-PK-6Gb" firstAttribute="leading" secondItem="rou-u5-8W1" secondAttribute="leading" type="default" id="O8Y-8l-SoZ"/>
@@ -690,7 +688,7 @@
                             <constraint firstItem="VW2-SQ-cz3" firstAttribute="top" secondItem="rou-u5-8W1" secondAttribute="top" type="user" id="kEc-fV-Qb4"/>
                             <constraint firstAttribute="bottom" secondItem="E9S-ov-Tow" secondAttribute="bottom" priority="1" constant="456" type="user" id="kns-8D-qzT"/>
                             <constraint firstAttribute="bottom" secondItem="Pgv-84-f7h" secondAttribute="bottom" priority="1" constant="54" type="user" id="lWI-4m-d4q"/>
-                            <constraint firstItem="E9S-ov-Tow" firstAttribute="trailing" secondItem="rou-u5-8W1" secondAttribute="trailing" type="default" id="phK-xp-J38"/>
+                            <constraint firstItem="E9S-ov-Tow" firstAttribute="trailing" secondItem="rou-u5-8W1" secondAttribute="trailing" type="user" id="phK-xp-J38"/>
                             <constraint firstItem="yJ9-I3-zRY" firstAttribute="top" secondItem="VW2-SQ-cz3" secondAttribute="bottom" type="user" id="qrA-ag-SYn"/>
                             <constraint firstItem="VW2-SQ-cz3" firstAttribute="trailing" secondItem="rou-u5-8W1" secondAttribute="trailing" type="default" id="sqS-Ob-uwh"/>
                         </constraints>
@@ -699,7 +697,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="WcH-Kz-WHs"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="compass" destination="RQ4-8o-Dkc" id="ivs-rc-lBT"/>
+                        <outlet property="compass" destination="Ebc-4J-B7O" id="oOM-vE-Hpp"/>
                         <outlet property="gpsButton" destination="Etb-oq-VYg" id="s36-8O-NOq"/>
                         <outlet property="mapInfoText" destination="UcF-kZ-IcQ" id="TVU-lG-JDz"/>
                         <outlet property="mapScale" destination="Pgv-84-f7h" id="kDz-6p-Y7x"/>
@@ -1143,19 +1141,12 @@
     <resources>
         <image name="5cm_transparent_no_10101.png" width="591" height="258"/>
         <image name="bilune_page_background01.jpg" width="900" height="288"/>
-        <image name="compass.png" width="64" height="66"/>
         <image name="globe.png" width="32" height="32"/>
         <image name="gps32.png" width="32" height="32"/>
         <image name="info.png" width="32" height="32"/>
         <image name="logo_unine_bleu.png" width="162" height="106"/>
     </resources>
     <classes>
-        <class className="AGSMapView" superclassName="AGSMapViewBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AGSMapView.h"/>
-        </class>
-        <class className="AGSMapViewBase" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AGSMapViewBase.h"/>
-        </class>
         <class className="BuildingListCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingListCell.h"/>
             <relationships>
@@ -1184,6 +1175,9 @@
                 <relationship kind="action" name="returnToMap:"/>
                 <relationship kind="outlet" name="floorList" candidateClass="UITableView"/>
             </relationships>
+        </class>
+        <class className="CompassView" superclassName="UILabel">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CompassView.h"/>
         </class>
         <class className="FloorListViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FloorListViewController.h"/>
@@ -1243,7 +1237,7 @@
                 <relationship kind="action" name="showMapOverview:"/>
                 <relationship kind="action" name="toggleGPS:"/>
                 <relationship kind="action" name="toggleSatelite:"/>
-                <relationship kind="outlet" name="compass" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="compass" candidateClass="CompassView"/>
                 <relationship kind="outlet" name="gpsButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="mapInfoText" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mapScale" candidateClass="ScaleBarView"/>

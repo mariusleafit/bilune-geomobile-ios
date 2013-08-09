@@ -184,15 +184,21 @@
     //manage zoomStateTransisitons (eg. from Overviewlayer to Buildings)
     int oldScaleBarValueInMeters = scaleBarValueInMeters;
     scaleBarValueInMeters = AGSUnitsToUnits(self.mapView.resolution, [self.roadBasemap mapServiceInfo].units, AGSUnitsMeters) * 80;
+    
     if(oldScaleBarValueInMeters < [Constants ZOOMSTATE_TRANSITION_HEIGHT] && scaleBarValueInMeters >= [Constants ZOOMSTATE_TRANSITION_HEIGHT])/*from Buildings to Overview*/ {
         [self zoomStateTransitionFromBuildingsToOverview];
     } else if(oldScaleBarValueInMeters >= [Constants ZOOMSTATE_TRANSITION_HEIGHT] && scaleBarValueInMeters < [Constants ZOOMSTATE_TRANSITION_HEIGHT])/*from Overview to Buildings*/ {
         [self zoomStateTransitionFromOverviewToBuildings];
     }
     
-    //update scaleBar
-    
-    [self.mapScale updateBar:AGSUnitsToUnits(self.mapView.resolution, [self.roadBasemap mapServiceInfo].units, AGSUnitsMeters)];
+    //if error with resolution --> hardcode (occures when mapView hasnt finished loading)
+    if(scaleBarValueInMeters < 10) {
+        scaleBarValueInMeters = 617;
+        [self.mapScale updateBar:(scaleBarValueInMeters / 80)];
+    } else {
+        //update scaleBar
+        [self.mapScale updateBar:AGSUnitsToUnits(self.mapView.resolution, [self.roadBasemap mapServiceInfo].units, AGSUnitsMeters)];
+    }
 }
 
 //if overviewlayer was visible but now the Buildings
@@ -235,8 +241,7 @@
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     //if rotationAngle changed
     if([keyPath isEqual:@"rotationAngle"]){
-        CGAffineTransform transform = CGAffineTransformMakeRotation(-(self.mapView.rotationAngle*3.14)/180);
-        [self.compass setTransform:transform];
+        [self.compass rotate:self.mapView.rotationAngle];
     }
 }
 
