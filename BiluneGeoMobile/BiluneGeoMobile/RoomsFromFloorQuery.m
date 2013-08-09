@@ -65,7 +65,16 @@
             }
         }
     }
-    [queryDelegate roomQueryRoomsFound:[NSArray arrayWithArray:foundRooms] andQueryName:queryName];
+    
+    //order rooms
+    NSArray *orderedRoom = [foundRooms sortedArrayUsingComparator:^(Room *a, Room *b) {
+        NSString *roomA = [a.name stringByReplacingOccurrencesOfString:@"(" withString:@""];
+        NSString *roomB = [b.name stringByReplacingOccurrencesOfString:@"(" withString:@""];
+        
+        return[roomA compare:roomB options:NSNumericSearch];
+    }];
+    
+    [queryDelegate roomQueryRoomsFound:[NSArray arrayWithArray:orderedRoom] andQueryName:queryName];
 }
 
 

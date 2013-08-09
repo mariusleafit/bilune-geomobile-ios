@@ -8,10 +8,19 @@
 
 #import "ScaleBarView.h"
 
+@interface ScaleBarView()
+@property (nonatomic) UIImageView *scaleImage;
+    
+@end
+
 @implementation ScaleBarView
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self=[super initWithCoder:aDecoder]) {
+        self.scaleImage = [[UIImageView alloc] initWithFrame:CGRectMake(30, 5, 80, 8)];
+        [self.scaleImage setImage:[UIImage imageNamed:@"scale.png"]];
+        [self addSubview:self.scaleImage];
+        
         unitLabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 0, 52, 17)];
         [unitLabel setText:@"100 m"];
         [unitLabel setFont:[UIFont fontWithName:@"Helvetica" size: 12.0]];
@@ -25,7 +34,7 @@
 
 // Override drawRect for drawing the actual scale bar
 // cf. source #1
-- (void)drawRect:(CGRect)rect {
+/*- (void)drawRect:(CGRect)rect {
 	CGContextRef ctx = UIGraphicsGetCurrentContext();
 	CGContextSetLineWidth(ctx, 8.0);
     CGMutablePathRef path = CGPathCreateMutable();
@@ -37,7 +46,7 @@
     CGContextStrokePath(ctx);
     CGPathRelease(path);
 	
-}
+}*/
 
 -(void) updateBar:(CGFloat)metersPerUnit {
 	[unitLabel setText:label];

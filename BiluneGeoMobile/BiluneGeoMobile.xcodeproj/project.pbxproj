@@ -74,6 +74,7 @@
 		29A15A1E179EA896006A6F46 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A15A1D179EA896006A6F46 /* Security.framework */; };
 		29A15A20179EAB1A006A6F46 /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 29A15A1F179EAB1A006A6F46 /* ArcGIS.bundle */; };
 		29A48C8917B50C5E003E3D8F /* CompassView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A48C8817B50C5D003E3D8F /* CompassView.m */; };
+		29A48C8B17B52B70003E3D8F /* scale.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A48C8A17B52B70003E3D8F /* scale.png */; };
 		29A4FD7617B0E29F00BF9DA2 /* RoomFromOccupantQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A4FD7517B0E29F00BF9DA2 /* RoomFromOccupantQuery.m */; };
 		29A4FD7C17B1127300BF9DA2 /* RoomsFromFloorQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A4FD7B17B1127300BF9DA2 /* RoomsFromFloorQuery.m */; };
 		29B63D5E1785B6EC001AEE4B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B63D5D1785B6EC001AEE4B /* MapViewController.m */; };
@@ -189,6 +190,7 @@
 		29A15A1F179EAB1A006A6F46 /* ArcGIS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ArcGIS.bundle; path = ../../../../../../../../Library/SDKs/ArcGIS/iOS/ArcGIS.framework/Versions/Current/Resources/ArcGIS.bundle; sourceTree = "<group>"; };
 		29A48C8717B50C5D003E3D8F /* CompassView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompassView.h; sourceTree = "<group>"; };
 		29A48C8817B50C5D003E3D8F /* CompassView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompassView.m; sourceTree = "<group>"; };
+		29A48C8A17B52B70003E3D8F /* scale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scale.png; sourceTree = "<group>"; };
 		29A4FD7417B0E29F00BF9DA2 /* RoomFromOccupantQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomFromOccupantQuery.h; sourceTree = "<group>"; };
 		29A4FD7517B0E29F00BF9DA2 /* RoomFromOccupantQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomFromOccupantQuery.m; sourceTree = "<group>"; };
 		29A4FD7A17B1127300BF9DA2 /* RoomsFromFloorQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsFromFloorQuery.h; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 		29B63D591785AC48001AEE4B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				29A48C8A17B52B70003E3D8F /* scale.png */,
 				29FEB94117B39DF400E47FB3 /* globe.png */,
 				2919AEBA17B28EF700B12DC3 /* compass.png */,
 				29941DD417AFD71100386CE7 /* pin32.png */,
@@ -660,6 +663,7 @@
 				29941DD517AFD71100386CE7 /* pin32.png in Resources */,
 				2919AEBB17B28EF700B12DC3 /* compass.png in Resources */,
 				29FEB94217B39DF400E47FB3 /* globe.png in Resources */,
+				29A48C8B17B52B70003E3D8F /* scale.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
