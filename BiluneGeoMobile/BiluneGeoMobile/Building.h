@@ -26,24 +26,23 @@
 @property (nonatomic, strong) AGSSpatialReference *spatialReference;
 
 
-+(Building *)createWidthData:(NSDictionary *)data;
++(Building *)createWithData:(NSDictionary *)data;
 
 -(NSString *)getBatCode;
 -(NSArray *)getFloorsSortedAsc:(BOOL)asc;
 -(NSArray *)getFloors;
 -(NSArray *)getVisibleFloorsSortedAsc:(BOOL)asc;
 -(NSArray *)getVisibleFloorIDsSortedAsc:(BOOL)asc;
--(Floor *)getFloorWidthFloorCode:(NSString *)floorCode;
--(Floor *)getFloorWidthFloorID:(NSNumber *)floorID;
--(void)changeVisibleFloorsWidthFloorCode:(NSString *)floorCode;
--(void)changeVisibleFloorsWidthFloorCodes:(NSArray *)floorCodes;
+-(Floor *)getFloorWithFloorCode:(NSString *)floorCode;
+-(Floor *)getFloorWithFloorID:(NSNumber *)floorID;
+-(void)changeVisibleFloorsWithFloorCode:(NSString *)floorCode;
+-(void)changeVisibleFloorsWithFloorCodes:(NSArray *)floorCodes;
 
 //set the Visibility of the Floors to the defaultVisibility
 -(void)resetFloorVisibility;
 
 -(UIImage *)getImage;
--(BOOL)isClickedWidthPoint:(AGSPoint *)point andSpatialReference:(AGSSpatialReference *)spatialReference;
-/*-(Room *)getClickedRoomWidthX:(NSNumber*)x andY:(NSNumber *)y;*/
+-(BOOL)isClickedWithPoint:(AGSPoint *)point andSpatialReference:(AGSSpatialReference *)spatialReference;
 
 
 

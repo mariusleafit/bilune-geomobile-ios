@@ -19,7 +19,7 @@
 @synthesize floorUrlFull;
 @synthesize buildingUrlFull;
 
-+(id)occupantWidthEndpoint:(NSString *)pEndpoint andFloorID:(NSNumber *)pFloorID andLocCode:(NSString *)pLocCode andLocTypeDesignation:(NSString *)pLocTypeDesignation andOccupantsName:(NSString *)pOccupantsName {
++(id)occupantWithEndpoint:(NSString *)pEndpoint andFloorID:(NSNumber *)pFloorID andLocCode:(NSString *)pLocCode andLocTypeDesignation:(NSString *)pLocTypeDesignation andOccupantsName:(NSString *)pOccupantsName {
     Occupant *returnOccupant = [[Occupant alloc] init];
     returnOccupant.endpoint = pEndpoint;
     returnOccupant.floorID = pFloorID;
@@ -34,14 +34,14 @@
     return returnOccupant;
 }
 
-+(id)occupantWidthDictionary:(NSDictionary *)data4 {
++(id)occupantWithDictionary:(NSDictionary *)data4 {
     NSString *endpoint = [data4 objectForKey:@"Endpoint"];
     NSNumber *floorID = [data4 objectForKey:@"FloorID"];
     NSString *locCode = [data4 objectForKey:@"LocCode"];
     NSString *locTypeDesignation = [data4 objectForKey:@"LocTypeDesignation"];
     NSString *occupantName = [data4 objectForKey:@"Name"];
     
-    return [Occupant occupantWidthEndpoint:endpoint andFloorID:floorID andLocCode:locCode andLocTypeDesignation:locTypeDesignation andOccupantsName:occupantName];
+    return [Occupant occupantWithEndpoint:endpoint andFloorID:floorID andLocCode:locCode andLocTypeDesignation:locTypeDesignation andOccupantsName:occupantName];
 }
 
 @end

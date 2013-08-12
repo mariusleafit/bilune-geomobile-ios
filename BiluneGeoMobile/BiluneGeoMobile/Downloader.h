@@ -15,7 +15,7 @@
 @property (nonatomic) NSString *identifier;
 @property (nonatomic) NSURL *downloadUrl;
 
--(id) initWidthDelegate:(id<DownloaderDelegate>) delegate identifier:(NSString *)pIdentifier url:(NSURL *)url;
+-(id) initWithDelegate:(id<DownloaderDelegate>) delegate identifier:(NSString *)pIdentifier url:(NSURL *)url;
 -(void) addDelegate:(id<DownloaderDelegate>) delegate;
 -(void) start;
 @end

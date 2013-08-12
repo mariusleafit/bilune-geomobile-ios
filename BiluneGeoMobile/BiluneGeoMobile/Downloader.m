@@ -22,7 +22,7 @@
 @synthesize identifier;
 @synthesize responseData;
 
--(id) initWidthDelegate:(id<DownloaderDelegate>) delegate identifier:(NSString *)pIdentifier url:(NSURL *)url{
+-(id) initWithDelegate:(id<DownloaderDelegate>) delegate identifier:(NSString *)pIdentifier url:(NSURL *)url{
     self = [super init];
     if(self) {
         self.delegates = [[NSMutableArray alloc] init];
@@ -82,7 +82,7 @@
     // If there was an error decoding the JSON
     if (jsonError) {
         for(id<DownloaderDelegate> delegate in self.delegates) {
-            [delegate didFailWidthError:nil andDownloadIdentifier:self.identifier];
+            [delegate didFailWithError:nil andDownloadIdentifier:self.identifier];
         } 
     }
     
@@ -93,7 +93,7 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     for(id<DownloaderDelegate> delegate in self.delegates) {
-        [delegate didFailWidthError:error andDownloadIdentifier:identifier];
+        [delegate didFailWithError:error andDownloadIdentifier:identifier];
     }
 }
 

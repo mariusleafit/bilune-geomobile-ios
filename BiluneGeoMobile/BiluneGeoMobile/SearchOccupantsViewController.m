@@ -54,12 +54,12 @@ NSMutableArray *filteredSections = nil;
         appDelegate = GetAppDelegate();
     }
     
-    initialSections = [self generateSectionArrayWidthOccupants:appDelegate.occupants];
+    initialSections = [self generateSectionArrayWithOccupants:appDelegate.occupants];
 }
 
 ///generates a MutableArray with a Dictionary with the following format:
 ///"firstLetter":NSString, "index":NSNumber
--(NSMutableArray *)generateSectionArrayWidthOccupants:(NSMutableArray *)data {
+-(NSMutableArray *)generateSectionArrayWithOccupants:(NSMutableArray *)data {
     NSMutableArray *returnArray = [[NSMutableArray alloc] initWithCapacity:26];
     
     int i = 0;
@@ -184,7 +184,7 @@ NSMutableArray *filteredSections = nil;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Occupant *occupant = [self getOccupantAtIndexPath:indexPath];
     
-    roomFormOccupantQuery = [[RoomFromOccupantQuery alloc] initWidthOccupant:occupant andName:@"RoomFromOccupantQuery" andDelegate:self andBuildingStack:appDelegate.buildingstack];
+    roomFormOccupantQuery = [[RoomFromOccupantQuery alloc] initWithOccupant:occupant andName:@"RoomFromOccupantQuery" andDelegate:self andBuildingStack:appDelegate.buildingstack];
     [roomFormOccupantQuery execute];
 }
 
@@ -232,7 +232,7 @@ NSMutableArray *filteredSections = nil;
         }
         
         //generate filteredSections
-        filteredSections = [self generateSectionArrayWidthOccupants:filteredOccupants];
+        filteredSections = [self generateSectionArrayWithOccupants:filteredOccupants];
     }
     
     [self.occupantsList reloadData];

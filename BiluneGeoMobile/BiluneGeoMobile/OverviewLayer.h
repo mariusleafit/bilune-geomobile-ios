@@ -15,7 +15,7 @@
 @property(nonatomic, weak) AGSGraphicsLayer *graphicsLayer;
 @property(nonatomic, weak) BuildingStack *buildingStack;
 
--(id)initWidthGraphicsLayer:(AGSGraphicsLayer *)pGraphicsLayer andBuildingStack:(BuildingStack *)pBuildingStack;
+-(id)initWithGraphicsLayer:(AGSGraphicsLayer *)pGraphicsLayer andBuildingStack:(BuildingStack *)pBuildingStack;
 
 -(void)setVisibility:(BOOL)pVisibility;
 -(Building *)getBuildingFromGraphic:(AGSGraphic *)graphic;

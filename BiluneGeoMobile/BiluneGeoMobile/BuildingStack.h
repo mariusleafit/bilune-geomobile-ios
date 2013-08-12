@@ -13,15 +13,15 @@
     
 }
 
-///*create BuildingStack width JSON-data
-+(BuildingStack *) createWidthData:(NSDictionary *)data;
+///*create BuildingStack with JSON-data
++(BuildingStack *) createWithData:(NSDictionary *)data;
 
-///*get Building width URL (eg. http://biluneapp.unine.ch/arcgis/rest/services/ebilune/30_unimail_web/MapServer)
--(Building *) getBuildingWidthFullURL:(NSURL *)pFullURL;
-///*get Building width URL (eg. ebilune/30_unimail_web)
--(Building *) getBuildingWidthShortURL:(NSString *)pShortURL;
+///*get Building with URL (eg. http://biluneapp.unine.ch/arcgis/rest/services/ebilune/30_unimail_web/MapServer)
+-(Building *) getBuildingWithFullURL:(NSURL *)pFullURL;
+///*get Building with URL (eg. ebilune/30_unimail_web)
+-(Building *) getBuildingWithShortURL:(NSString *)pShortURL;
 
--(Building *) getBuildingWidthPoint:(AGSPoint *)point andSpatialReference:(AGSSpatialReference *)spatialReference;
+-(Building *) getBuildingWithPoint:(AGSPoint *)point andSpatialReference:(AGSSpatialReference *)spatialReference;
 
 -(NSArray *) getBuildings;
 

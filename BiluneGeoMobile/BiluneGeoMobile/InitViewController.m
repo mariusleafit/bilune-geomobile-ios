@@ -78,9 +78,9 @@ bool errorOccured = false;
     DownloadQueue *downloadQueue = [[DownloadQueue alloc] init];
     
     //download occupants
-    Downloader *occupantsDownloader = [[Downloader alloc] initWidthDelegate:self identifier:@"occupants" url:[NSURL URLWithString:[Constants OCCUPANTSURL]]];
+    Downloader *occupantsDownloader = [[Downloader alloc] initWithDelegate:self identifier:@"occupants" url:[NSURL URLWithString:[Constants OCCUPANTSURL]]];
     
-    Downloader *buildingsDownloader = [[Downloader alloc] initWidthDelegate:self identifier:@"buildings" url:[NSURL URLWithString:[Constants BUILDINGSURL]]];
+    Downloader *buildingsDownloader = [[Downloader alloc] initWithDelegate:self identifier:@"buildings" url:[NSURL URLWithString:[Constants BUILDINGSURL]]];
     
     [downloadQueue addDownloader:occupantsDownloader];
     [downloadQueue addDownloader:buildingsDownloader];
@@ -107,7 +107,7 @@ bool errorOccured = false;
         if([identifier isEqual: @"occupants"] && data != nil) {
             delegate.occupants = [NSMutableArray arrayWithCapacity:1000];
             for(NSDictionary *item in data) {
-                [delegate.occupants addObject:[Occupant occupantWidthDictionary:item]];
+                [delegate.occupants addObject:[Occupant occupantWithDictionary:item]];
             }
             downloadedOccupants = true;
         }
@@ -117,14 +117,14 @@ bool errorOccured = false;
             //parse building
             NSDictionary *buildingsDict = [data valueForKey:@"Buildings"];
             if(buildingsDict != nil) {
-                delegate.buildingstack = [BuildingStack createWidthData:buildingsDict];
+                delegate.buildingstack = [BuildingStack createWithData:buildingsDict];
             }
             
             //parse Legend
             delegate.legendEntries = [NSMutableArray arrayWithCapacity:30];
             NSDictionary *legendDict = (NSDictionary *)[data valueForKey:@"Legend"];
             for (NSDictionary *legendEntryDict in legendDict) {
-                [delegate.legendEntries addObject:[[LegendEntry alloc] initWidthDictionary:legendEntryDict]];
+                [delegate.legendEntries addObject:[[LegendEntry alloc] initWithDictionary:legendEntryDict]];
             }
             
             
@@ -143,7 +143,7 @@ bool errorOccured = false;
 }
 
 
--(void)didFailWidthError:(NSError *)error andDownloadIdentifier:(NSString *)identifier{
+-(void)didFailWithError:(NSError *)error andDownloadIdentifier:(NSString *)identifier{
     errorOccured = true;
     [self.loaderImage stopAnimating];
     self.loaderImage.hidden = true;

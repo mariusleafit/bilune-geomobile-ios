@@ -65,7 +65,7 @@
     [self startNextDownload];
 }
 
--(void)didFailWidthError:(NSError *)error andDownloadIdentifier:(NSString *)identifier {
+-(void)didFailWithError:(NSError *)error andDownloadIdentifier:(NSString *)identifier {
     [self startNextDownload];
 }
 @end

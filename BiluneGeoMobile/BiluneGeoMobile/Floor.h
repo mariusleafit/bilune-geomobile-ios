@@ -22,7 +22,7 @@
 @property (nonatomic, strong) AGSEnvelope *extent;
 @property BOOL defaultVisibility;
 
-+(Floor *)createWidthData:(NSDictionary *)data andParentBuilding:(Building *)parentBuilding;
++(Floor *)createWithData:(NSDictionary *)data andParentBuilding:(Building *)parentBuilding;
 
 -(NSURL *)getParentBuildingURL;
 -(NSString *)getStrFloorID;
@@ -36,8 +36,5 @@
 
 
 -(AGSSpatialReference *)getSpatialReference;
-//-(Room *)getClickedRoomWidthX:(NSNumber *)x andY:(NSNumber *)y;
- 
- //comparator???
 
 @end

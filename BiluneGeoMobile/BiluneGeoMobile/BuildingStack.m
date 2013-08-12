@@ -26,19 +26,19 @@
     return self;
 }
 
-///*create BuildingStack width JSON-data
-+(BuildingStack *) createWidthData:(NSDictionary *)data {
+///*create BuildingStack with JSON-data
++(BuildingStack *) createWithData:(NSDictionary *)data {
     if(data == nil) {
         return nil;
     }
     
     BuildingStack *returnBuildingStack = [[BuildingStack alloc] init];
     
-    //initialize width Dictionary
+    //initialize with Dictionary
     // add Buildings
     for(NSDictionary *buildingDict in data) {
         if(buildingDict != nil) {
-            Building *tmpBuilding = [Building createWidthData:buildingDict];
+            Building *tmpBuilding = [Building createWithData:buildingDict];
             if(tmpBuilding) {
                 [returnBuildingStack.buildings addObject:tmpBuilding];
             }
@@ -48,8 +48,8 @@
     return returnBuildingStack;
 }
 
-///*get Building width URL (eg. http://biluneapp.unine.ch/arcgis/rest/services/ebilune/30_unimail_web/MapServer)
--(Building *) getBuildingWidthFullURL:(NSURL *)pFullURL{
+///*get Building with URL (eg. http://biluneapp.unine.ch/arcgis/rest/services/ebilune/30_unimail_web/MapServer)
+-(Building *) getBuildingWithFullURL:(NSURL *)pFullURL{
     Building *returnBuilding = nil;
     if(self.buildings && self.buildings.count > 0) {
         int i = 0;
@@ -64,8 +64,8 @@
     return returnBuilding;
 }
 
-///*get Building width URL (eg. ebilune/30_unimail_web)
--(Building *) getBuildingWidthShortURL:(NSString *)pShortURL {
+///*get Building with URL (eg. ebilune/30_unimail_web)
+-(Building *) getBuildingWithShortURL:(NSString *)pShortURL {
     Building *returnBuilding = nil;
     if(self.buildings && self.buildings.count > 0) {
         int i = 0;
@@ -80,12 +80,12 @@
     return returnBuilding;
 }
 
--(Building *)getBuildingWidthPoint:(AGSPoint *)point andSpatialReference:(AGSSpatialReference *)spatialReference {
+-(Building *)getBuildingWithPoint:(AGSPoint *)point andSpatialReference:(AGSSpatialReference *)spatialReference {
     Building *returnBuilding = nil;
     int i = 0;
     while(returnBuilding == nil && i < [self.buildings count]) {
         Building *tmpBuilding = [self.buildings objectAtIndex:i];
-        if([tmpBuilding isClickedWidthPoint:point andSpatialReference:nil]) {
+        if([tmpBuilding isClickedWithPoint:point andSpatialReference:nil]) {
             returnBuilding = tmpBuilding;
         }
         i++;

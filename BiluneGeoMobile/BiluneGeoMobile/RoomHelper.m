@@ -22,13 +22,13 @@
         NSString *locArea = [graphic attributeAsStringForKey:@"SHAPE_Area"];
         
         //get parentBuilding
-        Building *parentBuilding = [buildingStack getBuildingWidthFullURL:buildingUrlFull];
+        Building *parentBuilding = [buildingStack getBuildingWithFullURL:buildingUrlFull];
         if(parentBuilding) {
             //getFloor
-            Floor *parentFloor = [parentBuilding getFloorWidthFloorCode:floorCode];
+            Floor *parentFloor = [parentBuilding getFloorWithFloorCode:floorCode];
             if(parentFloor) {
                 AGSPolygon *roomPolygon = (AGSPolygon *)graphic.geometry;
-                returnRoom = [Room createWidthName:locCode andOccupants:locOccupants andPolygon:roomPolygon andParentFloor:parentFloor andParentBuilding:parentBuilding andAddress:batAddress andType:locType andArea:locArea];
+                returnRoom = [Room createWithName:locCode andOccupants:locOccupants andPolygon:roomPolygon andParentFloor:parentFloor andParentBuilding:parentBuilding andAddress:batAddress andType:locType andArea:locArea];
             }
         }
         

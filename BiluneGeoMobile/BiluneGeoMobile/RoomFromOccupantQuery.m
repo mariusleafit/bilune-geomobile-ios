@@ -19,7 +19,7 @@
 
 @implementation RoomFromOccupantQuery
 
--(id)initWidthOccupant:(Occupant *)occupant andName:(NSString *)name andDelegate:(id<RoomQueryDelegate>)delegate andBuildingStack:(BuildingStack *)buildingStack {
+-(id)initWithOccupant:(Occupant *)occupant andName:(NSString *)name andDelegate:(id<RoomQueryDelegate>)delegate andBuildingStack:(BuildingStack *)buildingStack {
     self = [super init];
     if(self) {
         queryName = name;
@@ -57,14 +57,14 @@
         NSString *locArea = [(AGSGraphic *)(featureSet.features[0]) attributeAsStringForKey:@"SHAPE_Area"];
         
         //get parentBuilding
-        Building *parentBuilding = [queryBuildingStack getBuildingWidthFullURL:queryOccupant.buildingUrlFull];
+        Building *parentBuilding = [queryBuildingStack getBuildingWithFullURL:queryOccupant.buildingUrlFull];
         if(parentBuilding) {
             //getFloor
-            Floor *parentFloor = [parentBuilding getFloorWidthFloorCode:floorCode];
+            Floor *parentFloor = [parentBuilding getFloorWithFloorCode:floorCode];
             if(parentFloor) {
                 AGSPolygon *roomPolygon = (AGSPolygon *)(((AGSGraphic *)(featureSet.features[0])).geometry);
                 
-                foundRoom = [Room createWidthName:locCode andOccupants:locOccupants andPolygon:roomPolygon andParentFloor:parentFloor andParentBuilding:parentBuilding andAddress:batAddress andType:locType andArea:locArea];
+                foundRoom = [Room createWithName:locCode andOccupants:locOccupants andPolygon:roomPolygon andParentFloor:parentFloor andParentBuilding:parentBuilding andAddress:batAddress andType:locType andArea:locArea];
             }
         }
         

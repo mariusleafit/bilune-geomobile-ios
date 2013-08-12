@@ -30,7 +30,7 @@
 @synthesize spatialReference;
 
 
-+(Building *) createWidthData:(NSDictionary *)data {
++(Building *) createWithData:(NSDictionary *)data {
     if(data == nil) {
         return nil;
     }
@@ -59,7 +59,7 @@
     returnBuilding.floors = [[NSMutableArray alloc] init];
     for (NSDictionary *floorDict in (NSDictionary *)[data valueForKey:@"Floors"]) {
         if(floorDict != nil) {
-            Floor *tmpFloor = [Floor createWidthData:floorDict andParentBuilding:returnBuilding];
+            Floor *tmpFloor = [Floor createWithData:floorDict andParentBuilding:returnBuilding];
             if(tmpFloor) {
                 [returnBuilding.floors addObject: tmpFloor];
             }
@@ -157,7 +157,7 @@
     return returnFloorIDs;
 }
 
--(Floor *)getFloorWidthFloorCode:(NSString *)floorCode {
+-(Floor *)getFloorWithFloorCode:(NSString *)floorCode {
     Floor *returnFloor = nil;
     if(self.floors && self.floors.count > 0) {
         int i = 0;
@@ -171,7 +171,7 @@
     return returnFloor;
 }
 
--(Floor *)getFloorWidthFloorID:(NSNumber *)floorID {
+-(Floor *)getFloorWithFloorID:(NSNumber *)floorID {
     Floor *returnFloor = nil;
     if(self.floors && self.floors.count > 0) {
         int i = 0;
@@ -194,7 +194,7 @@
     }
 }
 
--(BOOL)isClickedWidthPoint:(AGSPoint *)point andSpatialReference:(AGSSpatialReference *)spatialReference {
+-(BOOL)isClickedWithPoint:(AGSPoint *)point andSpatialReference:(AGSSpatialReference *)spatialReference {
     BOOL flag = false;
     AGSGeometryEngine *geometryEngine = [AGSGeometryEngine defaultGeometryEngine];
     AGSPoint *projectedPoint = (AGSPoint *)[geometryEngine projectGeometry:point toSpatialReference:[Constants BILUNE_SPATIALREFERENCE]];
@@ -206,16 +206,16 @@
 
 
 #pragma mark modifiers
--(void)changeVisibleFloorsWidthFloorCode:(NSString *)floorCode{
-    [self changeVisibleFloorsWidthFloorCodes:[NSArray arrayWithObject:floorCode]];
+-(void)changeVisibleFloorsWithFloorCode:(NSString *)floorCode{
+    [self changeVisibleFloorsWithFloorCodes:[NSArray arrayWithObject:floorCode]];
 }
 
--(void)changeVisibleFloorsWidthFloorCodes:(NSArray *)floorCodes {
+-(void)changeVisibleFloorsWithFloorCodes:(NSArray *)floorCodes {
     //get floors to be set visible
     NSMutableArray *newFloors = [NSMutableArray arrayWithCapacity:5];/*capacitiy is just an indicator*/
     for(NSString *floorCode in floorCodes) {
-        if([self getFloorWidthFloorCode:floorCode]) {
-            [newFloors addObject:[self getFloorWidthFloorCode:floorCode]];
+        if([self getFloorWithFloorCode:floorCode]) {
+            [newFloors addObject:[self getFloorWithFloorCode:floorCode]];
         }
     }
     

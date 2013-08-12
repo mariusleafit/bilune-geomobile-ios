@@ -11,6 +11,6 @@
 @protocol DownloaderDelegate <NSObject>
 
 -(void)finishedLoadingData:(NSDictionary *)data andDownloadIdentifier:(NSString *)identifier;
--(void)didFailWidthError:(NSError *)error andDownloadIdentifier:(NSString *)identifier;
+-(void)didFailWithError:(NSError *)error andDownloadIdentifier:(NSString *)identifier;
 
 @end

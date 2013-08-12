@@ -17,7 +17,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self=[super initWithCoder:aDecoder]) {
-        self.scaleImage = [[UIImageView alloc] initWithFrame:CGRectMake(30, 5, 80, 8)];
+        self.scaleImage = [[UIImageView alloc] initWithFrame:CGRectMake(30, 5, 80, 7)];
         [self.scaleImage setImage:[UIImage imageNamed:@"scale.png"]];
         [self addSubview:self.scaleImage];
         
@@ -31,22 +31,6 @@
     }
     return self;
 }
-
-// Override drawRect for drawing the actual scale bar
-// cf. source #1
-/*- (void)drawRect:(CGRect)rect {
-	CGContextRef ctx = UIGraphicsGetCurrentContext();
-	CGContextSetLineWidth(ctx, 8.0);
-    CGMutablePathRef path = CGPathCreateMutable();
-    CGPathMoveToPoint(path, NULL, 30, 10);
-    CGPathAddLineToPoint(path, NULL, 110, 10);
-    CGPathCloseSubpath(path);
-    CGContextAddPath(ctx, path);
-    CGContextSetStrokeColorWithColor(ctx,[UIColor blackColor].CGColor);
-    CGContextStrokePath(ctx);
-    CGPathRelease(path);
-	
-}*/
 
 -(void) updateBar:(CGFloat)metersPerUnit {
 	[unitLabel setText:label];

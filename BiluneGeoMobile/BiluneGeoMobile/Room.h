@@ -25,7 +25,7 @@
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) NSString *area;
 
-+(Room *)createWidthName:(NSString *)name andOccupants:(NSString *)occupants andPolygon:(AGSPolygon *)polygon andParentFloor:(Floor *)floor
++(Room *)createWithName:(NSString *)name andOccupants:(NSString *)occupants andPolygon:(AGSPolygon *)polygon andParentFloor:(Floor *)floor
        andParentBuilding:(Building *)building andAddress:(NSString *)address andType:(NSString *)type andArea:(NSString *)area;
 
 

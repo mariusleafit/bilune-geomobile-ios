@@ -23,7 +23,7 @@
 @synthesize extent;
 
 
-+(Floor *)createWidthData:(NSDictionary *)data andParentBuilding:(Building *)parentBuilding {
++(Floor *)createWithData:(NSDictionary *)data andParentBuilding:(Building *)parentBuilding {
     if(data == nil) {
         return nil;
     }

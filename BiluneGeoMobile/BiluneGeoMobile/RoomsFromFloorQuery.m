@@ -21,7 +21,7 @@
 
 @implementation RoomsFromFloorQuery
 
--(id)initWidthFloor:(Floor *)floor andName:(NSString *)name andDelegate:(id<MultipleRoomsQueryDelegate>)delegate{
+-(id)initWithFloor:(Floor *)floor andName:(NSString *)name andDelegate:(id<MultipleRoomsQueryDelegate>)delegate{
     self = [super init];
     if(self) {
         queryName = name;
@@ -59,7 +59,7 @@
             NSString *locArea = [(AGSGraphic *)(featureSet.features[i]) attributeAsStringForKey:@"SHAPE_Area"];
             AGSPolygon *roomPolygon = (AGSPolygon *)(((AGSGraphic *)(featureSet.features[i])).geometry);
                     
-            Room *tmpRoom = [Room createWidthName:locCode andOccupants:locOccupants andPolygon:roomPolygon andParentFloor:queryFloor andParentBuilding:queryFloor.parentBuilding andAddress:batAddress andType:locType andArea:locArea];
+            Room *tmpRoom = [Room createWithName:locCode andOccupants:locOccupants andPolygon:roomPolygon andParentFloor:queryFloor andParentBuilding:queryFloor.parentBuilding andAddress:batAddress andType:locType andArea:locArea];
             if(tmpRoom) {
                 [foundRooms addObject:tmpRoom];
             }

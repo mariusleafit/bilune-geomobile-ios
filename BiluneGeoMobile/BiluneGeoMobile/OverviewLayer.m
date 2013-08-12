@@ -15,7 +15,7 @@
 
 @synthesize buildingStack, graphicsLayer;
 
--(id)initWidthGraphicsLayer:(AGSGraphicsLayer *)pGraphicsLayer andBuildingStack:(BuildingStack *)pBuildingStack {
+-(id)initWithGraphicsLayer:(AGSGraphicsLayer *)pGraphicsLayer andBuildingStack:(BuildingStack *)pBuildingStack {
     self = [super init];
     if(self) {
         self.graphicsLayer = pGraphicsLayer;
@@ -63,7 +63,7 @@
     
     if([graphic valueForKey:@"buildingUrl"]) {
         NSString *shortURL = (NSString *)((NSArray *)[graphic valueForKey:@"buildingUrl"])[0];
-        returnBuilding = [self.buildingStack getBuildingWidthShortURL:shortURL];
+        returnBuilding = [self.buildingStack getBuildingWithShortURL:shortURL];
     }
     
     return returnBuilding;

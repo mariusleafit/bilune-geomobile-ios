@@ -13,6 +13,6 @@
 #import "BuildingStack.h"
 
 @interface RoomsFromFloorQuery : NSObject<AGSQueryTaskDelegate>
--(id)initWidthFloor:(Floor *)floor andName:(NSString *)queryName andDelegate:(id<MultipleRoomsQueryDelegate>)delegate;
+-(id)initWithFloor:(Floor *)floor andName:(NSString *)queryName andDelegate:(id<MultipleRoomsQueryDelegate>)delegate;
 -(void)execute;
 @end

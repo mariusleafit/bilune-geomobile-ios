@@ -81,7 +81,6 @@
                             <constraint firstItem="fIz-Rb-oDY" firstAttribute="centerX" secondItem="fJu-6z-xXD" secondAttribute="centerX" type="default" id="jdq-kn-Wzj"/>
                             <constraint firstItem="RWE-Ih-jIP" firstAttribute="top" secondItem="n4h-Mg-qVu" secondAttribute="top" constant="60" id="mAg-aA-eaC"/>
                             <constraint firstItem="Gt6-yU-S8G" firstAttribute="top" secondItem="n4h-Mg-qVu" secondAttribute="top" constant="48" type="user" id="mrJ-Bw-jic"/>
-                            <constraint firstItem="fJu-6z-xXD" firstAttribute="trailing" secondItem="n4h-Mg-qVu" secondAttribute="trailing" type="default" id="pBa-xd-3ya"/>
                             <constraint firstItem="SUV-gg-QsB" firstAttribute="top" secondItem="fIz-Rb-oDY" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="qQS-xH-e2X"/>
                             <constraint firstItem="dSh-aH-5vr" firstAttribute="leading" secondItem="n4h-Mg-qVu" secondAttribute="leading" constant="35" id="t5s-bJ-SD2"/>
                             <constraint firstItem="TFS-eK-WF2" firstAttribute="top" secondItem="n4h-Mg-qVu" secondAttribute="top" type="default" id="z4P-qm-VNU"/>
@@ -207,7 +206,6 @@
                             <constraint firstItem="3ek-co-mqN" firstAttribute="leading" secondItem="zb7-EV-Vj3" secondAttribute="leading" constant="35" id="qYb-so-zhm"/>
                             <constraint firstItem="dBu-iY-vZv" firstAttribute="trailing" secondItem="zb7-EV-Vj3" secondAttribute="trailing" type="default" id="ull-Yh-dOM"/>
                             <constraint firstItem="G8P-nf-WkI" firstAttribute="top" secondItem="OTi-06-lec" secondAttribute="bottom" constant="8" type="user" id="xLm-YR-W3d"/>
-                            <constraint firstItem="rWf-B0-YO5" firstAttribute="trailing" secondItem="zb7-EV-Vj3" secondAttribute="trailing" type="default" id="xU4-Wv-LZ8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="UNINE" id="iFG-vz-4Je"/>
@@ -749,9 +747,8 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="5cm_transparent_no_10101.png" translatesAutoresizingMaskIntoConstraints="NO" id="v2V-5z-7EL">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="leafit_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="v2V-5z-7EL">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="4BQ-GE-e3V"/>
                                             <constraint firstAttribute="height" constant="98" id="ajf-GK-yVZ"/>
                                         </constraints>
                                     </imageView>
@@ -1139,11 +1136,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="5cm_transparent_no_10101.png" width="591" height="258"/>
-        <image name="bilune_page_background01.jpg" width="900" height="288"/>
+        <image name="bilune_page_background01.jpg" width="320" height="102"/>
         <image name="globe.png" width="32" height="32"/>
         <image name="gps32.png" width="32" height="32"/>
         <image name="info.png" width="32" height="32"/>
+        <image name="leafit_logo.png" width="200" height="87"/>
         <image name="logo_unine_bleu.png" width="162" height="106"/>
     </resources>
     <classes>

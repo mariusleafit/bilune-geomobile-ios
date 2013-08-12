@@ -122,7 +122,7 @@
         [self.mapView zoomToEnvelope:projectedPolygon.envelope animated:NO];
         
         //change visible floors
-        [roomToZoomTo.parentBuilding changeVisibleFloorsWidthFloorCode:roomToZoomTo.parentFloor.floorCode];
+        [roomToZoomTo.parentBuilding changeVisibleFloorsWithFloorCode:roomToZoomTo.parentFloor.floorCode];
         //add building to mapView
         [self.mapView addMapLayer:[[AGSFeatureLayer alloc] initWithURL:[roomToZoomTo.parentFloor getFloorURL] mode:AGSFeatureLayerModeSnapshot] withName:[ [roomToZoomTo.parentFloor getFloorURL] absoluteString]];
         
@@ -148,7 +148,7 @@
     //init OverviewLayer
     AGSGraphicsLayer *overviewGraphicsLayer = [[AGSGraphicsLayer alloc] initWithSpatialReference:[Constants BASEMAP_SPATIALREFERENCE]];
     [self.mapView addMapLayer:overviewGraphicsLayer withName:@"overviewLayer"];
-    self.overviewLayer = [[OverviewLayer alloc] initWidthGraphicsLayer:overviewGraphicsLayer andBuildingStack:self.appDelegate.buildingstack];
+    self.overviewLayer = [[OverviewLayer alloc] initWithGraphicsLayer:overviewGraphicsLayer andBuildingStack:self.appDelegate.buildingstack];
     
     //init buildings
     [self.appDelegate.buildingstack resetFloorVisibility];
@@ -156,7 +156,6 @@
         if(building != roomToZoomTo.parentBuilding) {
             for(Floor *floor in [building getVisibleFloorsSortedAsc:false]) {
                 [self.mapView addMapLayer:[[AGSFeatureLayer alloc] initWithURL:[floor getFloorURL] mode:AGSFeatureLayerModeSnapshot] withName:[ [floor getFloorURL] absoluteString]];
-                //[self.mapView addMapLayer:[[AGSDynamicMapServiceLayer alloc] initWithURL:floor.parentBuilding.fullURL] withName:[floor.parentBuilding.fullURL absoluteString]];
             }
         }
     }
@@ -308,7 +307,7 @@
                 self.mapView.callout.delegate = nil;
                 [self.mapView.callout showCalloutAt:mappoint pixelOffset:CGPointMake(0.0f, 0.0f) animated:YES];
             
-                getClickedRoomQuery = [[RoomFromObjectIDQuery alloc] initWidthUrl:[NSURL URLWithString:floorUrlFull] andName:@"RoomFromObjectIDQuery" andDelegate:self andObjectID:objectID andBuildingStack:self.appDelegate.buildingstack];
+                getClickedRoomQuery = [[RoomFromObjectIDQuery alloc] initWithUrl:[NSURL URLWithString:floorUrlFull] andName:@"RoomFromObjectIDQuery" andDelegate:self andObjectID:objectID andBuildingStack:self.appDelegate.buildingstack];
                 [getClickedRoomQuery execute];
             } else {
                 [self.roomMarkingLayer removeAllGraphics];
@@ -321,7 +320,7 @@
 -(void)mapView:(AGSMapView *)mapView didTapAndHoldAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint graphics:(NSDictionary *)graphics {
     //if Buildings are visible
     if(scaleBarValueInMeters <= [Constants ZOOMSTATE_TRANSITION_HEIGHT]) {
-        Building *clickedBuilding = [self.appDelegate.buildingstack getBuildingWidthPoint:mappoint andSpatialReference:[Constants BASEMAP_SPATIALREFERENCE]];
+        Building *clickedBuilding = [self.appDelegate.buildingstack getBuildingWithPoint:mappoint andSpatialReference:[Constants BASEMAP_SPATIALREFERENCE]];
         
         //show changeFloor
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];

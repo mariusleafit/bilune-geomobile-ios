@@ -11,7 +11,7 @@
 @implementation LegendEntry
 @synthesize title, color;
 
--(id)initWidthColor:(UIColor *)pColor title:(NSString *)pTitle {
+-(id)initWithColor:(UIColor *)pColor title:(NSString *)pTitle {
     self = [super init];
     if(self) {
         self.title = pTitle;
@@ -20,7 +20,7 @@
     return self;
 }
 
--(id)initWidthDictionary:(NSDictionary *)dict {
+-(id)initWithDictionary:(NSDictionary *)dict {
     self = [super init];
     if(self) {
         self.title = (NSString *)[dict valueForKey:@"Value"];

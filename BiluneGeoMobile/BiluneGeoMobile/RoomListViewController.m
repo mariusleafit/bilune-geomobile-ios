@@ -48,7 +48,7 @@ Floor *currentFloor;
     self.roomsOfFloor = [[NSArray alloc] initWithObjects:nil];
     
     //load Rooms from currentFloor
-    roomsQuery = [[RoomsFromFloorQuery alloc] initWidthFloor:currentFloor andName:@"RoomsFromFloorQuery" andDelegate:self];
+    roomsQuery = [[RoomsFromFloorQuery alloc] initWithFloor:currentFloor andName:@"RoomsFromFloorQuery" andDelegate:self];
     [roomsQuery execute];
     
     self.roomList.dataSource = self;
