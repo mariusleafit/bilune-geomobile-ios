@@ -56,6 +56,9 @@
     [self.graphicsLayer setVisible:pVisibility];
 }
 
+-(BOOL)isVisible {
+    return self.graphicsLayer.isVisible;
+}
 
 ///get Building from BuildingStack using the BuildingUrl saved in the graphic
 -(Building *)getBuildingFromGraphic:(AGSGraphic *)graphic {

@@ -190,6 +190,7 @@
         [self zoomStateTransitionFromOverviewToBuildings];
     }
     
+
     //if error with resolution --> hardcode (occures when mapView hasnt finished loading)
     if(scaleBarValueInMeters < 10) {
         scaleBarValueInMeters = 617;
@@ -197,6 +198,19 @@
     } else {
         //update scaleBar
         [self.mapScale updateBar:AGSUnitsToUnits(self.mapView.resolution, [self.roadBasemap mapServiceInfo].units, AGSUnitsMeters)];
+    }
+    
+    //verify if overview and buildings are correctly hidden/visible
+    if(scaleBarValueInMeters >=[Constants ZOOMSTATE_TRANSITION_HEIGHT]) {/*overview*/
+        if(!self.overviewLayer.isVisible) {
+            [self setVisibilityOfBuildings:NO];
+            [self.overviewLayer setVisibility:YES];
+        }
+    } else {/*building*/
+        if(self.overviewLayer.isVisible) {
+            [self setVisibilityOfBuildings:YES];
+            [self.overviewLayer setVisibility:NO];
+        }
     }
 }
 
@@ -406,14 +420,23 @@
 }
 
 - (IBAction)toggleGPS:(id)sender {
-    if(self.mapView.locationDisplay.dataSourceStarted){
-        [self.mapView.locationDisplay stopDataSource];
-        self.mapView.locationDisplay.autoPanMode = AGSLocationDisplayAutoPanModeOff;
-        self.gpsButton.tintColor = [UIColor whiteColor];
+    if(![CLLocationManager locationServicesEnabled] || [CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Service Localisation désactivé"
+                                                        message:@"Pour réactiver, utilisez Paramètres."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     } else {
-        [self.mapView.locationDisplay startDataSource];
-        self.mapView.locationDisplay.autoPanMode = AGSLocationDisplayAutoPanModeDefault;
-        self.gpsButton.tintColor = [UIColor greenColor];
+        if(self.mapView.locationDisplay.dataSourceStarted){
+            [self.mapView.locationDisplay stopDataSource];
+            self.mapView.locationDisplay.autoPanMode = AGSLocationDisplayAutoPanModeOff;
+            self.gpsButton.tintColor = [UIColor whiteColor];
+        } else {
+            [self.mapView.locationDisplay startDataSource];
+            self.mapView.locationDisplay.autoPanMode = AGSLocationDisplayAutoPanModeDefault;
+            self.gpsButton.tintColor = [UIColor greenColor];
+        }
     }
 }
 - (IBAction)showInfo:(id)sender {

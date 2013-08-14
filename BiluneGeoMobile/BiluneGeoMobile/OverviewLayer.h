@@ -19,4 +19,5 @@
 
 -(void)setVisibility:(BOOL)pVisibility;
 -(Building *)getBuildingFromGraphic:(AGSGraphic *)graphic;
+-(BOOL)isVisible;
 @end
