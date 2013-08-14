@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface InfoViewController : UIViewController
-- (IBAction)returnToMap:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *devInfoContainer;
 @property (weak, nonatomic) IBOutlet UIView *appInfoContainer;
 - (IBAction)changeInfoPage:(id)sender;

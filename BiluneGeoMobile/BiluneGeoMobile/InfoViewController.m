@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
 	
+    self.title = @"Info";
     //hide devInfo and show appInfo
     self.devInfoContainer.hidden = true;
     self.appInfoContainer.hidden = false;
@@ -46,9 +47,7 @@
 
 #pragma mark IBAction
 
-- (IBAction)returnToMap:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+
 - (IBAction)changeInfoPage:(id)sender {
     if(self.devInfoContainer.hidden) {
         self.devInfoContainer.hidden = false;

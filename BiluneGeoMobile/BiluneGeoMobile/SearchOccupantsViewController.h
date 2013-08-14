@@ -10,7 +10,6 @@
 #import "RoomQueryDelegate.h"
 
 @interface SearchOccupantsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, RoomQueryDelegate>
-- (IBAction)returnToMenu:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *occupantsList;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) NSMutableArray *filteredOccupants;

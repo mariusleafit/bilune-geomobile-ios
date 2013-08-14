@@ -26,6 +26,8 @@
     [super viewDidLoad];    
     self.appDelegate = GetAppDelegate();
     
+    self.title = @"Batiments d'UNINE";
+    
     self.buildingsList.dataSource = self;
     self.buildingsList.delegate = self;
 }
@@ -46,9 +48,11 @@
     static NSString *cellIdentifier = @"BuildingCell";
     
     //get cell
-    BuildingListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    BuildingListCell *cell = [self.buildingsList dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[BuildingListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        
+        UIViewController *tmpViewController = [[UIViewController alloc] initWithNibName:@"BuildingListCell" bundle:nil];
+        cell = (BuildingListCell *)tmpViewController.view;
     }
     
     //get building
@@ -67,11 +71,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Building *clickedBuilding = [[appDelegate.buildingstack getBuildings] objectAtIndex:indexPath.row];
     if(clickedBuilding) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
-        FloorListViewController *viewController = (FloorListViewController *)[storyboard instantiateViewControllerWithIdentifier:@"FloorListView"];
+        FloorListViewController *viewController = [[FloorListViewController alloc] initWithNibName:@"FloorList" bundle:nil];
         [viewController setBuilding:clickedBuilding];
-        [self presentViewController:viewController animated:YES completion:nil];
-
+        [self.appDelegate.navigationController pushViewController:viewController animated:YES];
     }
 }
 
@@ -81,13 +83,7 @@
 }
 
 #pragma mark IBAction
-- (IBAction)returnToMenu:(id)sender {
-    //show SearchOccupants
-    /*UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
-    UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MainMenu"];
-    [self presentViewController:viewController animated:YES completion:nil];*/
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+
 
 
 @end

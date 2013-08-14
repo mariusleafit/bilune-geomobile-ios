@@ -36,6 +36,9 @@ Floor *currentFloor;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.appDelegate = GetAppDelegate();
+    
 	// prepare View
     if([currentFloor.parentBuilding getImage]){
         [self.buildingImage setImage:[currentFloor.parentBuilding getImage]];
@@ -50,6 +53,8 @@ Floor *currentFloor;
     //load Rooms from currentFloor
     roomsQuery = [[RoomsFromFloorQuery alloc] initWithFloor:currentFloor andName:@"RoomsFromFloorQuery" andDelegate:self];
     [roomsQuery execute];
+    
+    self.title = @"Locaux";
     
     self.roomList.dataSource = self;
     self.roomList.delegate = self;
@@ -94,10 +99,9 @@ Floor *currentFloor;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Room *room = [self.roomsOfFloor objectAtIndex:indexPath.row];
     if(room) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
-        MapViewController *viewController = (MapViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Map"];
+        MapViewController *viewController = [[MapViewController alloc] initWithNibName:@"Map" bundle:nil];
         [viewController setRoomToZoomTo:room];
-        [self presentViewController:viewController animated:YES completion:nil];
+        [self.appDelegate.navigationController pushViewController:viewController animated:YES];
     }
 }
 
@@ -118,7 +122,5 @@ Floor *currentFloor;
 }
 
 #pragma mark IBAction
-- (IBAction)returnToEtages:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+
 @end

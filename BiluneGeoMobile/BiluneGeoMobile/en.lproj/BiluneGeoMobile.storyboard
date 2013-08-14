@@ -592,8 +592,8 @@
                                             <accessibilityTraits key="traits" none="YES"/>
                                         </accessibility>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="0oc-uG-awg"/>
                                             <constraint firstAttribute="width" constant="239" id="rHU-Fx-D1S"/>
-                                            <constraint firstAttribute="height" constant="43" id="ukC-eT-SPl"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -609,8 +609,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.23999999999999999" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Ebc-4J-B7O" firstAttribute="top" secondItem="E9S-ov-Tow" secondAttribute="top" constant="3" id="BP0-rH-kUu"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ebc-4J-B7O" secondAttribute="trailing" constant="5" type="user" id="ZrN-7O-jCH"/>
+                                    <constraint firstItem="Ebc-4J-B7O" firstAttribute="leading" secondItem="E9S-ov-Tow" secondAttribute="leading" constant="3" id="9zE-Fb-y1M"/>
+                                    <constraint firstItem="Ebc-4J-B7O" firstAttribute="centerY" secondItem="E9S-ov-Tow" secondAttribute="centerY" type="user" id="Ycb-3Q-huj"/>
+                                    <constraint firstItem="Ebc-4J-B7O" firstAttribute="top" secondItem="E9S-ov-Tow" secondAttribute="top" constant="4" type="user" id="reh-HM-eB0"/>
                                     <constraint firstItem="UcF-kZ-IcQ" firstAttribute="centerX" secondItem="E9S-ov-Tow" secondAttribute="centerX" type="user" id="sRT-2O-9x8"/>
                                     <constraint firstItem="UcF-kZ-IcQ" firstAttribute="top" secondItem="E9S-ov-Tow" secondAttribute="top" type="default" id="za2-7D-1Bw"/>
                                 </constraints>
@@ -1143,138 +1144,6 @@
         <image name="leafit_logo.png" width="200" height="87"/>
         <image name="logo_unine_bleu.png" width="162" height="106"/>
     </resources>
-    <classes>
-        <class className="BuildingListCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingListCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addressText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="buildingImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="BuildingListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="returnToMenu:"/>
-                <relationship kind="outlet" name="buildingsList" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="ChangeFloorListCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChangeFloorListCell.h"/>
-            <relationships>
-                <relationship kind="action" name="changeVisibility:"/>
-                <relationship kind="outlet" name="floorName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="visibilitySwitch" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="ChangeFloorViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChangeFloorViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="returnToMap:"/>
-                <relationship kind="outlet" name="floorList" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CompassView" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CompassView.h"/>
-        </class>
-        <class className="FloorListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FloorListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="returnToBuildingList:"/>
-                <relationship kind="outlet" name="buildingAddress" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="buildingImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="floorsTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="InfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="changeInfoPage:"/>
-                <relationship kind="action" name="returnToMap:"/>
-                <relationship kind="outlet" name="appInfoContainer" candidateClass="UIView"/>
-                <relationship kind="outlet" name="devInfoContainer" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="InitViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InitViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="retryDownload:"/>
-                <relationship kind="outlet" name="alertText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loaderImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="retryButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="LegendListCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LegendListCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="colorLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="LegendViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LegendViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="returnToMap:"/>
-                <relationship kind="outlet" name="legendTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MainMenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showBuildingList:"/>
-                <relationship kind="action" name="showMap:"/>
-                <relationship kind="action" name="showSearchOccupants:"/>
-            </relationships>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="returnToMenu:"/>
-                <relationship kind="action" name="showInfo:"/>
-                <relationship kind="action" name="showLegend:"/>
-                <relationship kind="action" name="showMapOverview:"/>
-                <relationship kind="action" name="toggleGPS:"/>
-                <relationship kind="action" name="toggleSatelite:"/>
-                <relationship kind="outlet" name="compass" candidateClass="CompassView"/>
-                <relationship kind="outlet" name="gpsButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="mapInfoText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mapScale" candidateClass="ScaleBarView"/>
-                <relationship kind="outlet" name="mapView" candidateClass="AGSMapView"/>
-                <relationship kind="outlet" name="sateliteButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="RoomInfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomInfoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="returnToMap:"/>
-                <relationship kind="outlet" name="infoTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="titleBar" candidateClass="UINavigationItem"/>
-            </relationships>
-        </class>
-        <class className="RoomListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="returnToEtages:"/>
-                <relationship kind="outlet" name="buildingAddress" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="buildingImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="floorName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="roomList" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="ScaleBarView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScaleBarView.h"/>
-        </class>
-        <class className="SearchOccupantsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchOccupantsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="returnToMenu:"/>
-                <relationship kind="outlet" name="occupantsList" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -34,6 +34,7 @@
     appDelegate = GetAppDelegate();
     
     self.legendTable.dataSource = self;
+    self.title = @"Legende";
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,7 +55,8 @@
     //get cell
     LegendListCell *cell = (LegendListCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = (LegendListCell *)[[LegendListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        UIViewController *tmpViewController = [[UIViewController alloc] initWithNibName:@"LegendCell" bundle:nil];
+        cell = (LegendListCell *)tmpViewController.view;
     }
     
     //get LegendEntry
@@ -73,7 +75,5 @@
 }
 
 #pragma mark IBAction
-- (IBAction)returnToMap:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+
 @end

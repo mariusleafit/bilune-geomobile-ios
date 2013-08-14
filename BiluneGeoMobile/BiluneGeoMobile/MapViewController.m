@@ -14,6 +14,9 @@
 #import "RoomHelper.h"
 #import "RoomFromObjectIDQuery.h"
 #import "RoomInfoViewController.h"
+#import "MainMenuViewController.h"
+#import "InfoViewController.h"
+#import "LegendViewController.h"
 
 @interface MapViewController () {
     RoomFromObjectIDQuery *getClickedRoomQuery;
@@ -47,6 +50,14 @@
     [super viewDidLoad];
 	
     self.appDelegate = GetAppDelegate();
+    //prepare navigationBar
+    [self setTitle:@"Carte"];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+     initWithTitle:@"Home"
+     style:UIBarButtonItemStyleBordered
+     target:self
+     action:@selector(returnToHome)];
+    
     
     //**prepare map**
     
@@ -171,8 +182,8 @@
     [self.mapView addMapLayer:self.roomMarkingLayer withName:@"roomMarkingLayer"];
     
     self.mapView.allowRotationByPinching = true;
-}
 
+}
 
 #pragma mark ZoomManagement
 -(void) respondToPan: (NSNotification *)notification {
@@ -191,10 +202,14 @@
     }
     
 
-    //if error with resolution --> hardcode (occures when mapView hasnt finished loading)
+    //if error with resolution (sometimes mapView.resolution isn't "uptodate" --> hardcode (occures when mapView hasnt finished loading)
     if(scaleBarValueInMeters < 10) {
-        scaleBarValueInMeters = 617;
-        [self.mapScale updateBar:(scaleBarValueInMeters / 80)];
+        if(roomToZoomTo) {
+            scaleBarValueInMeters = 24.0;
+        } else {
+            scaleBarValueInMeters = 617.0;
+        }
+        [self.mapScale updateBar:(scaleBarValueInMeters  / 80.0)];
     } else {
         //update scaleBar
         [self.mapScale updateBar:AGSUnitsToUnits(self.mapView.resolution, [self.roadBasemap mapServiceInfo].units, AGSUnitsMeters)];
@@ -337,11 +352,13 @@
         Building *clickedBuilding = [self.appDelegate.buildingstack getBuildingWithPoint:mappoint andSpatialReference:[Constants BASEMAP_SPATIALREFERENCE]];
         
         //show changeFloor
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
-        ChangeFloorViewController *viewController = (ChangeFloorViewController *)[storyboard instantiateViewControllerWithIdentifier:@"ChangeFloor"];
+        //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+        ChangeFloorViewController *viewController = [[ChangeFloorViewController alloc] initWithNibName:@"ChangeFloor" bundle:nil];
         [viewController setBuilding:clickedBuilding];
         [viewController setMapViewController:self];
-        [self presentViewController:viewController animated:YES completion:nil];
+        //[self presentViewController:viewController animated:YES completion:nil];
+        
+        [self.appDelegate.navigationController pushViewController:viewController animated:YES];
     }
 }
 
@@ -374,16 +391,18 @@
 -(void)didClickAccessoryButtonForCallout:(AGSCallout *)callout {
     if(clickedRoom) {
         //display RoominfoView
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
-        RoomInfoViewController *viewController = (RoomInfoViewController *)[storyboard instantiateViewControllerWithIdentifier:@"RoomInfo"];
+        //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+        RoomInfoViewController *viewController = [[RoomInfoViewController alloc] initWithNibName:@"RoomInfo" bundle:nil];
         [viewController setRoom:clickedRoom];
-        [self presentViewController:viewController animated:YES completion:nil];
+        //[self presentViewController:viewController animated:YES completion:nil];
+        [self.appDelegate.navigationController pushViewController:viewController animated:YES];
     } else if(roomToZoomTo) {
         //display RoominfoView
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
-        RoomInfoViewController *viewController = (RoomInfoViewController *)[storyboard instantiateViewControllerWithIdentifier:@"RoomInfo"];
+        //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+        RoomInfoViewController *viewController = [[RoomInfoViewController alloc] initWithNibName:@"RoomInfo" bundle:nil];
         [viewController setRoom:roomToZoomTo];
-        [self presentViewController:viewController animated:YES completion:nil];
+        //[self presentViewController:viewController animated:YES completion:nil];
+         [self.appDelegate.navigationController pushViewController:viewController animated:YES];
 
     }
 }
@@ -402,21 +421,13 @@
 }
 
 #pragma mark IBAction
-- (IBAction)returnToMenu:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)showMapOverview:(id)sender {
-    [self.mapView zoomToEnvelope:[Constants INITIAL_EXTENT] animated:YES];
-    [roomMarkingLayer removeAllGraphics];
-    //self.mapView.callout.hidden = true;
-}
 
 - (IBAction)showLegend:(id)sender {
     //showLegend
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+    /*UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
     UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Legend"];
-    [self presentViewController:viewController animated:YES completion:nil];
+    [self presentViewController:viewController animated:YES completion:nil];*/
+    [self.appDelegate.navigationController pushViewController:[[LegendViewController alloc]  initWithNibName:@"Legend" bundle:nil] animated:YES];
 }
 
 - (IBAction)toggleGPS:(id)sender {
@@ -441,9 +452,12 @@
 }
 - (IBAction)showInfo:(id)sender {
     //show Info
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
+    /*UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
     UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"InfoUNINE"];
-    [self presentViewController:viewController animated:YES completion:nil];
+    [self presentViewController:viewController animated:YES completion:nil];*/
+
+    [self.appDelegate.navigationController pushViewController:[[InfoViewController alloc] initWithNibName:@"Info" bundle:nil] animated:YES];
+   
 }
 - (IBAction)toggleSatelite:(id)sender {
     if(self.sateliteBasemap.isVisible) {
@@ -454,6 +468,14 @@
         [self.sateliteBasemap setVisible:YES];
         [self.roadBasemap setVisible:NO];
          self.sateliteButton.tintColor = [UIColor greenColor];
+    }
+}
+
+-(void)returnToHome {
+    for(UIViewController *viewController in self.appDelegate.navigationController.viewControllers) {
+        if([viewController isKindOfClass:[MainMenuViewController class]]) {
+            [self.appDelegate.navigationController popToViewController:viewController animated:YES];
+        }
     }
 }
 @end

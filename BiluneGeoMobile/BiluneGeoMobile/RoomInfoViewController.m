@@ -44,7 +44,7 @@
     self.infoTable.dataSource = self;
     self.infoTable.delegate = self;
     
-    self.titleBar.title = room.name;
+    self.title = room.name;
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,10 +91,5 @@
     } else {
         return 44;
     }
-}
-
-#pragma mark IBAction
-- (IBAction)returnToMap:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

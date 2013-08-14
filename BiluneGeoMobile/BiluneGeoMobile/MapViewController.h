@@ -14,14 +14,12 @@
 #import "CompassView.h"
 
 @interface MapViewController : UIViewController<AGSMapViewTouchDelegate, AGSMapViewLayerDelegate, RoomQueryDelegate, AGSCalloutDelegate> {
-    int scaleBarValueInMeters;
+    float scaleBarValueInMeters;
 }
 - (IBAction)showInfo:(id)sender;
 @property (weak, nonatomic) IBOutlet AGSMapView *mapView;
 @property (weak, nonatomic) IBOutlet CompassView *compass;
 
-- (IBAction)returnToMenu:(id)sender;
-- (IBAction)showMapOverview:(id)sender;
 - (IBAction)showLegend:(id)sender;
 -(void) updateVisibleFloorsFromBuilding:(Building *)building;
 @property (weak, nonatomic) IBOutlet ScaleBarView *mapScale;

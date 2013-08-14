@@ -10,9 +10,7 @@
 #import "Room.h"
 
 @interface RoomInfoViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
-- (IBAction)returnToMap:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *infoTable;
-@property (weak, nonatomic) IBOutlet UINavigationItem *titleBar;
 
 
 -(void)setRoom:(Room *)pRoom;

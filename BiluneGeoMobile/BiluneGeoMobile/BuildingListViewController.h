@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BuildingListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
-- (IBAction)returnToMenu:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *buildingsList;
 
 @end

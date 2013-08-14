@@ -35,11 +35,15 @@ Building *building;
 {
     [super viewDidLoad];
 	
+    self.appDelegate = GetAppDelegate();
+    
     //prepare View
     [self.buildingAddress setText:building.address];
     if([building getImage]){
         [self.buildingImage setImage:[building getImage]];
     }
+    
+    self.title = @"Etages";
     
     self.floorsTable.delegate = self;
     self.floorsTable.dataSource = self;
@@ -80,10 +84,9 @@ Building *building;
 
 #pragma mark UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
-    RoomListViewController *viewController = (RoomListViewController *)[storyboard instantiateViewControllerWithIdentifier:@"RoomList"];
+    RoomListViewController *viewController = [[RoomListViewController alloc] initWithNibName:@"RoomList" bundle:nil];
     [viewController setFloor:[[building getFloors] objectAtIndex:indexPath.row]];
-    [self presentViewController:viewController animated:YES completion:nil];
+    [self.appDelegate.navigationController pushViewController:viewController animated:YES];
 }
 
 #pragma mark DeviceOrientation
@@ -93,12 +96,5 @@ Building *building;
 
 #pragma mark IBAction
 
-- (IBAction)returnToBuildingList:(id)sender {
-    //show SearchOccupants
-    /*UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
-    UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"BuildingList"];
-    [self presentViewController:viewController animated:YES completion:nil];*/
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 @end

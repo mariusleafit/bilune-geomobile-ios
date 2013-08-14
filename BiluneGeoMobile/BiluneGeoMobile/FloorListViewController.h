@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *buildingImage;
 @property (weak, nonatomic) IBOutlet UILabel *buildingAddress;
 @property (weak, nonatomic) IBOutlet UITableView *floorsTable;
-- (IBAction)returnToBuildingList:(id)sender;
 
 
 -(void) setBuilding:(Building *)pBuilding;

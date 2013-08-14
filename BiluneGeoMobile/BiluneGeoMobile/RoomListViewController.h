@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *buildingAddress;
 @property (weak, nonatomic) IBOutlet UILabel *floorName;
 @property (weak, nonatomic) IBOutlet UITableView *roomList;
-- (IBAction)returnToEtages:(id)sender;
 
 - (void) setFloor:(Floor *)pFloor;
 @end

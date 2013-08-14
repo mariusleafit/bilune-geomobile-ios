@@ -10,9 +10,10 @@
 #import "SearchOccupantsViewController.h"
 #import "BuildingListViewController.h"
 #import <ArcGIS/ArcGIS.h>
+#import "MapViewController.h"
 
 @interface MainMenuViewController ()
-
+@property (weak) AppDelegate *appDelegate;
 @end
 
 @implementation MainMenuViewController
@@ -20,7 +21,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.appDelegate = GetAppDelegate();
+    
 	// Do any additional setup after loading the view, typically from a nib.
+    [self setTitle:@"UNINE"];
+    self.navigationItem.hidesBackButton = true;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,22 +45,15 @@
 
 - (IBAction)showSearchOccupants:(id)sender {
     //show SearchOccupants
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
-    SearchOccupantsViewController *viewController = (SearchOccupantsViewController *)[storyboard instantiateViewControllerWithIdentifier:@"SearchOccupants"];
-    [self presentViewController:viewController animated:YES completion:nil];
+    [self.appDelegate.navigationController pushViewController:[[SearchOccupantsViewController alloc] initWithNibName:@"SearchOccupants" bundle:nil] animated:YES];
 }
 
 - (IBAction)showBuildingList:(id)sender {
     //show SearchOccupants
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
-    BuildingListViewController *viewController = (BuildingListViewController *)[storyboard instantiateViewControllerWithIdentifier:@"BuildingList"];
-    [self presentViewController:viewController animated:YES completion:nil];
+     [self.appDelegate.navigationController pushViewController:[[BuildingListViewController alloc] initWithNibName:@"BuildingList" bundle:nil] animated:YES];
 }
 
 - (IBAction)showMap:(id)sender {
-    //show SearchOccupants
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
-    UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Map"];
-    [self presentViewController:viewController animated:YES completion:nil];
+    [self.appDelegate.navigationController pushViewController:[[MapViewController alloc] initWithNibName:@"Map" bundle:nil] animated:YES];
 }
 @end

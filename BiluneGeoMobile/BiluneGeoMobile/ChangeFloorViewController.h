@@ -16,6 +16,5 @@
 }
 -(void)setBuilding:(Building *)pBuilding;
 @property (weak, nonatomic) IBOutlet UITableView *floorList;
-- (IBAction)returnToMap:(id)sender;
 -(void)setMapViewController:(MapViewController *)pMapViewController;
 @end

@@ -28,7 +28,25 @@
 {
     [super viewDidLoad];
 	self.floorList.dataSource = self;
+    self.title = @"Étages";
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    //change floors on map
     
+    //is at least one floor visible?
+    BOOL isVisible = false;
+    for(Floor *floor in [building getFloors]) {
+        if([floor isVisible]) {
+            isVisible = true;
+        }
+    }
+    //set visibility back to default
+    if(!isVisible) {
+        [building resetFloorVisibility];
+    }
+    [mapViewController updateVisibleFloorsFromBuilding:building];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,7 +74,9 @@
     //get cell
     ChangeFloorListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[ChangeFloorListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        UIViewController *tmpViewController = [[UIViewController alloc] initWithNibName:@"ChangeFloorCell" bundle:nil];
+        //cell = [[ChangeFloorListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = (ChangeFloorListCell *)tmpViewController.view;
     }
     
     //get Floor
@@ -77,20 +97,5 @@
 }
 
 #pragma mark IBAction
-- (IBAction)returnToMap:(id)sender {
-    //is at least one floor visible?
-    BOOL isVisible = false;
-    for(Floor *floor in [building getFloors]) {
-        if([floor isVisible]) {
-            isVisible = true;
-        }
-    }
-    //set visibility back to default
-    if(!isVisible) {
-        [building resetFloorVisibility];
-    }
-    [mapViewController updateVisibleFloorsFromBuilding:building];
-    [self dismissViewControllerAnimated:YES completion:nil];
 
-}
 @end

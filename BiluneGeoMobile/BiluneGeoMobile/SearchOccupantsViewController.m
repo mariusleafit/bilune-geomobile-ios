@@ -49,6 +49,8 @@ NSMutableArray *filteredSections = nil;
     
     isFiltered = false;
     
+    self.title = @"Personnes";
+    
     //initialize initialSections
     if(appDelegate == nil) {
         appDelegate = GetAppDelegate();
@@ -148,6 +150,9 @@ NSMutableArray *filteredSections = nil;
     //get cell
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
+    if(!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+    }
     Occupant *occupant = [self getOccupantAtIndexPath:indexPath];
     
     [cell.textLabel setText:occupant.occupantName];
@@ -193,10 +198,9 @@ NSMutableArray *filteredSections = nil;
     
     if([queryName isEqualToString:@"RoomFromOccupantQuery"]) {
         if(room) {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
-            MapViewController *viewController = (MapViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Map"];
+            MapViewController *viewController = [[MapViewController alloc] initWithNibName:@"Map" bundle:nil];
             [viewController setRoomToZoomTo:room];
-            [self presentViewController:viewController animated:YES completion:nil];
+            [appDelegate.navigationController pushViewController:viewController animated:YES];
         } else {
             NSLog(@"room not found");
         }
@@ -254,10 +258,6 @@ NSMutableArray *filteredSections = nil;
 }
 
 #pragma mark IBAction
-- (IBAction)returnToMenu:(id)sender {
-    //show main menu
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 
 @end

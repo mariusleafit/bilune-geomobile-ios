@@ -40,7 +40,7 @@ bool errorOccured = false;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
+    [self setTitle:@"UNINE"];
     [self startDownload];
 }
 
@@ -135,9 +135,7 @@ bool errorOccured = false;
         if(!errorOccured && downloadedOccupants && downloadedBuildings) {
             [self.loaderImage stopAnimating];
             //show main menu
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"BiluneGeoMobile" bundle:nil];
-            MainMenuViewController *viewController = (MainMenuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MainMenu"];
-            [self presentViewController:viewController animated:NO completion:nil];
+            [delegate.navigationController pushViewController:[[MainMenuViewController alloc] initWithNibName:@"MainMenu" bundle:nil] animated:NO];
         }
     }
 }
