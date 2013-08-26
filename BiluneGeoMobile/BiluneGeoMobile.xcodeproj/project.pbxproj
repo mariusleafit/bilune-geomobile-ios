@@ -151,7 +151,7 @@
 		2919AEB717B2476D00B12DC3 /* LegendListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegendListCell.h; sourceTree = "<group>"; };
 		2919AEB817B2476D00B12DC3 /* LegendListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegendListCell.m; sourceTree = "<group>"; };
 		2919AEBA17B28EF700B12DC3 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
-		2930D4361785A3E500A4DCD2 /* BiluneGeoMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = BiluneGeoMobile.app; path = "unine campus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2930D4361785A3E500A4DCD2 /* unine campus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "unine campus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2930D4391785A3E500A4DCD2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2930D43B1785A3E500A4DCD2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2930D43D1785A3E500A4DCD2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -365,7 +365,7 @@
 		2930D4371785A3E500A4DCD2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2930D4361785A3E500A4DCD2 /* BiluneGeoMobile.app */,
+				2930D4361785A3E500A4DCD2 /* unine campus.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -736,7 +736,7 @@
 			);
 			name = "unine campus";
 			productName = BiluneGeoMobile;
-			productReference = 2930D4361785A3E500A4DCD2 /* BiluneGeoMobile.app */;
+			productReference = 2930D4361785A3E500A4DCD2 /* unine campus.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
