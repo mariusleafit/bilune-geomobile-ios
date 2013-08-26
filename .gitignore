@@ -1,16 +1,16 @@
 
 *.xcworkspacedata
 
+*.xcuserstate
+
+*.pbxproj
+
+*.xcscheme
+
 VenusGateway/VenusGateway.xcodeproj/xcuserdata/Marius.xcuserdatad/xcschemes/xcschememanagement.plist
 
-VenusGateway/VenusGateway.xcodeproj/xcuserdata/Marius.xcuserdatad/xcschemes/VenusGateway.xcscheme
 
 
-VenusGateway/VenusGateway.xcodeproj/project.xcworkspace/contents.xcworkspacedata
 
-VenusGateway/VenusGateway.xcodeproj/project.pbxproj
-
-
-*.xcuserstate
 
 
