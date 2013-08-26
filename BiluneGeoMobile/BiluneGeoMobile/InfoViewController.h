@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface InfoViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIView *devInfoContainer;
-@property (weak, nonatomic) IBOutlet UIView *appInfoContainer;
+@property (weak, nonatomic) IBOutlet UIScrollView *devInfoContainer;
+@property (weak, nonatomic) IBOutlet UIScrollView *appInfoContainer;
 - (IBAction)changeInfoPage:(id)sender;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end

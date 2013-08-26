@@ -26,7 +26,7 @@
     [super viewDidLoad];    
     self.appDelegate = GetAppDelegate();
     
-    self.title = @"Batiments d'UNINE";
+    self.title = @"Bâtiments UNINE";
     
     self.buildingsList.dataSource = self;
     self.buildingsList.delegate = self;

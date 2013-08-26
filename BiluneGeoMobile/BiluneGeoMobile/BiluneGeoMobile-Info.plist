@@ -14,7 +14,8 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>bilune_geomobile.png</string>
+				<string>app_logo.png</string>
+				<string>app_logo@2x.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>

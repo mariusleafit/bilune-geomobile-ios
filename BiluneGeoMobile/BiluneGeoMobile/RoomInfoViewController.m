@@ -72,6 +72,11 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
+    if([((NSString *)[infoDataTitle objectAtIndex:indexPath.row]) isEqualToString:@"Occupants"]) {
+        cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        cell.detailTextLabel.numberOfLines = 8;
+    }
+    
     //get data
     cell.textLabel.text = [infoDataTitle objectAtIndex:indexPath.row];
     cell.detailTextLabel.text = [infoDataSubTitle objectAtIndex:indexPath.row];
@@ -92,7 +97,12 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     //Occupants uses more space
     if([((NSString *)[infoDataTitle objectAtIndex:indexPath.row]) isEqualToString:@"Occupants"]) {
-        return 80;
+        //if the occupants fields needs more than one line
+        if([[infoDataSubTitle objectAtIndex:indexPath.row] length] > 35) {
+            return 80;
+        } else {
+            return 44;
+        }
     } else {
         return 44;
     }
