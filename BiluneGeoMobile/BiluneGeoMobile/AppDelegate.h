@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BuildingStack.h"
 #import "MainMenuViewController.h"
+#import "CustomNavigationController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -17,5 +18,5 @@
 @property (strong, nonatomic) BuildingStack *buildingstack;
 @property (strong, nonatomic) NSMutableArray *legendEntries;
 
-@property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) CustomNavigationController *navigationController;
 @end

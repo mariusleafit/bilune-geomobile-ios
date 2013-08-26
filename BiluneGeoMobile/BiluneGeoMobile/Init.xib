@@ -44,6 +44,7 @@
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
 						<string key="NSFrame">{{142, 233}, {36, 37}}</string>
 						<reference key="NSSuperview" ref="118060505"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="763767078"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -54,6 +55,7 @@
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
 						<string key="NSFrame">{{170, 0}, {102, 89}}</string>
 						<reference key="NSSuperview" ref="118060505"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="165082489"/>
 						<int key="IBUIContentMode">1</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -69,6 +71,7 @@
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
 						<string key="NSFrame">{{35, 12}, {127, 66}}</string>
 						<reference key="NSSuperview" ref="118060505"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="537002844"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -103,6 +106,7 @@
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
 						<string key="NSFrame">{{0, 97}, {320, 103}}</string>
 						<reference key="NSSuperview" ref="118060505"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="686422296"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -123,6 +127,7 @@
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
 						<string key="NSFrame">{{35, 208}, {252, 59}}</string>
 						<reference key="NSSuperview" ref="118060505"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1049811585"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -156,6 +161,7 @@
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
 						<string key="NSFrame">{{110, 278}, {100, 44}}</string>
 						<reference key="NSSuperview" ref="118060505"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -189,6 +195,7 @@
 				<object class="NSPSMatrix" key="NSFrameMatrix"/>
 				<string key="NSFrame">{{0, 64}, {320, 504}}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="364941185"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -254,6 +261,15 @@
 						<reference key="destination" ref="763767078"/>
 					</object>
 					<int key="connectionID">58</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">retryDownload:</string>
+						<reference key="source" ref="763767078"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">59</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -777,8 +793,8 @@
 				<real value="252" key="20.IBUILabelPreferredMaxLayoutWidthAtFirstLayout"/>
 				<reference key="20.IBUserGuides" ref="0"/>
 				<array key="20.IBViewMetadataConstraints">
-					<reference ref="442150387"/>
 					<reference ref="320938824"/>
+					<reference ref="442150387"/>
 				</array>
 				<boolean value="NO" key="20.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<boolean value="NO" key="20.showNotes"/>
@@ -800,16 +816,16 @@
 				<string key="24.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<reference key="24.IBUserGuides" ref="0"/>
 				<array key="24.IBViewMetadataConstraints">
-					<reference ref="284090426"/>
 					<reference ref="469013366"/>
+					<reference ref="284090426"/>
 				</array>
 				<boolean value="NO" key="24.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<boolean value="NO" key="24.showNotes"/>
 				<string key="25.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<reference key="25.IBUserGuides" ref="0"/>
 				<array key="25.IBViewMetadataConstraints">
-					<reference ref="415806664"/>
 					<reference ref="720650041"/>
+					<reference ref="415806664"/>
 				</array>
 				<boolean value="NO" key="25.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<boolean value="NO" key="25.showNotes"/>
@@ -858,7 +874,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">58</int>
+			<int key="maxID">59</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

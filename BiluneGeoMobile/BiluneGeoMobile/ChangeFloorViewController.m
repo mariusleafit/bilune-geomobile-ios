@@ -92,8 +92,8 @@
 
 
 #pragma mark DeviceOrientation
--(BOOL)shouldAutorotate {
-    return NO;
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAllButUpsideDown;
 }
 
 #pragma mark IBAction

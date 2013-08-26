@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIView *devInfoContainer;
 @property (weak, nonatomic) IBOutlet UIView *appInfoContainer;
 - (IBAction)changeInfoPage:(id)sender;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end

@@ -140,6 +140,7 @@
 		29EABBA61786BFAD0043BD86 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EABBA51786BFAC0043BD86 /* Room.m */; };
 		29EABBA91786BFC10043BD86 /* Occupant.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EABBA81786BFC10043BD86 /* Occupant.m */; };
 		29EABBAF1786BFDC0043BD86 /* LegendEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EABBAE1786BFDC0043BD86 /* LegendEntry.m */; };
+		29FA1D9217CB3181001E1A2B /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FA1D9117CB3181001E1A2B /* CustomNavigationController.m */; };
 		29FEB94217B39DF400E47FB3 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 29FEB94117B39DF400E47FB3 /* globe.png */; };
 /* End PBXBuildFile section */
 
@@ -315,6 +316,8 @@
 		29EABBA81786BFC10043BD86 /* Occupant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Occupant.m; sourceTree = "<group>"; };
 		29EABBAD1786BFDC0043BD86 /* LegendEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegendEntry.h; sourceTree = "<group>"; };
 		29EABBAE1786BFDC0043BD86 /* LegendEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegendEntry.m; sourceTree = "<group>"; };
+		29FA1D9017CB3181001E1A2B /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
+		29FA1D9117CB3181001E1A2B /* CustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
 		29FEB94117B39DF400E47FB3 /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -574,6 +577,7 @@
 		29B63D571785ABDF001AEE4B /* core */ = {
 			isa = PBXGroup;
 			children = (
+				29FA1D8F17CB3166001E1A2B /* system */,
 				29DAE97E178C3CB50027D47C /* helpers */,
 				29EABB971786BE770043BD86 /* models */,
 			);
@@ -693,6 +697,15 @@
 				29EABBAE1786BFDC0043BD86 /* LegendEntry.m */,
 			);
 			name = legend;
+			sourceTree = "<group>";
+		};
+		29FA1D8F17CB3166001E1A2B /* system */ = {
+			isa = PBXGroup;
+			children = (
+				29FA1D9017CB3181001E1A2B /* CustomNavigationController.h */,
+				29FA1D9117CB3181001E1A2B /* CustomNavigationController.m */,
+			);
+			name = system;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -878,6 +891,7 @@
 				29A4FD7C17B1127300BF9DA2 /* RoomsFromFloorQuery.m in Sources */,
 				2919AEB917B2476D00B12DC3 /* LegendListCell.m in Sources */,
 				29A48C8917B50C5E003E3D8F /* CompassView.m in Sources */,
+				29FA1D9217CB3181001E1A2B /* CustomNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

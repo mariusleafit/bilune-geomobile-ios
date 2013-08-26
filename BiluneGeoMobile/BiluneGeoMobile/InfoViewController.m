@@ -31,7 +31,15 @@
     //hide devInfo and show appInfo
     self.devInfoContainer.hidden = true;
     self.appInfoContainer.hidden = false;
+    
+    
+    
 }
+
+/*- (void) viewDidLayoutSubviews {
+    self.scrollView.center = CGPointMake(self.view.center.x, 0);
+    //self.scrollView.center = self.view.center;
+}*/
 
 - (void)didReceiveMemoryWarning
 {
@@ -40,10 +48,9 @@
 }
 
 #pragma mark DeviceOrientation
--(BOOL)shouldAutorotate {
-    return NO;
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAllButUpsideDown;
 }
-
 
 #pragma mark IBAction
 

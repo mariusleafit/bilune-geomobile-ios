@@ -17,10 +17,11 @@
 {
     // Override point for customization after application launch.
     //return YES;
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:[[InitViewController alloc] initWithNibName:@"Init" bundle:nil]];
+    self.navigationController = [[CustomNavigationController alloc] initWithRootViewController:[[InitViewController alloc] initWithNibName:@"Init" bundle:nil]];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window setRootViewController:self.navigationController];
+    
     [self.window makeKeyAndVisible];
     
     return YES;

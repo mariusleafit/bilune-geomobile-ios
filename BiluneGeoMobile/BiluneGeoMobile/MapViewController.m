@@ -408,16 +408,8 @@
 }
 
 #pragma mark DeviceOrientation
--(BOOL)shouldAutorotate {
-    return YES;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    //Pass the interface orientation on to the map's gps so that
-    //it can re-position the gps symbol appropriately in
-    //compass navigation mode
-    self.mapView.locationDisplay.interfaceOrientation = interfaceOrientation;
-    return YES;
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAllButUpsideDown;
 }
 
 #pragma mark IBAction

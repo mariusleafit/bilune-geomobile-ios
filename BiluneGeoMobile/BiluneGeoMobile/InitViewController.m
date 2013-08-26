@@ -150,8 +150,8 @@ bool errorOccured = false;
 }
 
 #pragma mark DeviceOrientation
--(BOOL)shouldAutorotate {
-    return NO;
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 #pragma mark IBActions
