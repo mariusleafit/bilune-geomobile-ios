@@ -91,7 +91,6 @@
 		2996869A17B90480004569F5 /* 31_latenium_1e@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2996868417B90480004569F5 /* 31_latenium_1e@2x.jpg */; };
 		2996869B17B90480004569F5 /* 33_vau22@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2996868517B90480004569F5 /* 33_vau22@2x.jpg */; };
 		2996869C17B90480004569F5 /* bilune_page_background01@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2996868617B90480004569F5 /* bilune_page_background01@2x.jpg */; };
-		299686A217B907CA004569F5 /* bilune_geomobile.png in Resources */ = {isa = PBXBuildFile; fileRef = 299686A117B907CA004569F5 /* bilune_geomobile.png */; };
 		299686AB17B90C82004569F5 /* leafit_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 299686A917B90C82004569F5 /* leafit_logo.png */; };
 		299686AC17B90C82004569F5 /* leafit_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 299686AA17B90C82004569F5 /* leafit_logo@2x.png */; };
 		299686AE17B90D4A004569F5 /* scale@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 299686AD17B90D4A004569F5 /* scale@2x.png */; };
@@ -152,7 +151,7 @@
 		2919AEB717B2476D00B12DC3 /* LegendListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegendListCell.h; sourceTree = "<group>"; };
 		2919AEB817B2476D00B12DC3 /* LegendListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegendListCell.m; sourceTree = "<group>"; };
 		2919AEBA17B28EF700B12DC3 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
-		2930D4361785A3E500A4DCD2 /* BiluneGeoMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiluneGeoMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2930D4361785A3E500A4DCD2 /* BiluneGeoMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = BiluneGeoMobile.app; path = "unine campus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2930D4391785A3E500A4DCD2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2930D43B1785A3E500A4DCD2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2930D43D1785A3E500A4DCD2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -248,7 +247,6 @@
 		2996868417B90480004569F5 /* 31_latenium_1e@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "31_latenium_1e@2x.jpg"; sourceTree = "<group>"; };
 		2996868517B90480004569F5 /* 33_vau22@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "33_vau22@2x.jpg"; sourceTree = "<group>"; };
 		2996868617B90480004569F5 /* bilune_page_background01@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bilune_page_background01@2x.jpg"; sourceTree = "<group>"; };
-		299686A117B907CA004569F5 /* bilune_geomobile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bilune_geomobile.png; sourceTree = "<group>"; };
 		299686A917B90C82004569F5 /* leafit_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leafit_logo.png; sourceTree = "<group>"; };
 		299686AA17B90C82004569F5 /* leafit_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leafit_logo@2x.png"; sourceTree = "<group>"; };
 		299686AD17B90D4A004569F5 /* scale@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scale@2x.png"; sourceTree = "<group>"; };
@@ -358,7 +356,6 @@
 			children = (
 				2993BBF017CB53DA006EF5E5 /* app_logo@2x.png */,
 				2993BBEE17CB53D2006EF5E5 /* app_logo.png */,
-				299686A117B907CA004569F5 /* bilune_geomobile.png */,
 				2930D43F1785A3E500A4DCD2 /* BiluneGeoMobile */,
 				2930D4381785A3E500A4DCD2 /* Frameworks */,
 				2930D4371785A3E500A4DCD2 /* Products */,
@@ -841,7 +838,6 @@
 				2996869A17B90480004569F5 /* 31_latenium_1e@2x.jpg in Resources */,
 				2996869B17B90480004569F5 /* 33_vau22@2x.jpg in Resources */,
 				2996869C17B90480004569F5 /* bilune_page_background01@2x.jpg in Resources */,
-				299686A217B907CA004569F5 /* bilune_geomobile.png in Resources */,
 				299686AB17B90C82004569F5 /* leafit_logo.png in Resources */,
 				299686AC17B90C82004569F5 /* leafit_logo@2x.png in Resources */,
 				299686AE17B90D4A004569F5 /* scale@2x.png in Resources */,
