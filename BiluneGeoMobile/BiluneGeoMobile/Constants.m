@@ -10,8 +10,6 @@
 
 @implementation Constants
 
-+(NSString *) OCCUPANTSURL {return @"https://biluneapp.unine.ch/IGeomobileAccessServices/occupants";}
-+(NSString *) BUILDINGSURL {return @"https://biluneapp.unine.ch/IGeomobileAccessServices/buildings";}
 +(float) DOWNLOADTIMEOUT {return 5.0;}
 
 //BILUNE Constants

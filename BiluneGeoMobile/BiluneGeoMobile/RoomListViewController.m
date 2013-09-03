@@ -85,12 +85,16 @@ Floor *currentFloor;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
+
+    
     //get room
     Room *room = [self.roomsOfFloor objectAtIndex:indexPath.row];
     if(room) {
         cell.textLabel.text = room.name;
         cell.detailTextLabel.text = room.type;
     }
+    
+    
     
     return cell;
 }

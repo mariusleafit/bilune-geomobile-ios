@@ -70,6 +70,7 @@
     UITableViewCell *cell = [self.infoTable dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     if([((NSString *)[infoDataTitle objectAtIndex:indexPath.row]) isEqualToString:@"Occupants"]) {

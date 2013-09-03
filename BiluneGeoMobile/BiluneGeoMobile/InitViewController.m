@@ -78,9 +78,9 @@ bool errorOccured = false;
     DownloadQueue *downloadQueue = [[DownloadQueue alloc] init];
     
     //download occupants
-    Downloader *occupantsDownloader = [[Downloader alloc] initWithDelegate:self identifier:@"occupants" url:[NSURL URLWithString:[Constants OCCUPANTSURL]]];
+    Downloader *occupantsDownloader = [[Downloader alloc] initWithDelegate:self identifier:@"occupants" url:[NSURL URLWithString:OCCUPANTSURL]];
     
-    Downloader *buildingsDownloader = [[Downloader alloc] initWithDelegate:self identifier:@"buildings" url:[NSURL URLWithString:[Constants BUILDINGSURL]]];
+    Downloader *buildingsDownloader = [[Downloader alloc] initWithDelegate:self identifier:@"buildings" url:[NSURL URLWithString:BUILDINGSURL]];
     
     [downloadQueue addDownloader:occupantsDownloader];
     [downloadQueue addDownloader:buildingsDownloader];
@@ -105,7 +105,7 @@ bool errorOccured = false;
         
         //occupants download
         if([identifier isEqual: @"occupants"] && data != nil) {
-            delegate.occupants = [NSMutableArray arrayWithCapacity:1000];
+            delegate.occupants = [NSMutableArray arrayWithCapacity:data.count];
             for(NSDictionary *item in data) {
                 [delegate.occupants addObject:[Occupant occupantWithDictionary:item]];
             }
@@ -121,7 +121,7 @@ bool errorOccured = false;
             }
             
             //parse Legend
-            delegate.legendEntries = [NSMutableArray arrayWithCapacity:30];
+            delegate.legendEntries = [NSMutableArray arrayWithCapacity:data.count];
             NSDictionary *legendDict = (NSDictionary *)[data valueForKey:@"Legend"];
             for (NSDictionary *legendEntryDict in legendDict) {
                 [delegate.legendEntries addObject:[[LegendEntry alloc] initWithDictionary:legendEntryDict]];

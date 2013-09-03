@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <ArcGIS/ArcGIS.h>
 
+#define OCCUPANTSURL @"https://biluneapp.unine.ch/IGeomobileAccessServices/occupants"
+#define BUILDINGSURL @"https://biluneapp.unine.ch/IGeomobileAccessServices/buildings"
+
 @interface Constants : NSObject
 
 //VENUS constants
-+(NSString *) OCCUPANTSURL;
-+(NSString *) BUILDINGSURL;
 +(float) DOWNLOADTIMEOUT;
 
 //ArcGIS constants

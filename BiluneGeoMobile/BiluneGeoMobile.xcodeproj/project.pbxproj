@@ -9,15 +9,15 @@
 /* Begin PBXBuildFile section */
 		2919AEB917B2476D00B12DC3 /* LegendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2919AEB817B2476D00B12DC3 /* LegendListCell.m */; };
 		2919AEBB17B28EF700B12DC3 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 2919AEBA17B28EF700B12DC3 /* compass.png */; };
+		29258BC417CF4FDE001514E4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 29258BC317CF4FDD001514E4 /* Default.png */; };
+		29258BC617CF4FEE001514E4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29258BC517CF4FEE001514E4 /* Default@2x.png */; };
+		29258BC817CF4FFB001514E4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29258BC717CF4FFB001514E4 /* Default-568h@2x.png */; };
 		2930D43A1785A3E500A4DCD2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2930D4391785A3E500A4DCD2 /* UIKit.framework */; };
 		2930D43C1785A3E500A4DCD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2930D43B1785A3E500A4DCD2 /* Foundation.framework */; };
 		2930D43E1785A3E500A4DCD2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2930D43D1785A3E500A4DCD2 /* CoreGraphics.framework */; };
 		2930D4441785A3E500A4DCD2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2930D4421785A3E500A4DCD2 /* InfoPlist.strings */; };
 		2930D4461785A3E500A4DCD2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2930D4451785A3E500A4DCD2 /* main.m */; };
 		2930D44A1785A3E500A4DCD2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2930D4491785A3E500A4DCD2 /* AppDelegate.m */; };
-		2930D44C1785A3E500A4DCD2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2930D44B1785A3E500A4DCD2 /* Default.png */; };
-		2930D44E1785A3E500A4DCD2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2930D44D1785A3E500A4DCD2 /* Default@2x.png */; };
-		2930D4501785A3E500A4DCD2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2930D44F1785A3E500A4DCD2 /* Default-568h@2x.png */; };
 		2930D4561785A3E500A4DCD2 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2930D4551785A3E500A4DCD2 /* MainMenuViewController.m */; };
 		298B8BBB1790271900FD1EF3 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B8BBA1790271900FD1EF3 /* Constants.m */; };
 		2991A724179960D5007F6E19 /* BuildingListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2991A723179960D5007F6E19 /* BuildingListCell.m */; };
@@ -37,8 +37,6 @@
 		2991F39817BBD8F300C3A30F /* RoomList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2991F39717BBD8F300C3A30F /* RoomList.xib */; };
 		2993BBEB17CB5386006EF5E5 /* app_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2993BBEA17CB5386006EF5E5 /* app_logo.png */; };
 		2993BBED17CB53A3006EF5E5 /* app_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2993BBEC17CB53A3006EF5E5 /* app_logo@2x.png */; };
-		2993BBEF17CB53D2006EF5E5 /* app_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2993BBEE17CB53D2006EF5E5 /* app_logo.png */; };
-		2993BBF117CB53DB006EF5E5 /* app_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2993BBF017CB53DA006EF5E5 /* app_logo@2x.png */; };
 		2993BBF817CB89F0006EF5E5 /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 2993BBF617CB89F0006EF5E5 /* marker.png */; };
 		2993BBF917CB89F0006EF5E5 /* marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2993BBF717CB89F0006EF5E5 /* marker@2x.png */; };
 		2993BBFB17CB8B54006EF5E5 /* pin32@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2993BBFA17CB8B54006EF5E5 /* pin32@2x.png */; };
@@ -151,6 +149,9 @@
 		2919AEB717B2476D00B12DC3 /* LegendListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegendListCell.h; sourceTree = "<group>"; };
 		2919AEB817B2476D00B12DC3 /* LegendListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegendListCell.m; sourceTree = "<group>"; };
 		2919AEBA17B28EF700B12DC3 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
+		29258BC317CF4FDD001514E4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		29258BC517CF4FEE001514E4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		29258BC717CF4FFB001514E4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		2930D4361785A3E500A4DCD2 /* unine campus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "unine campus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2930D4391785A3E500A4DCD2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2930D43B1785A3E500A4DCD2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -161,9 +162,6 @@
 		2930D4471785A3E500A4DCD2 /* BiluneGeoMobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BiluneGeoMobile-Prefix.pch"; sourceTree = "<group>"; };
 		2930D4481785A3E500A4DCD2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2930D4491785A3E500A4DCD2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2930D44B1785A3E500A4DCD2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		2930D44D1785A3E500A4DCD2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		2930D44F1785A3E500A4DCD2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2930D4541785A3E500A4DCD2 /* MainMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		2930D4551785A3E500A4DCD2 /* MainMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		298B8BB91790271900FD1EF3 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -643,10 +641,10 @@
 				29949A32179D50FB004C549A /* loader */,
 				29B63D601785B8D8001AEE4B /* info32.png */,
 				29B63D5F1785B8C1001AEE4B /* gps.png */,
+				29258BC717CF4FFB001514E4 /* Default-568h@2x.png */,
+				29258BC517CF4FEE001514E4 /* Default@2x.png */,
+				29258BC317CF4FDD001514E4 /* Default.png */,
 				29B63D5A1785B2B9001AEE4B /* logo_unine_bleu.png */,
-				2930D44B1785A3E500A4DCD2 /* Default.png */,
-				2930D44D1785A3E500A4DCD2 /* Default@2x.png */,
-				2930D44F1785A3E500A4DCD2 /* Default-568h@2x.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -775,9 +773,6 @@
 				29EABB931786A8880043BD86 /* bilune_page_background01.jpg in Resources */,
 				29EABB941786A8880043BD86 /* logo_unine_bleu.png in Resources */,
 				2930D4441785A3E500A4DCD2 /* InfoPlist.strings in Resources */,
-				2930D44C1785A3E500A4DCD2 /* Default.png in Resources */,
-				2930D44E1785A3E500A4DCD2 /* Default@2x.png in Resources */,
-				2930D4501785A3E500A4DCD2 /* Default-568h@2x.png in Resources */,
 				299C7F9A178ED9B40038FADC /* loader1.tiff in Resources */,
 				299C7F9B178ED9B40038FADC /* loader12.tiff in Resources */,
 				299C7F9C178ED9B40038FADC /* loader11.tiff in Resources */,
@@ -857,11 +852,12 @@
 				2991F39817BBD8F300C3A30F /* RoomList.xib in Resources */,
 				2993BBEB17CB5386006EF5E5 /* app_logo.png in Resources */,
 				2993BBED17CB53A3006EF5E5 /* app_logo@2x.png in Resources */,
-				2993BBEF17CB53D2006EF5E5 /* app_logo.png in Resources */,
-				2993BBF117CB53DB006EF5E5 /* app_logo@2x.png in Resources */,
 				2993BBF817CB89F0006EF5E5 /* marker.png in Resources */,
 				2993BBF917CB89F0006EF5E5 /* marker@2x.png in Resources */,
 				2993BBFB17CB8B54006EF5E5 /* pin32@2x.png in Resources */,
+				29258BC417CF4FDE001514E4 /* Default.png in Resources */,
+				29258BC617CF4FEE001514E4 /* Default@2x.png in Resources */,
+				29258BC817CF4FFB001514E4 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -951,6 +947,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				VALID_ARCHS = armv7;
 			};
 			name = Debug;
 		};
@@ -979,12 +976,14 @@
 				"PROVISIONING_PROFILE[sdk=*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = armv7;
 			};
 			name = Release;
 		};
 		2930D45A1785A3E500A4DCD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = armv7;
 				CODE_SIGN_IDENTITY = "iPhone Developer: ueli Schrag (KDD3557E9N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ueli Schrag (KDD3557E9N)";
 				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS/**";
@@ -1000,6 +999,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1007,8 +1007,9 @@
 		2930D45B1785A3E500A4DCD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: ueli Schrag (KDD3557E9N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ueli Schrag (KDD3557E9N)";
+				ARCHS = armv7;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: University of Neuchatel (KG24GATC9J)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: University of Neuchatel (KG24GATC9J)";
 				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BiluneGeoMobile/BiluneGeoMobile-Prefix.pch";
@@ -1020,8 +1021,9 @@
 					ArcGIS,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "4F8A7065-BEC5-436D-88DA-599898895F3E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4F8A7065-BEC5-436D-88DA-599898895F3E";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
